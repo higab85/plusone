@@ -45,10 +45,10 @@ Google Maps Android API es una aplicación totalmente gratuita e ilimitada. Perm
 3. Desarrollar.
 
 Más información: 
-[Precios](https://developers.google.com/maps/pricing-and-plans/#details)
-[MAPS](https://developers.google.com/maps/documentation/android-api/?hl=fr)
-[Places](https://developers.google.com/places/?hl=fr)
-[First steps](https://developers.google.com/maps/documentation/android-api/start?hl=fr)
+- [Precios](https://developers.google.com/maps/pricing-and-plans/#details)
+- [MAPS](https://developers.google.com/maps/documentation/android-api/?hl=fr)
+- [Places](https://developers.google.com/places/?hl=fr)
+- [First steps](https://developers.google.com/maps/documentation/android-api/start?hl=fr)
 
 ## Conclusión 
 
@@ -59,7 +59,7 @@ Lo primero de todo, creemos que hay un gran número de personas que no realizan 
 Consideramos que con nuestra aplicación los problemas enunciados anteriormente se solventarán. 
 El usuario, al poder crear todo tipo de eventos, también generamos una relación social entre ellos, no una simple quedada puntual, lo cual creemos interesante. Conseguir que personas con gustos afines se relacionen entre sí.
 
-###¿Viabilidad?
+### ¿Viabilidad?
 Creemos que es viable, porque hemos visto una necesidad en las personas para este tipo de Aplicación.
 Por ejemplo, a quién de nosotros no le ha pasado alguna vez ir a un campo de fútbol sala y que uno de tus amigos sea baja, pues con nuestra aplicación podrás buscar ese jugador que te falta. O querer ir a un evento y que tus amigos no puedan/quieran y no te guste ir solo, pues con nuestra aplicación podrás encontrar personas que como tú estén interesadas en ir.
 
