@@ -5,10 +5,10 @@ apply plugin: 'kotlin-kapt' // Use experimental kapt implementation
 
 android {
     compileSdkVersion 25
-    buildToolsVersion '26.0.0'
+    buildToolsVersion "24.0.3"
 
     defaultConfig {
-        applicationId "in.boilerplate.sample"
+        applicationId "plusone"
 
         minSdkVersion 16
         targetSdkVersion 25
