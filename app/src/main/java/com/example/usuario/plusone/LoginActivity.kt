@@ -20,11 +20,9 @@ import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.ArrayAdapter
 import android.widget.TextView
-
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
-
 import kotlinx.android.synthetic.main.activity_login.*
 
 /**
@@ -49,13 +47,13 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             false
         })
 
-        boton_iniciarSesion.setOnClickListener { attemptLogin()
+        boton_iniciarSesion.setOnClickListener { attemptLogin()}
         boton_registrarse.setOnClickListener{
             val intent = Intent(this,RegistrarseActivity::class.java)
             startActivity(intent)
         }
 
-        }
+
     }
 
     private fun populateAutoComplete() {
@@ -297,6 +295,6 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
          * A dummy authentication store containing known user names and passwords.
          * TODO: remove after connecting to a real authentication system.
          */
-        private val DUMMY_CREDENTIALS = arrayOf("foo@example.com:hello", "bar@example.com:world")
+         val DUMMY_CREDENTIALS = arrayOf("foo@example.com:hello", "bar@example.com:world")
     }
 }
