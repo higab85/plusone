@@ -25,18 +25,13 @@ import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
 import kotlinx.android.synthetic.main.activity_login.*
 
-/**
- * A login screen that offers login via email/password.
- */
+// In the Activity where you instantiate IdentityManager
+// IdentityManager provides methods for getting the user's unique Amazon Cognito identity ID and
+// the credentials provider needed to instantiate other AWS clients.
+import com.amazonaws.mobile.config.AWSConfiguration;
+import com.amazonaws.mobile.auth.core.IdentityManager;
+import com.amazonaws.mobile.auth.userpools.CognitoUserPoolsSignInProvider;                                                                             ;
 
-//class MainActivity : AppCompatActivity() {
-//
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        toast(text = "GEGE")
-//        setContentView(R.layout.activity_login)
-//    }
-//}
 
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
     /**

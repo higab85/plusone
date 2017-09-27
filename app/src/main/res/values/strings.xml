@@ -18,4 +18,5 @@
     <string name="permission_rationale">"El acceso a contactos es necesario para auto-rellenar el
         email."
     </string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>
