@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.usuario.plusone.LoginActivity">
+    tools:context="plusone.plusone.LoginActivity">
 
     <!-- Login progress -->
     <ProgressBar
@@ -64,22 +64,22 @@
             </android.support.design.widget.TextInputLayout>
 
             <Button
-                android:id="@+id/boton_iniciarSesion"
+                android:id="@+id/loginButton"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Iniciar Sesión"
+                android:text="@string/action_sign_in"
                 android:textStyle="bold" />
 
             <Button
-                android:id="@+id/boton_registrarse"
+                android:id="@+id/registerButton"
                 style="?android:textAppearanceSmall"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:layout_marginTop="16dp"
-                android:text="Registrarse" />
+                android:text="@string/action_register" />
 
         </LinearLayout>
     </ScrollView>
