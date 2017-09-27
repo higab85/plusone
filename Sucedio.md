@@ -1,7 +1,7 @@
-#Lo que realmente Sucedió
+# Lo que realmente Sucedió
 
-##Dia 25/09/2017
-------------------
+## Dia 25/09/2017
+
 
 - Empezamos a trabajar a las 16:30
 - Comenzamos a descargar los entornos 16:45
@@ -20,8 +20,8 @@
 - No funcionan los botones 2:30
 
 
-##Dia 26/09/2017
-------------------
+## Dia 26/09/2017
+
 
 - Continuamos con el trabajo 9:30
 - Conseguimos tener los botones en ambas actividades 10:12
