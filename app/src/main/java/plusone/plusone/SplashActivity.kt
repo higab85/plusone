@@ -29,41 +29,41 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val identityManager = IdentityManager.getDefaultIdentityManager()
-
         identityManager.doStartupAuth(this,
             StartupAuthResultHandler { authResults ->
-                if (authResults.isUserSignedIn) {
-                    val provider = identityManager.currentIdentityProvider
-
-                    // If the user was  signed in previously with a provider,
-                    // indicate that to them with a toast.
-                    Toast.makeText(
-                            this@SplashActivity, String.format("Signed in with %s",
-                            provider.displayName), Toast.LENGTH_LONG).show()
-                    goMain(this@SplashActivity)
-                    return@StartupAuthResultHandler
-
-                } else {
+                // TODO: uncomment this to have automatic sign-in. Disabled for development
+//                if (authResults.isUserSignedIn) {
+//                    val provider = identityManager.currentIdentityProvider
+//
+//                    // If the user was  signed in previously with a provider,
+//                    // indicate that to them with a toast.
+//                    Toast.makeText(
+//                            this@SplashActivity, String.format("Signed in with %s",
+//                            provider.displayName), Toast.LENGTH_LONG).show()
+//                    goMain(this@SplashActivity)
+//                    return@StartupAuthResultHandler
+//
+//                } else {
                     // Either the user has never signed in with a provider before
                     // or refresh failed with a previously signed in provider.
 
                     // Optionally, you may want to check if refresh
                     // failed for the previously signed in provider.
 
-                    val errors = authResults.errorDetails
-
-                    if (errors.didErrorOccurRefreshingProvider()) {
-                        val providerAuthException = errors.providerRefreshException
+//                    val errors = authResults.errorDetails
+//
+//                    if (errors.didErrorOccurRefreshingProvider()) {
+//                        val providerAuthException = errors.providerRefreshException
 
                         // Credentials for previously signed-in provider could not be refreshed
                         // The identity provider name is available here using:
                         //     providerAuthException.getProvider().getDisplayName()
 
-                    }
+//                    }
 
                     doSignIn(IdentityManager.getDefaultIdentityManager())
                     return@StartupAuthResultHandler
-                }
+//                }
             }, 2000)
     }
 
