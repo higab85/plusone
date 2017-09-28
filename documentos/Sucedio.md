@@ -31,7 +31,7 @@
 - Finalmente solucionamos el problema 17:20
    - Ambas actividades funcionan y la relación entre ellas 
    
-# 27/09/2017
+## 27/09/2017
 -13:30-14:00 Se arregla el proyecto para que pueda ser usado en Android Studio 2.3 y 3.0
 -17:00-19:00 Se comunica la app con AWS. La app puede registrar e iniciar sesión a usuarios. Seguimos teniendo que hacer la aplicación que creamos nosotros, y no las predeterminadas por AWS.
 ## 28/09/2017
