@@ -31,7 +31,7 @@ class SplashActivity : AppCompatActivity() {
         val identityManager = IdentityManager.getDefaultIdentityManager()
         identityManager.doStartupAuth(this,
             StartupAuthResultHandler { authResults ->
-                // TODO: uncomment this to have automatic sign-in. Disabled for development
+// TODO: uncomment this to have automatic sign-in. Disabled for development
 //                if (authResults.isUserSignedIn) {
 //                    val provider = identityManager.currentIdentityProvider
 //
@@ -70,35 +70,36 @@ class SplashActivity : AppCompatActivity() {
 
     fun doSignIn(identityManager: IdentityManager) {
         identityManager.setUpToAuthenticate(
-                this@SplashActivity, object : DefaultSignInResultHandler() {
+            this@SplashActivity, object : DefaultSignInResultHandler() {
 
-            override fun onSuccess(activity: Activity, identityProvider: IdentityProvider?) {
-                if (identityProvider != null) {
+                override fun onSuccess(activity: Activity, identityProvider: IdentityProvider?) {
+                    if (identityProvider != null) {
 
-                    // Sign-in succeeded
-                    // The identity provider name is available here using:
-                    //     identityProvider.getDisplayName()
+                        // Sign-in succeeded
+                        // The identity provider name is available here using:
+                        //     identityProvider.getDisplayName()
 
+                    }
+
+                    // On Success of SignIn go to your startup activity
+                    activity.startActivity(Intent(activity, MainActivity::class.java)
+                            .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 }
 
-                // On Success of SignIn go to your startup activity
-                activity.startActivity(Intent(activity, MainActivity::class.java)
-                        .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-            }
+                override fun onCancel(activity: Activity): Boolean {
+                    // Return false to prevent the user from dismissing
+                    // the sign in screen by pressing back button.
+                    // Return true to allow this.
 
-            override fun onCancel(activity: Activity): Boolean {
-                // Return false to prevent the user from dismissing
-                // the sign in screen by pressing back button.
-                // Return true to allow this.
-
-                return false
-            }
+                    return false
+                }
         })
 
         val config = AuthUIConfiguration.Builder()
                 .userPools(true)
                 // .signInButton(FacebookButton.class)
                 // .signInButton(GoogleButton.class)
+                // .logoResId(R.drawable.logo_image)
                 .build()
 
         val context = this@SplashActivity
@@ -108,7 +109,7 @@ class SplashActivity : AppCompatActivity() {
 
     /** Go to the main activity.  */
     fun goMain(callingActivity: Activity) {
-        callingActivity.startActivity(Intent(callingActivity, MainActivity::class.java)
+        callingActivity.startActivity(Intent(callingActivity, SuccessActivity::class.java)
                 .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
         callingActivity.finish()
     }
