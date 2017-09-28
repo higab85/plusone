@@ -99,7 +99,7 @@ class SplashActivity : AppCompatActivity() {
                 .userPools(true)
                 // .signInButton(FacebookButton.class)
                 // .signInButton(GoogleButton.class)
-                // .logoResId(R.drawable.logo_image)
+                .logoResId(R.drawable.plusone)
                 .build()
 
         val context = this@SplashActivity
