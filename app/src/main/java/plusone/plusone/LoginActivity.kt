@@ -35,7 +35,7 @@ import com.amazonaws.mobile.auth.userpools.CognitoUserPoolsSignInProvider;      
 
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
     /**
-     * Keep track of the login task to ensure we can cancel it if requested.
+     * Keep track of the login task to ensure we can cancel it if requested. (mini-edit)
      */
     private var mAuthTask: UserLoginTask? = null
 
