@@ -9,6 +9,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         toast(text = "GEGE")
-        setContentView(R.layout.activity_success)
+        setContentView(R.layout.activity_login)
     }
 }
