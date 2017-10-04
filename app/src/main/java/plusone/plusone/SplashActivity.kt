@@ -21,6 +21,7 @@ import com.amazonaws.mobile.auth.ui.AuthUIConfiguration
 import com.amazonaws.mobile.auth.ui.SignInActivity
 
 import com.amazonaws.mobile.config.AWSConfiguration
+import org.jetbrains.anko.toast
 
 class SplashActivity : AppCompatActivity() {
 
@@ -82,7 +83,8 @@ class SplashActivity : AppCompatActivity() {
                     }
 
                     // On Success of SignIn go to your startup activity
-                    activity.startActivity(Intent(activity, MainActivity::class.java)
+                    toast("identityProvider: $identityProvider")
+                    activity.startActivity(Intent(activity, RegisterActivity::class.java)
                             .setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                 }
 
