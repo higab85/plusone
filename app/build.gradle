@@ -1,17 +1,16 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
-
+apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 26
     buildToolsVersion "26.0.1"
     defaultConfig {
         applicationId "plusone.plusone"
-        minSdkVersion 25
+        minSdkVersion 22
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -26,26 +25,11 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    apply plugin: 'kotlin-android-extensions'
-    compile('com.amazonaws:aws-android-sdk-auth-core:2.6.0@aar') { transitive = true; }
-
     compile 'com.android.support:appcompat-v7:26.+'
-    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile 'com.android.support:design:26.+'
-    compile 'org.jetbrains.anko:anko-common:0.8.3'
-    compile 'com.android.support:multidex:1.0.1'
-    compile 'com.amazonaws:aws-android-sdk-core:2.6.0'
-
-
-    compile 'com.android.support:support-v4:26.+'
-    compile ('com.amazonaws:aws-android-sdk-auth-userpools:2.6.+@aar') { transitive = true; }
-
-    // Dependencies for the SDK Sign-in prompt UI library
-    compile 'com.android.support:appcompat-v7:26.+'
-    compile ('com.amazonaws:aws-android-sdk-auth-ui:2.6.+@aar') { transitive = true; }
-
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 }
 repositories {
     mavenCentral()
