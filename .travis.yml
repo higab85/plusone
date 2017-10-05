@@ -22,4 +22,5 @@ android:
     - extra-android-m2repository
     - addon-google_apis-google-$ANDROID_API_LEVEL
 script:
+    - android update sdk --no-ui --filter build-tools-26.0.0,android-26,extra-android-m2repository
     - ./gradlew build check
