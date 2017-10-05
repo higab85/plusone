@@ -23,5 +23,5 @@ android:
     - addon-google_apis-google-$ANDROID_API_LEVEL
 script:
     # https://forum.ionicframework.com/t/you-have-not-accepted-the-license-agreements-of-the-following-sdk-component/69570/11
-    - android update sdk --no-ui --filter build-tools-26.0.2,android-26,extra-android-m2repository
+    - yes | sudo sdkmanager --licenses
     - ./gradlew build check
