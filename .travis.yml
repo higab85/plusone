@@ -21,7 +21,8 @@ android:
     - extra-google-m2repository
     - extra-android-m2repository
     - addon-google_apis-google-$ANDROID_API_LEVEL
-script:
-    # https://forum.ionicframework.com/t/you-have-not-accepted-the-license-agreements-of-the-following-sdk-component/69570/11
+before_script:
+  #https://stackoverflow.com/questions/38096225/automatically-accept-all-sdk-licences/42009817#42009817
     - yes | sudo sdkmanager --licenses
+script:
     - ./gradlew build check
