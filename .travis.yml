@@ -22,5 +22,6 @@ android:
     - extra-android-m2repository
     - addon-google_apis-google-$ANDROID_API_LEVEL
 script:
-    - android update sdk --no-ui --filter build-tools-26.0.0,android-26,extra-android-m2repository
+    # https://forum.ionicframework.com/t/you-have-not-accepted-the-license-agreements-of-the-following-sdk-component/69570/11
+    - android update sdk --no-ui --filter build-tools-26.0.2,android-26,extra-android-m2repository
     - ./gradlew build check
