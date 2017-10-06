@@ -3,21 +3,120 @@
 
     <item
         is-multidex="true"
-        jar="/home/tyler/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.51/e34fe80c9714240525f665113dd3749415515655/kotlin-stdlib-1.1.51.jar"
+        jar="/home/tyler/.android/build-cache/4a5ddba8e847edfbd0c6c0a9efb3a288d3077d8d/output/jars/classes.jar"
         jumboMode="true"
         optimize="true"
-        revision="26.0.1"
-        sha1="e34fe80c9714240525f665113dd3749415515655">
-        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-1.1.51_2bda9c346f4fb7b83401d4ee844be7af7449cfde/classes.dex" />
+        revision="25.0.1"
+        sha1="d4cf6227dd6a2ceff0f7dcf0c324380b7abf2c28">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_2ba07ea83c64bfb77d14d368bb7940210762f6f5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/7199fda92e93075712292600d038ab79df39a39b/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="38789e20ace9ab7dbd00554bd2673ab424478d3b">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_c1164051aa77bb112c93bc194a39c1d0dc6303d4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/7565ddc66ec9c790ebf0f6fa2217ffea17f08949/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="150252b33b00274cc868578ade018fda0d43a3eb">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_10271012ae4e2e063ca1f7ec6d4e5d88cb5f3cd6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.gradle/caches/modules-2/files-2.1/org.jetbrains/annotations/13.0/919f0dfe192fb4e063e7dacadee7f8bb9a2672a9/annotations-13.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/annotations-13.0_b5154f96da7f7678430f16efe623def1dab9a5cd/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/1993c7086a510f5ff3e8c6e6a0340a4c236f3b41/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_30a92c2813d19169835e84f0171def5a17c8bf9f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/64fb4b67c539dbe403a77205b9105ed8b1f9c638/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="efb8cb62d47d157c29d1521daac7eefd4cb881ee">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_78e02bdef8906ad0313c76717e201f16c4299259/classes.dex" />
     </item>
     <item
         is-multidex="true"
         jar="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
-        revision="26.0.1"
-        sha1="ff241bfc60c5613ec016e4eadf97509fad8e8ead">
+        revision="25.0.1"
+        sha1="c1536ed284d57ae5711db598f42f1c9d47900dd2">
         <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5c596a4d0851d1d457594e576283edcbc2469350/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/56709ab2c3d6b4ee014c5a6b8a42ce912006a369/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4a26a1154d053ab11aaf4c3967c42a4d66390991">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_6ee860cdbf7a0092c7a83f1f13e31b744aca8e7f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/1234c58610102208efd5156f3d8d1d8683af359c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6ef31f1555bb4cc513ec8d52711365a8b89f3600">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_a689446ea2b24fbb4f66e4fddc696d15519c1ad7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/306998c21033fbc5a6bdc6d0da234a6f928209e2/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="052f5f840f21174a3ecf6544130194e2652cbb73">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_bc25ffbac18ca639e96221c34d8fe45abfb0b779/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/81f2e70a690396f9eb3421822d12e28e3a3c07c9/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="da27a32db6af8954ee8061537c7d476fcb1df46f">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_563b1c1ab7d50ca4b03bfb882fca8af1140ea6d5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/083050d6060788a8964579e927ed25052d7b7f94/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="47635644d0d5c103c1dd8360549eb9ba3225c7d3">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d6b7487c84006e7e6ccfb65dfbad1845ad6c4853/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.51/e34fe80c9714240525f665113dd3749415515655/kotlin-stdlib-1.1.51.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="e34fe80c9714240525f665113dd3749415515655">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-1.1.51_2bda9c346f4fb7b83401d4ee844be7af7449cfde/classes.dex" />
     </item>
     <item
         is-multidex="true"
@@ -30,10 +129,91 @@
     </item>
     <item
         is-multidex="true"
+        jar="/home/tyler/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/25.3.1/support-annotations-25.3.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-25.3.1_8ea2ecf40b4b40ab6e29e5239babb45ae08a0b0b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_53ffc7cae562dce8063b363b00c1c5ab0a937572/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/tyler/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.51/8b5933578dc55f32cfc1a25f1db6371e4161fb8f/kotlin-stdlib-jre7-1.1.51.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.1"
+        sha1="8b5933578dc55f32cfc1a25f1db6371e4161fb8f">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-jre7-1.1.51_9342e0c58b2b7c40129ec7860ccb5e0b5ee786a4/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/Android/Sdk/extras/m2repository/com/android/support/constraint/constraint-layout-solver/1.0.2/constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/constraint-layout-solver-1.0.2_e8f7faa630e4ed6e862ed5bd9491159bc388db5a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/e4297cf10cfb77e99f8f49cf60a7b7d1ac0de605/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="45f697922e6f072daa12f8a2995dc77ab03c11da">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d32fa4d6ff997326170fce716ccf1e76d8fa0417/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.1"
+        sha1="ff241bfc60c5613ec016e4eadf97509fad8e8ead">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5c596a4d0851d1d457594e576283edcbc2469350/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/baefd704cc11fc0bc3b9ad1b0c11d8dd3973f56c/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="95519720620b553f63afc789beba9ad582807f7c">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_d6c2308e41a19aa7387851423012bab84a326ddc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.1.51/e34fe80c9714240525f665113dd3749415515655/kotlin-stdlib-1.1.51.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e34fe80c9714240525f665113dd3749415515655">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-1.1.51_2bda9c346f4fb7b83401d4ee844be7af7449cfde/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.android/build-cache/5c53a091f73494049a8889c973394621f9dd14fd/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_9ede7b3a2b3811c4a706ed2cb7ec98af317348d8/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/home/tyler/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib-jre7/1.1.51/8b5933578dc55f32cfc1a25f1db6371e4161fb8f/kotlin-stdlib-jre7-1.1.51.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
         sha1="8b5933578dc55f32cfc1a25f1db6371e4161fb8f">
         <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/kotlin-stdlib-jre7-1.1.51_9342e0c58b2b7c40129ec7860ccb5e0b5ee786a4/classes.dex" />
     </item>
