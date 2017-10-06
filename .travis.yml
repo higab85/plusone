@@ -22,7 +22,8 @@ android:
     - extra-android-m2repository
     - addon-google_apis-google-$ANDROID_API_LEVEL
 before_script:
-  #https://stackoverflow.com/questions/38096225/automatically-accept-all-sdk-licences/42009817#42009817
-  #  - yes | sdkmanager --licenses
+    # Prepare pre-accepted licenses to not be promted at installation
+    - mkdir -p "$ANDROID_HOME/licenses"
+    - cp ./licenses/* "$ANDROID_HOME/licenses/"
 script:
     - ./gradlew build check
