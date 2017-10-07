@@ -8,96 +8,75 @@ import java.sql.*
 import java.util.Properties
 
 
-object MySQLDatabase {
+object DatabaseConnection {
 
-    internal var conn: Connection? = null
-    internal var username = "plusone" // provide the username
-    internal var password = "plusone" // provide the corresponding password
+    // Constructor
+    init{
+        getConnection()
+    }
 
-//    @JvmStatic fun main(args: Array<String>) {
-//        // make a connection to MySQL Server
-//        getConnection()
-//        // execute the query via connection object
-//        executeMySQLQuery()
-//    }
+    internal var conn: Connection? = null // connection to db
 
-    // verifies user, and password.
+    // log user in. This will create a CurrentUser(static) with the user that has logged in
+    fun loginUser(user:String, pass:String):Boolean{
+        if (verifyUser(user, pass)) {
+            var stmt: Statement? = null
+            var resultset: ResultSet? = null
+            try{
+                print("misterblister $conn")
+                stmt = conn!!.createStatement()
+                var query = "SELECT * FROM plusone.users WHERE username = '$user';"
+                resultset = stmt!!.executeQuery(query)
+                resultset!!.next()
+                CurrentUser.email = resultset!!.getString("email")
+                CurrentUser.name  = resultset!!.getString("name")
+                CurrentUser.userLoggedIn = true
+                CurrentUser.username = user
+                return true
+            }
+            catch (ex: SQLException){
+                ex.printStackTrace()
+            }
+        }
+        return false
+    }
+
+    // Returns true if password matches user on server.
     fun verifyUser(user:String, pass:String): Boolean {
         var stmt: Statement? = null
         var resultset: ResultSet? = null
         try{
             stmt = conn!!.createStatement()
-            var query = "SELECT * FROM plusone.users WHERE username = 'Allan';"
+            var query = "SELECT * FROM plusone.users WHERE username = '$user';"
             resultset = stmt!!.executeQuery(query)
             resultset!!.next()
-            if (pass == resultset!!.getString("pw"))
-                return true
+            try {
+                return pass == resultset.getString("pw")
+            }
+            catch (ex:SQLException) {
+                // TODO: log this
+                ex.printStackTrace()
+            }
         }
         catch (ex: SQLException){
+            // TODO: log this
             ex.printStackTrace()
         }
         return false
     }
-    // registers user
+    // TODO: registers user
     fun registerUser(user:String, pass:String){
 
     }
-    fun executeMySQLQuery() {
-        var stmt: Statement? = null
-        var resultset: ResultSet? = null
 
-        try {
-            stmt = conn!!.createStatement()
-            resultset = stmt!!.executeQuery("SHOW DATABASES;")
-
-            if (stmt.execute("SHOW DATABASES;")) {
-                resultset = stmt.resultSet
-            }
-
-            while (resultset!!.next()) {
-                println(resultset.getString("Database"))
-            }
-        } catch (ex: SQLException) {
-            // handle any errors
-            ex.printStackTrace()
-        } finally {
-            // release resources
-            if (resultset != null) {
-                try {
-                    resultset.close()
-                } catch (sqlEx: SQLException) {
-                }
-
-                resultset = null
-            }
-
-            if (stmt != null) {
-                try {
-                    stmt.close()
-                } catch (sqlEx: SQLException) {
-                }
-
-                stmt = null
-            }
-
-            if (conn != null) {
-                try {
-                    conn!!.close()
-                } catch (sqlEx: SQLException) {
-                }
-
-                conn = null
-            }
-        }
-    }
 
     /**
-     * This method makes a connection to MySQL Server
+     * This method makes a connection to MySQL Server and initialises conn.
      */
-    fun getConnection():Boolean {
+    private fun getConnection():Boolean {
         val connectionProps = Properties()
-        connectionProps.put("user", username)
-        connectionProps.put("password", password)
+        connectionProps.put("user", "plusone")
+        connectionProps.put("password", "plusone")
         try {
             Class.forName("com.mysql.jdbc.Driver").newInstance()
             conn = DriverManager.getConnection(
@@ -116,4 +95,6 @@ object MySQLDatabase {
         }
         return false
     }
+
+
 }

@@ -22,8 +22,11 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
+import android.Manifest.permission.INTERNET
 import android.content.Intent
+import android.support.annotation.IntegerRes
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.toast
 
 
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
@@ -39,13 +42,18 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         populateAutoComplete()
         password.setOnEditorActionListener(TextView.OnEditorActionListener { _, id, _ ->
             if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                attemptLogin()
+                val intent = Intent(this, MainActivity::class.java)
+                attemptLogin(intent)
                 return@OnEditorActionListener true
             }
             false
         })
 
-        loginButton.setOnClickListener { attemptLogin()}
+        loginButton.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            attemptLogin(intent)
+
+        }
         registerButton.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
@@ -70,7 +78,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             return true
         }
         if (shouldShowRequestPermissionRationale(READ_CONTACTS)) {
-            Snackbar.make(email, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
+            Snackbar.make(user, R.string.permission_rationale, Snackbar.LENGTH_INDEFINITE)
                     .setAction(android.R.string.ok,
                             { requestPermissions(arrayOf(READ_CONTACTS), REQUEST_READ_CONTACTS) })
         } else {
@@ -78,6 +86,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         }
         return false
     }
+
 
     /**
      * Callback received when a permissions request has been completed.
@@ -97,17 +106,17 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * If there are form errors (invalid email, missing fields, etc.), the
      * errors are presented and no actual login attempt is made.
      */
-    private fun attemptLogin() {
+    private fun attemptLogin(activityIntent:Intent) {
         if (mAuthTask != null) {
             return
         }
 
         // Reset errors.
-        email.error = null
+        user.error = null
         password.error = null
 
         // Store values at the time of the login attempt.
-        val emailStr = email.text.toString()
+        val userStr = user.text.toString()
         val passwordStr = password.text.toString()
 
         var cancel = false
@@ -121,15 +130,15 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         }
 
         // Check for a valid email address.
-        if (TextUtils.isEmpty(emailStr)) {
-            email.error = getString(R.string.error_field_required)
-            focusView = email
-            cancel = true
-        } else if (!isEmailValid(emailStr)) {
-            email.error = getString(R.string.error_invalid_email)
-            focusView = email
-            cancel = true
-        }
+//        if (TextUtils.isEmpty(emailStr)) {
+//            email.error = getString(R.string.error_field_required)
+//            focusView = email
+//            cancel = true
+//        } else if (!isEmailValid(emailStr)) {
+//            email.error = getString(R.string.error_invalid_email)
+//            focusView = email
+//            cancel = true
+//        }
 
         if (cancel) {
             // There was an error; don't attempt login and focus the first
@@ -138,10 +147,13 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
+//            showProgress(true)
             showProgress(true)
-            mAuthTask = UserLoginTask(emailStr, passwordStr)
+            mAuthTask = UserLoginTask(userStr, passwordStr, activityIntent)
             mAuthTask!!.execute(null as Void?)
         }
+
+
     }
 
     private fun isEmailValid(email: String): Boolean {
@@ -151,7 +163,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
     private fun isPasswordValid(password: String): Boolean {
         //TODO: Replace this with your own logic
-        return password.length > 4
+        return password.length > 3
     }
 
     /**
@@ -227,7 +239,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         val adapter = ArrayAdapter(this@LoginActivity,
                 android.R.layout.simple_dropdown_item_1line, emailAddressCollection)
 
-        email.setAdapter(adapter)
+        user.setAdapter(adapter)
     }
 
     object ProfileQuery {
@@ -242,38 +254,24 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    inner class UserLoginTask internal constructor(private val mEmail: String, private val mPassword: String) : AsyncTask<Void, Void, Boolean>() {
+    inner class UserLoginTask internal constructor(private val mUser: String, private val mPassword: String, private val activityIntent: Intent) : AsyncTask<Void, Void, Boolean>() {
 
-        override fun doInBackground(vararg params: Void): Boolean? {
-            // TODO: attempt authentication against a network service.
-
-            try {
-                // Simulate network access.
-                Thread.sleep(2000)
-            } catch (e: InterruptedException) {
-                return false
-            }
-
-            return DUMMY_CREDENTIALS
-                    .map { it.split(":") }
-                    .firstOrNull { it[0] == mEmail }
-                    ?.let {
-                        // Account exists, return true if the password matches.
-                        it[1] == mPassword
-                    }
-                    ?: true
+        override fun doInBackground(vararg params: Void): Boolean{
+            return DatabaseConnection.loginUser(mUser, mPassword)
         }
 
-        override fun onPostExecute(success: Boolean?) {
+        override fun onPostExecute(success: Boolean) {
             mAuthTask = null
             showProgress(false)
+            if (success) {
+                CurrentUser.userLoggedIn = true
+                startActivity(activityIntent)
 
-            if (success!!) {
-                finish()
             } else {
                 password.error = getString(R.string.error_incorrect_password)
                 password.requestFocus()
             }
+
         }
 
         override fun onCancelled() {
@@ -289,10 +287,5 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
          */
         private val REQUEST_READ_CONTACTS = 0
 
-        /**
-         * A dummy authentication store containing known user names and passwords.
-         * TODO: remove after connecting to a real authentication system.
-         */
-        val DUMMY_CREDENTIALS = arrayOf("foo@example.com:hello", "bar@example.com:world")
     }
 }
