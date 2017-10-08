@@ -70,4 +70,4 @@ Por ejemplo, a quién de nosotros no le ha pasado alguna vez ir a un campo de f�
 
 
 ## Estándar de Código
-Usaremos el [estándar de kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html)
+Usaremos el [estándar de kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html).
