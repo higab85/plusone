@@ -68,3 +68,6 @@ El usuario, al poder crear todo tipo de eventos, también generamos una relació
 Creemos que es viable, porque hemos visto una necesidad en las personas para este tipo de Aplicación.
 Por ejemplo, a quién de nosotros no le ha pasado alguna vez ir a un campo de fútbol sala y que uno de tus amigos sea baja, pues con nuestra aplicación podrás buscar ese jugador que te falta. O querer ir a un evento y que tus amigos no puedan/quieran y no te guste ir solo, pues con nuestra aplicación podrás encontrar personas que como tú estén interesadas en ir.
 
+
+## Estándar de Código
+Usaremos el [estándar de kotlin](https://kotlinlang.org/docs/reference/coding-conventions.html)
