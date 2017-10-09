@@ -61,7 +61,7 @@
         tools:layout_editor_absoluteY="196dp" />
 
     <EditText
-        android:id="@+id/email"
+        android:id="@+id/user"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -79,7 +79,7 @@
         android:layout_marginLeft="16dp"
         android:text="@string/prompt_password"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/email"
+        app:layout_constraintTop_toBottomOf="@id/user"
         tools:layout_editor_absoluteY="276dp" />
 
     <EditText
