@@ -4,6 +4,7 @@ package plusone.plusone
  * Created by Gabriel on 6/10/17.
  */
 
+import android.app.usage.UsageEvents
 import java.sql.*
 import java.util.Properties
 
@@ -23,7 +24,6 @@ object DatabaseConnection {
             var stmt: Statement? = null
             var resultset: ResultSet? = null
             try{
-                print("misterblister $conn")
                 stmt = conn!!.createStatement()
                 var query = "SELECT * FROM plusone.users WHERE username = '$user';"
                 resultset = stmt!!.executeQuery(query)
@@ -68,6 +68,95 @@ object DatabaseConnection {
     fun registerUser(user:String, pass:String){
 
     }
+
+    //Get the last event.id on the event table
+
+
+
+    var lastEventId = null
+
+
+
+    fun getLastIdEvent() {
+
+        var stmt: Statement? = null
+
+        var resultset: ResultSet? = null
+
+        try{
+
+            stmt = conn!!.createStatement()
+
+            var query = "SELECT event_id FROM plusone.event WHERE event_id = (SELECT MAX(event_id) FROM plusone.event);"
+
+            resultset = stmt!!.executeQuery(query)
+
+            resultset!!.next()
+
+            lastEventId = resultset.getString(1) as Nothing?
+
+
+
+        } catch (ex:SQLException) {
+
+            // TODO: log this
+
+            ex.printStackTrace()
+
+        } catch (ex: SQLException){
+
+            // TODO: log this
+
+            ex.printStackTrace()
+
+        }
+
+    }
+
+
+
+    //Send informations of the event to the DB
+
+
+
+    fun createEventDB(event: Event){
+
+        var stmt: Statement? = null
+
+        var resultset: ResultSet? = null
+
+        try{
+
+            stmt = conn!!.createStatement()
+
+            var query = "INSERT INTO plusone.event" +
+
+                    "VALUES ('$event.lastEventId','$event.title','$event.description'," +
+                    "'$event.date','$event.end_date','$event.location','$event.type'," +
+                    "'$event.max_ppl','$event.min_ppl';"
+
+            resultset = stmt!!.executeQuery(query)
+
+            resultset!!.next()
+
+
+
+        } catch (ex:SQLException) {
+
+            // TODO: log this
+
+            ex.printStackTrace()
+
+        } catch (ex: SQLException){
+
+            // TODO: log this
+
+            ex.printStackTrace()
+
+        }
+
+    }
+
 
 
     /**
