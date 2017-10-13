@@ -25,5 +25,13 @@
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="title_activity_login2">Sign in</string>
+    <string name="sport_event">Sports Events</string>
+    <string name="food">Food</string>
+    <string name="party">Party</string>
+    <string name="entertainment">Entertainement</string>
+    <string name="learning">Learning</string>
+    <string name="others">Others</string>
+    <string name="prompt_search">Search...</string>
+    <string name="title_activity_probando">ProbandoActivity</string>
 
 </resources>

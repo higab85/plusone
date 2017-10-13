@@ -1,40 +1,29 @@
 package plusone.plusone
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
+import android.support.design.widget.FloatingActionButton
+import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.view.MenuItem
-import android.widget.TextView
+import android.support.v7.widget.Toolbar
+import android.view.View
+import android.widget.ImageButton
+import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-
-    private var mTextMessage: TextView? = null
-
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
-        when (item.itemId) {
-            R.id.navigation_home -> {
-                mTextMessage!!.setText(R.string.title_home)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_dashboard -> {
-                mTextMessage!!.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-                mTextMessage!!.setText(R.string.title_notifications)
-                return@OnNavigationItemSelectedListener true
-            }
-        }
-        false
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val imageButtonSettings =findViewById(R.id.imageButtonSettings) as ImageButton
+        val imageButtonAddEvent =findViewById(R.id.imageButtonAddEvent) as ImageButton
 
-        mTextMessage = findViewById(R.id.message) as TextView
-        val navigation = findViewById(R.id.navigation) as BottomNavigationView
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        imageButtonSettings.setOnClickListener{
+            Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
+        }
+        imageButtonAddEvent.setOnClickListener{view->
+            Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 }

@@ -1,9 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="plusone.plusone.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include
+        android:id="@+id/include"
+        layout="@layout/content_main" />
+    //tabla
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:stretchColumns="*"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="400dp">
+
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/buttonSportsEvents"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/sport_event" />
+
+            <Button
+                android:id="@+id/buttonFood"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/food" />
+
+            <Button
+                android:id="@+id/buttonParty"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/party" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent" >
+
+            <Button
+                android:id="@+id/buttonEntertainment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/entertainment" />
+
+            <Button
+                android:id="@+id/buttonLearning"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/learning" />
+
+            <Button
+                android:id="@+id/buttonOthers"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:text="@string/others" />
+        </TableRow>
+
+    </TableLayout>
+
+    <ImageButton
+        android:id="@+id/imageButtonSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="325dp"
+        android:layout_marginTop="25dp"
+        app:srcCompat="@drawable/ic_home_black_24dp" />
+
+    <EditText
+        android:id="@+id/editTextSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="300dp"
+        android:ems="10"
+        android:hint="@string/prompt_search" />
+
+
+    <ImageView
+        android:id="@+id/plusoneImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/plusoneimage" />
+
+
+    <ImageButton
+        android:id="@+id/imageButtonAddEvent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="315dp"
+        android:layout_marginTop="330dp"
+        app:layout_anchor="@+id/include"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+
+
+
+    </android.support.design.widget.AppBarLayout>
+
+
+</android.support.design.widget.CoordinatorLayout>
