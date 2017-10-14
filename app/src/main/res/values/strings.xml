@@ -33,5 +33,12 @@
     <string name="others">Others</string>
     <string name="prompt_search">Search...</string>
     <string name="title_activity_probando">ProbandoActivity</string>
-
+    <string name="name_Event">Event Name </string>
+    <string name="name_Date">Date </string>
+    <string name="name_TimeStart">Time Start</string>
+    <string name="name_TimeEnd">Time End</string>
+    <string name="name_Localitation"> Localitation</string>
+    <string name="name_Type">Type</string>
+    <string name="name_People">People needed</string>
+    <string name="name_Create">Create</string>
 </resources>

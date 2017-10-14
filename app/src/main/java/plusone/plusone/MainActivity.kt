@@ -1,5 +1,6 @@
 package plusone.plusone
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
@@ -21,7 +22,8 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
         }
         imageButtonAddEvent.setOnClickListener{view->
-            Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, EventActivity::class.java)
+            startActivity(intent)
         }
 
     }
