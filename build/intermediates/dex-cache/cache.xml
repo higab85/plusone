@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_be538f59814049f317f55cbd6d06d80f372f0479\classes.dex" />
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d918bb3e392c7969de8c94a318199a2ed063c6b9\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="fca73a76eb8d0452ddb3eb08548f0ae00aa2a3d8">
-        <dex dex="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2a02621f0cb0734e478f398a767e7e8dbc9bf031\classes.dex" />
+        sha1="03ea779cfb88ce5b15dbd8e8cee1751844d08080">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_845974b4827023a73e0b35fa93b68e880785a2ab\classes.dex" />
     </item>
 
 </items>

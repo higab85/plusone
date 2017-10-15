@@ -33,12 +33,20 @@
     <string name="others">Others</string>
     <string name="prompt_search">Search...</string>
     <string name="title_activity_probando">ProbandoActivity</string>
-    <string name="name_Event">Event Name </string>
-    <string name="name_Date">Date </string>
-    <string name="name_TimeStart">Time Start</string>
-    <string name="name_TimeEnd">Time End</string>
-    <string name="name_Localitation"> Localitation</string>
-    <string name="name_Type">Type</string>
-    <string name="name_People">People needed</string>
-    <string name="name_Create">Create</string>
+    <string name="Event">Event Name </string>
+    <string name="Date">Date </string>
+    <string name="TimeStart">Time Start</string>
+    <string name="TimeEnd">Time End</string>
+    <string name="Localization"> Localization</string>
+    <string name="Type">Type</string>
+    <string-array name="arrayEventTypes">
+        <item>Sports Event</item>
+        <item>Food</item>
+        <item>Party</item>
+        <item>Entertainement</item>
+        <item>Learning</item>
+        <item>Others</item>
+    </string-array>
+    <string name="People">People needed</string>
+    <string name="Create">Create</string>
 </resources>
