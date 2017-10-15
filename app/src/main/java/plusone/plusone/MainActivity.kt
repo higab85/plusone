@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, EventActivity::class.java)
             startActivity(intent)
         }
+        imageButtonSettings.setOnClickListener{view->
+            ///Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AjustesActivity::class.java)
+            startActivity(intent)
+
+        }
 
     }
 

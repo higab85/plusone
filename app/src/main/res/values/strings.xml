@@ -49,4 +49,19 @@
     </string-array>
     <string name="People">People needed</string>
     <string name="Create">Create</string>
+
+
+    <string name="cerrarButtonAjustes">Cerrar Sesion</string>
+    <string name="cambiarButtonAjustes">Cambiar</string>
+    <string name="sexoAjustes">Sexo</string>
+    <string name="editTextAjustesContrasena"></string>
+    <string name="textViewAjustesContrasena">Contraseña</string>
+    <string name="editTextAjustesEmail"></string>
+    <string name="textViewAjustesEmail">Email</string>
+    <string name="editTextAjustesAppel"></string>
+    <string name="textViewAjustesAppel">Apellido</string>
+    <string name="editTextAjustesNombre"></string>
+    <string name="textViewAjustesNombre">Nombre</string>
 </resources>
+
+
