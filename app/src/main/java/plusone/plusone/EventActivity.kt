@@ -7,6 +7,6 @@ class EventActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_event2)
+        setContentView(R.layout.activity_event)
     }
 }
