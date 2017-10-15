@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="plusone.plusone.AjustesActivity">
+
+
+    <LinearLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textViewAjustesNombre"
+            android:layout_width="fill_parent"
+            android:layout_height="27dp"
+            android:text="@string/textViewAjustesNombre" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/editTextAjustesNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/editTextAjustesNombre" />
+
+            <ImageButton
+                android:id="@+id/imageButtonAjustesNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewAjustesAppel"
+            android:layout_width="fill_parent"
+            android:layout_height="27dp"
+            android:text="@string/textViewAjustesAppel" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/editTextAjustesAppel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="10"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@string/editTextAjustesAppel" />
+
+            <ImageButton
+                android:id="@+id/imageButtonAjustesAppel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewAjustesEmail"
+            android:layout_width="fill_parent"
+            android:layout_height="27dp"
+            android:text="@string/textViewAjustesEmail" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/editTextAjustesEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editTextAjustesEmail"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <ImageButton
+                android:id="@+id/imageButtonAjustesEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewAjustesContrasena"
+            android:layout_width="fill_parent"
+            android:layout_height="27dp"
+            android:text="@string/textViewAjustesContrasena"
+           />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+            <EditText
+                android:id="@+id/editTextAjustesContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/editTextAjustesContrasena"
+                android:ems="10"
+                android:inputType="textPassword" />
+
+            <ImageButton
+                android:id="@+id/imageButtonAjustesContrasena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/checkBoxAjustesSexo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sexoAjustes" />
+
+        <Button
+            android:id="@+id/cambiarButtonAjustes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/cambiarButtonAjustes"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            tools:layout_editor_absoluteY="273dp" />
+
+        <Button
+            android:id="@+id/cerrarButtonAjustes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="@string/cerrarButtonAjustes"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            tools:layout_editor_absoluteY="273dp" />
+
+
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/plusoneImage"
+        android:layout_width="76dp"
+        android:layout_height="77dp"
+        android:background="@android:color/transparent"
+        app:srcCompat="@drawable/plusoneimage"
+        tools:layout_editor_absoluteX="300dp"
+        tools:layout_editor_absoluteY="0dp" />
+</android.support.constraint.ConstraintLayout>

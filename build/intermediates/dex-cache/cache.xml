@@ -2,22 +2,382 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\1e887092f654f84032b463708345264957c48dc3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_a3691790096a332a6e135fc53d7004c41cc85a8e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\ca83d1b5b85884040eadce495187831a0d12b589\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_67008958ffa16225a286443b68bb12f2aa82a276.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\6c8afcd3979e45bf3d6ec64dfde8bcbc05f28743\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_3f9ffe8e7a70d7f002a2fd5530789ff095cb94fd.jar" />
+    </item>
+    <item
         is-multidex="true"
-        jar="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jar="C:\Users\Allan\.android\build-cache\ca83d1b5b85884040eadce495187831a0d12b589\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6a022bf00ccd0948a8180c505e8e458bbddd43a6">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_67008958ffa16225a286443b68bb12f2aa82a276\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\ab74a260b674664c9069329d03d95b517278f5fa\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_19f974174a1477ee142dcf3193ad9ee0ccd92165\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-common\0.8.3\ad10769960178c2c329a7dd6b801f3403558a9da\anko-common-0.8.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ad10769960178c2c329a7dd6b801f3403558a9da">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\anko-common-0.8.3_d1a0fd6ac6395dac510669fdcbf223a40ce662c4.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\1e887092f654f84032b463708345264957c48dc3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_a3691790096a332a6e135fc53d7004c41cc85a8e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\6c8afcd3979e45bf3d6ec64dfde8bcbc05f28743\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cddcd0fb93bc70e27325f2f715b2710332004ebb">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_3f9ffe8e7a70d7f002a2fd5530789ff095cb94fd\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains.anko\anko-common\0.8.3\ad10769960178c2c329a7dd6b801f3403558a9da\anko-common-0.8.3.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ad10769960178c2c329a7dd6b801f3403558a9da">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\anko-common-0.8.3_d1a0fd6ac6395dac510669fdcbf223a40ce662c4\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.1.51\8b5933578dc55f32cfc1a25f1db6371e4161fb8f\kotlin-stdlib-jre7-1.1.51.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8b5933578dc55f32cfc1a25f1db6371e4161fb8f">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\kotlin-stdlib-jre7-1.1.51_cc8392b629cb6ce6053f2b2183c93152df8c7230.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib-jre7\1.1.51\8b5933578dc55f32cfc1a25f1db6371e4161fb8f\kotlin-stdlib-jre7-1.1.51.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8b5933578dc55f32cfc1a25f1db6371e4161fb8f">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-jre7-1.1.51_cc8392b629cb6ce6053f2b2183c93152df8c7230\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\constraint-layout-solver-1.0.2_35bae561ea165b76b752951cb8d852c2b7125124\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\AppData\Local\Android\sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\constraint-layout-solver-1.0.2_35bae561ea165b76b752951cb8d852c2b7125124.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\792f4bcc946094dce0433870a90d6f9afb58ea97\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_0ded827d3b8f448b6ff89d84cadc3204f6ae4371.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.1.51\e34fe80c9714240525f665113dd3749415515655\kotlin-stdlib-1.1.51.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e34fe80c9714240525f665113dd3749415515655">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\kotlin-stdlib-1.1.51_7e442304e0e60af7f0b9a47661f13605e06c3710.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\792f4bcc946094dce0433870a90d6f9afb58ea97\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0ded827d3b8f448b6ff89d84cadc3204f6ae4371\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains.kotlin\kotlin-stdlib\1.1.51\e34fe80c9714240525f665113dd3749415515655\kotlin-stdlib-1.1.51.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e34fe80c9714240525f665113dd3749415515655">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\kotlin-stdlib-1.1.51_7e442304e0e60af7f0b9a47661f13605e06c3710\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\97a45c43d81a96fa2974a3f5315d1c263d4b9288\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_ec5cbe7278f1e9fd57dbf6cfd2718e66c68e6042\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\annotations-13.0_b2870ce1e42c2fa0d0b76049d8359fc8d49d9c4d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_be538f59814049f317f55cbd6d06d80f372f0479\classes.dex" />
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7bba93359cbf86a9615d03663a991b69c0b28c24\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\org.jetbrains\annotations\13.0\919f0dfe192fb4e063e7dacadee7f8bb9a2672a9\annotations-13.0.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="fca73a76eb8d0452ddb3eb08548f0ae00aa2a3d8">
-        <dex dex="C:\Users\janto\Desktop\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_2a02621f0cb0734e478f398a767e7e8dbc9bf031\classes.dex" />
+        sha1="919f0dfe192fb4e063e7dacadee7f8bb9a2672a9">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\annotations-13.0_b2870ce1e42c2fa0d0b76049d8359fc8d49d9c4d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\a51480750418cc363e55f3d13bf6989c4fbd754f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_cdb56e74395e73c0a09695cbd144c6b4e2bbb7a8\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\ab74a260b674664c9069329d03d95b517278f5fa\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_19f974174a1477ee142dcf3193ad9ee0ccd92165.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\a51480750418cc363e55f3d13bf6989c4fbd754f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_cdb56e74395e73c0a09695cbd144c6b4e2bbb7a8.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="380ef5226de2c85ff3b38cbfefeea881c5fce09d">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\mysql-connector-java-5.1.6_dd74786db072722f2afb3bb963b4ecdbfbbb70cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\support-annotations-26.0.0-alpha1_b4932c480570b0811dd3f87242916ea829733e04.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-26.0.0-alpha1_b4932c480570b0811dd3f87242916ea829733e04\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.6\380ef5226de2c85ff3b38cbfefeea881c5fce09d\mysql-connector-java-5.1.6.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="380ef5226de2c85ff3b38cbfefeea881c5fce09d">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\mysql-connector-java-5.1.6_dd74786db072722f2afb3bb963b4ecdbfbbb70cf.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\14aa2ed4e8c4682f4450b0d2e4b0f82b03b7a1ea\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_209ea4692c20c7950488b943b5229201a5a0ddd3\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\14aa2ed4e8c4682f4450b0d2e4b0f82b03b7a1ea\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_209ea4692c20c7950488b943b5229201a5a0ddd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\97a45c43d81a96fa2974a3f5315d1c263d4b9288\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_ec5cbe7278f1e9fd57dbf6cfd2718e66c68e6042.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="8d2ed9a6e31bfc24f262760d59f5939ae83d179c">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9eec12c89702a9ecf8a25a7ecf1d40b07ed1f473\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\be78a0b3d096075292d64b7d7a2be42dd36e41bf\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_54d8007693a1da5bece2ed6a5f3d7a6ff1af1cd0.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\be78a0b3d096075292d64b7d7a2be42dd36e41bf\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_54d8007693a1da5bece2ed6a5f3d7a6ff1af1cd0\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\154f7f0ea77aa867b6ba63d64a0ae5e44f62f434\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_83f4b9c339f5f51e6752d66e9e534489883a402a.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\6079a54c136051d72aa54dd3762cde5e8589023e\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_89661dbd22f1e577337f02787fbcd59967acfa7a\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\6079a54c136051d72aa54dd3762cde5e8589023e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_89661dbd22f1e577337f02787fbcd59967acfa7a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\a4bc9632bb88d393f593774babc33100fdd10a97\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_f51d3c4a9ee12f2b8b2ba25c91f74470b012ecd9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Allan\.android\build-cache\67069e32180729c4e9500b7c98d45003e56fb9cb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\pre-dexed\debug\classes_9010ec86747ed30449f6ce8e35ddb1e5835e29a2.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\154f7f0ea77aa867b6ba63d64a0ae5e44f62f434\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_83f4b9c339f5f51e6752d66e9e534489883a402a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\a4bc9632bb88d393f593774babc33100fdd10a97\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_f51d3c4a9ee12f2b8b2ba25c91f74470b012ecd9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Allan\.android\build-cache\67069e32180729c4e9500b7c98d45003e56fb9cb\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9010ec86747ed30449f6ce8e35ddb1e5835e29a2\classes.dex" />
     </item>
 
 </items>
