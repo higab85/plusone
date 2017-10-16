@@ -16,7 +16,6 @@
     <string name="error_field_required">This field is compulsory</string>
     <string name="permission_rationale">"Access to contacts is necessary to auto-fill emails."
     </string>
-    <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_success">Success</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
@@ -32,12 +31,11 @@
     <string name="learning">Learning</string>
     <string name="others">Others</string>
     <string name="prompt_search">Search...</string>
-    <string name="title_activity_probando">ProbandoActivity</string>
     <string name="Event">Event Name </string>
     <string name="Date">Date </string>
-    <string name="TimeStart">Time Start</string>
-    <string name="TimeEnd">Time End</string>
-    <string name="Localization"> Localization</string>
+    <string name="TimeStart">Starts at</string>
+    <string name="TimeEnd">Finishes at</string>
+    <string name="location"> Location</string>
     <string name="Type">Type</string>
     <string-array name="arrayEventTypes">
         <item>Sports Event</item>

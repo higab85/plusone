@@ -1,5 +1,6 @@
 package plusone.plusone
 
+import java.sql.Time
 import java.util.*
 
 /**
@@ -14,18 +15,16 @@ enum class EventType{
 
 class Event{
     var eventID:String = ""
-    var title:String = ""
+    var name:String = ""
     var description:String = ""
     var start:java.sql.Date = java.sql.Date(0)
-    var duration:Long = 0
+    var end:java.sql.Date = java.sql.Date(0)
     var location:String = ""
     var type:EventType = EventType.OTHER
     var maxPpl:Int = 0
     var minPpl:Int = 0
 
-    // will return
-    fun getEndDate():java.sql.Date{
-        var durationMilliseconds:Long = duration * 60 * 1000
-        return java.sql.Date(start.getTime() + durationMilliseconds)
+    fun setStart(date:Date, time:Time){
+
     }
 }

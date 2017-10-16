@@ -116,9 +116,6 @@ object DatabaseConnection {
 
 
     //Send informations of the event to the DB
-
-
-
     fun createEventDB(event: Event){
 
         var stmt: Statement? = null

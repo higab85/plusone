@@ -27,7 +27,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextEventName"
+                android:id="@+id/eventName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
@@ -47,7 +47,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextDate"
+                android:id="@+id/date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -69,7 +69,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextTimeStart"
+                android:id="@+id/start"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -89,7 +89,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextTimeEnd"
+                android:id="@+id/end"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -103,14 +103,14 @@
             android:layout_margin="9dp">
 
             <TextView
-                android:id="@+id/textViewLocalization"
+                android:id="@+id/textViewLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Localization"
+                android:text="@string/location"
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/editTextLocalization"
+                android:id="@+id/location"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -151,7 +151,7 @@
                 android:text="@string/People" />
 
             <EditText
-                android:id="@+id/editTextPeopleNeeded"
+                android:id="@+id/peopleNeeded"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -165,7 +165,7 @@
             >
 
             <Button
-                android:id="@+id/buttonCreateEvent"
+                android:id="@+id/createEventButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Create" />
