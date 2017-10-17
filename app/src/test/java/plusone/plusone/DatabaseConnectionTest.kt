@@ -49,6 +49,11 @@ class DatabaseConnectionTest {
         var event = Event()
 
         event.name = "test-title"
+        event.start = "02/04/2017 at 02:00"
+        event.end = "02/04/2017 at 02:30"
+        event.location = "club"
+        event.type = EventType.CONCERT
+        event.reqPeople = 1
         try {
             DatabaseConnection.createEventDB(event)
         }catch (e:SQLException) {

@@ -71,36 +71,30 @@ object DatabaseConnection {
 
 
     //Send informations of the event to the DB
+    @Throws (SQLException::class)
     fun createEventDB(event: Event){
 
         var stmt: Statement? = null
-        var resultSet:ResultSet? = null
 
-        try{
+//        try{
 
-            stmt = conn!!.createStatement()
+        stmt = conn!!.createStatement()
 
-            var query = "INSERT INTO plusone.events (name, description, start_date, end_date," +
-                    "location, type, req_people)" +
-                    "VALUES ('${event.name}','${event.description}'," +
-                    "'${event.start}','${event.end}','${event.location}','${event.type}'," +
-                    "'${event.reqPeople}');"
+        var query = "INSERT INTO plusone.events (name, description, start_date, end_date," +
+                "location, type, req_people)" +
+                " VALUES ('${event.name}','${event.description}'," +
+                "'${event.start}','${event.end}','${event.location}','${event.type}'," +
+                "'${event.reqPeople}');"
 
         stmt!!.executeUpdate(query)
 
-        } catch (ex: SQLException) {
-
-            // TODO: log this
-
-            ex.printStackTrace()
-
-        } catch (ex: SQLException){
-
-            // TODO: log this
-
-            ex.printStackTrace()
-
-        }
+//        } catch (ex: SQLException) {
+//
+//            // TODO: log this
+//
+//            ex.printStackTrace()
+//
+//        }
 
     }
 
