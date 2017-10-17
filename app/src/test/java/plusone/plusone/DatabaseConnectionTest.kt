@@ -1,8 +1,10 @@
 package plusone.plusone
 
+import kotlinx.android.synthetic.main.activity_event.*
 import org.junit.Assert.*
 import org.junit.Test
 import java.sql.SQLException
+import java.time.LocalDateTime
 
 /**
  * Created by tyler on 6/10/17.
@@ -13,7 +15,7 @@ class DatabaseConnectionTest {
     // tests whether the app can connect to DB
     @Test
     fun canConnectToDB() {
-        assertTrue(DatabaseConnection.conn!! != null)
+        assertTrue(DatabaseConnection.conn != null)
     }
 
     // tests whether user with correct credentials can be verified
@@ -40,5 +42,20 @@ class DatabaseConnectionTest {
         DatabaseConnection.loginUser("demo-user", "demo")
         assertTrue(CurrentUser.userLoggedIn)
     }
+
+    // test whether events can be saved to db
+    @Test
+    fun eventCreation(){
+        var event = Event()
+
+        event.name = "test-title"
+        try {
+            DatabaseConnection.createEventDB(event)
+        }catch (e:SQLException) {
+            fail()
+        }
+    }
+
+
 
 }

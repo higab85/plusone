@@ -37,14 +37,16 @@
     <string name="TimeEnd">Finishes at</string>
     <string name="location"> Location</string>
     <string name="Type">Type</string>
+
     <string-array name="arrayEventTypes">
         <item>Sports Event</item>
         <item>Food</item>
         <item>Party</item>
-        <item>Entertainement</item>
+        <item>Entertainment</item>
         <item>Learning</item>
         <item>Others</item>
     </string-array>
+
     <string name="People">People needed</string>
     <string name="Create">Create</string>
 

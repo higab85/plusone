@@ -29,7 +29,7 @@
             android:name=".MainActivity"
             android:label="@string/title_activity_main" />
         <activity android:name=".EventActivity" />
-        <activity android:name=".AjustesActivity"></activity>
-    </application>
+        <!--<activity android:name=".AjustesActivity"></activity>-->
+    </application>s
 
 </manifest>

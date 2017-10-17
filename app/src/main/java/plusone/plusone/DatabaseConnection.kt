@@ -69,76 +69,26 @@ object DatabaseConnection {
 
     }
 
-    //Get the last event.id on the event table
-
-
-
-    var lastEventId = null
-
-
-
-    fun getLastIdEvent() {
-
-        var stmt: Statement? = null
-
-        var resultset: ResultSet? = null
-
-        try{
-
-            stmt = conn!!.createStatement()
-
-            var query = "SELECT event_id FROM plusone.event WHERE event_id = (SELECT MAX(event_id) FROM plusone.event);"
-
-            resultset = stmt!!.executeQuery(query)
-
-            resultset!!.next()
-
-            lastEventId = resultset.getString(1) as Nothing?
-
-
-
-        } catch (ex:SQLException) {
-
-            // TODO: log this
-
-            ex.printStackTrace()
-
-        } catch (ex: SQLException){
-
-            // TODO: log this
-
-            ex.printStackTrace()
-
-        }
-
-    }
-
-
 
     //Send informations of the event to the DB
     fun createEventDB(event: Event){
 
         var stmt: Statement? = null
-
-        var resultset: ResultSet? = null
+        var resultSet:ResultSet? = null
 
         try{
 
             stmt = conn!!.createStatement()
 
-            var query = "INSERT INTO plusone.event" +
+            var query = "INSERT INTO plusone.events (name, description, start_date, end_date," +
+                    "location, type, req_people)" +
+                    "VALUES ('${event.name}','${event.description}'," +
+                    "'${event.start}','${event.end}','${event.location}','${event.type}'," +
+                    "'${event.reqPeople}');"
 
-                    "VALUES ('$event.lastEventId','$event.title','$event.description'," +
-                    "'$event.date','$event.end_date','$event.location','$event.type'," +
-                    "'$event.max_ppl','$event.min_ppl';"
+        stmt!!.executeUpdate(query)
 
-            resultset = stmt!!.executeQuery(query)
-
-            resultset!!.next()
-
-
-
-        } catch (ex:SQLException) {
+        } catch (ex: SQLException) {
 
             // TODO: log this
 
