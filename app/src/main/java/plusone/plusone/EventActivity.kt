@@ -10,6 +10,8 @@ import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_event.*
 import kotlinx.android.synthetic.main.activity_login.*
 import android.widget.ArrayAdapter
+import android.Manifest.permission.INTERNET
+
 
 
 
@@ -34,11 +36,17 @@ class EventActivity : AppCompatActivity() {
             var event = Event()
             event.name = eventName.text.toString()
             // TODO: change to calculatable format
-            event.start = date.text.toString() + " at " + start.text.toString()
-            event.end = date.text.toString() + " at " + end.text.toString()
-            event.location = location.text.toString()
-            event.setType(eventType.toString())
-            event.reqPeople = peopleNeeded.text.toString().toInt()
+//            event.start = // date.text.toString() + " at " + start.text.toString()
+//            event.end = // date.text.toString() + " at " + end.text.toString()
+//            event.location = // location.text.toString()
+//            event.type = eventType.toString()
+//            event.reqPeople = 1 // peopleNeeded.text.toString().toInt()
+            event.name = "test-titleee"
+            event.start = "02/04/2017 at 02:00"
+            event.end = "02/04/2017 at 02:30"
+            event.location = "club"
+            event.type = EventType.CONCERT
+            event.reqPeople = 1
             DatabaseConnection.createEventDB(event)
 
             finish()

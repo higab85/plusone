@@ -3,6 +3,15 @@
 
     <item
         is-multidex="true"
+        jar="/home/tyler/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.30/203cca178350b60899be36d0e56029eca7430d8/mysql-connector-java-5.1.30.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0203cca178350b60899be36d0e56029eca7430d8">
+        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10/mysql-connector-java-5.1.30_68394cc7ddc0bb874e2a96c7e37bcb25e407d507/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
