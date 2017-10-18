@@ -25,7 +25,7 @@
             android:id="@+id/textViewEventName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Event"
+            android:text="@string/event"
             android:textSize="20dp" />
 
         <EditText
@@ -42,18 +42,17 @@
         android:layout_margin="9dp">
 
         <TextView
-            android:id="@+id/textViewDate"
+            android:id="@+id/textViewDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Date"
+            android:text="Description"
             android:textSize="20dp" />
 
         <EditText
-            android:id="@+id/date"
+            android:id="@+id/description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="date" />
+            android:ems="10" />
 
 
     </TableRow>
@@ -67,7 +66,7 @@
             android:id="@+id/textViewTimeStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/TimeStart"
+            android:text="@string/timeStart"
             android:textSize="20dp" />
 
         <EditText
@@ -87,7 +86,7 @@
             android:id="@+id/textViewTimeEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/TimeEnd"
+            android:text="@string/timeEnd"
             android:textSize="20dp" />
 
         <EditText
@@ -129,14 +128,16 @@
             android:id="@+id/textViewEventType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Type"
+            android:text="@string/type"
             android:textSize="20dp" />
 
         <Spinner
             android:id="@+id/eventType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/arrayEventTypes" />
+            android:gravity="center"
+            android:entries="@array/arrayEventTypes"/>
+
 
     </TableRow>
 

@@ -5,9 +5,7 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_event.*
 import android.widget.*
 import android.os.AsyncTask
-
-
-
+import android.view.View
 
 
 class EventActivity : AppCompatActivity() {
@@ -15,6 +13,7 @@ class EventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event)
+
 
 //        val spinner = findViewById(R.id.eventType) as Spinner
 //        // Create an ArrayAdapter using the string array and a default spinner layout
@@ -32,17 +31,18 @@ class EventActivity : AppCompatActivity() {
 //        var startButton:EditText = findViewById(R.id.start) as EditText
 //        var endButton:EditText = findViewById(R.id.end) as EditText
 //        var locationButton:EditText = findViewById(R.id.location) as EditText
-//        var typeButton:EditText = findViewById(R.id.eventType).toString() as EditText
+
 //        var reqPeopleButton:EditText = findViewById(R.id.peopleNeeded) as EditText
 
         createEventButton.setOnClickListener{
             val event = Event()
             event.name = eventName.text.toString()
+            event.description = description.text.toString()
             // TODO: change to calculatable format
-            event.start = date.text.toString() + " at " + start.text.toString()
-            event.end = date.text.toString() + " at " + end.text.toString()
+            event.start = start.text.toString()
+            event.end = end.text.toString()
             event.location = location.text.toString()
-            event.type = EventType.PARTY
+            event.type = EventType.OTHER
             event.reqPeople = peopleNeeded.text.toString().toInt()
             CreateEvent().execute(event)
         }
@@ -50,17 +50,6 @@ class EventActivity : AppCompatActivity() {
 
 
 
-//        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-//
-//            override fun onItemSelected(parent: AdapterView<*>, view: View, pos: Int, id: Long) {
-//
-//            }
-//
-//            override fun onNothingSelected(parent: AdapterView<out Adapter>?) {
-//
-//            }
-//
-//        }
 
     }
     inner class CreateEvent: AsyncTask<Event, Void, Boolean>() {

@@ -10,7 +10,7 @@ import java.util.*
 
 // types of events there can be
 enum class EventType{
-    MEAL, DAYACTIVITY, PARTY, DRINK, CONCERT, OTHER
+    SPORTSEVENT,FOOD,PARTY,ENTERTAINMENT,LEARNING,OTHER
 }
 
 
@@ -42,11 +42,11 @@ class Event {
     fun setType(eventType: String){
         eventType.toLowerCase()
         when(eventType){
-            "meal" -> type = EventType.MEAL
-            "day activity" -> type = EventType.DAYACTIVITY
+            "sportsevent" -> type = EventType.SPORTSEVENT
+            "food" -> type = EventType.FOOD
             "party" -> type = EventType.PARTY
-            "drink" -> type = EventType.DRINK
-            "concert" -> type = EventType.CONCERT
+            "entertainment" -> type = EventType.ENTERTAINMENT
+            "learning" -> type = EventType.LEARNING
             "other" -> type = EventType.OTHER
         }
 

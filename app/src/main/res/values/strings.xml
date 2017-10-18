@@ -31,12 +31,13 @@
     <string name="learning">Learning</string>
     <string name="others">Others</string>
     <string name="prompt_search">Search...</string>
-    <string name="Event">Event Name </string>
-    <string name="Date">Date </string>
-    <string name="TimeStart">Starts at</string>
-    <string name="TimeEnd">Finishes at</string>
+    <string name="event">Event Name </string>
+    <string name="description">Description</string>
+    <string name="date">Date </string>
+    <string name="timeStart">Starts at</string>
+    <string name="timeEnd">Finishes at</string>
     <string name="location"> Location</string>
-    <string name="Type">Type</string>
+    <string name="type">Type</string>
 
     <string-array name="arrayEventTypes">
         <item>Sports Event</item>

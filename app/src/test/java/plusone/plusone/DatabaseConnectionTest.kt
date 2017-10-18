@@ -52,7 +52,7 @@ class DatabaseConnectionTest {
         event.start = "02/04/2017 at 02:00"
         event.end = "02/04/2017 at 02:30"
         event.location = "club"
-        event.type = EventType.CONCERT
+        event.type = EventType.OTHER
         event.reqPeople = 1
         try {
             DatabaseConnection.createEventDB(event)
