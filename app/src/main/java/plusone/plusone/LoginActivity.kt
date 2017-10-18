@@ -254,7 +254,9 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    inner class UserLoginTask internal constructor(private val mUser: String, private val mPassword: String, private val activityIntent: Intent) : AsyncTask<Void, Void, Boolean>() {
+    inner class UserLoginTask internal constructor(private val mUser: String,
+                                                   private val mPassword: String,
+                                                   private val activityIntent: Intent) : AsyncTask<Void, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Void): Boolean{
             return DatabaseConnection.loginUser(mUser, mPassword)

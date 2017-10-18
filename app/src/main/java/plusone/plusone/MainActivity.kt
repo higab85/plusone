@@ -9,6 +9,9 @@ import android.support.v7.widget.Toolbar
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
+import android.os.StrictMode
+
+
 
 class MainActivity : AppCompatActivity() {
 

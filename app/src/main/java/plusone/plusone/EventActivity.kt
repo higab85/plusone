@@ -1,16 +1,11 @@
 package plusone.plusone
 
-import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.widget.Adapter
-import android.widget.AdapterView
-import android.widget.Spinner
 import kotlinx.android.synthetic.main.activity_event.*
-import kotlinx.android.synthetic.main.activity_login.*
-import android.widget.ArrayAdapter
-import android.Manifest.permission.INTERNET
+import android.widget.*
+import android.os.AsyncTask
+
 
 
 
@@ -32,25 +27,28 @@ class EventActivity : AppCompatActivity() {
 //
 //        var eventTypeResult:String = "Type not selected"
 
+//        var nameButton:EditText = findViewById(R.id.eventName) as EditText
+//        var dateButton:EditText = findViewById(R.id.date) as EditText
+//        var startButton:EditText = findViewById(R.id.start) as EditText
+//        var endButton:EditText = findViewById(R.id.end) as EditText
+//        var locationButton:EditText = findViewById(R.id.location) as EditText
+//        var typeButton:EditText = findViewById(R.id.eventType).toString() as EditText
+//        var reqPeopleButton:EditText = findViewById(R.id.peopleNeeded) as EditText
+
         createEventButton.setOnClickListener{
-            var event = Event()
+            val event = Event()
             event.name = eventName.text.toString()
             // TODO: change to calculatable format
-//            event.start = // date.text.toString() + " at " + start.text.toString()
-//            event.end = // date.text.toString() + " at " + end.text.toString()
-//            event.location = // location.text.toString()
-//            event.type = eventType.toString()
-//            event.reqPeople = 1 // peopleNeeded.text.toString().toInt()
-            event.name = "test-titleee"
-            event.start = "02/04/2017 at 02:00"
-            event.end = "02/04/2017 at 02:30"
-            event.location = "club"
-            event.type = EventType.CONCERT
-            event.reqPeople = 1
-            DatabaseConnection.createEventDB(event)
-
-            finish()
+            event.start = date.text.toString() + " at " + start.text.toString()
+            event.end = date.text.toString() + " at " + end.text.toString()
+            event.location = location.text.toString()
+            event.type = EventType.PARTY
+            event.reqPeople = peopleNeeded.text.toString().toInt()
+            CreateEvent().execute(event)
         }
+
+
+
 
 //        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
 //
@@ -64,6 +62,19 @@ class EventActivity : AppCompatActivity() {
 //
 //        }
 
+    }
+    inner class CreateEvent: AsyncTask<Event, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: Event): Boolean {
+            return DatabaseConnection.createEventDB(params[0])
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            finish()
+        }
+
+        override fun onCancelled() {
+        }
     }
 
 //    inner class SpinnerActivity : AppCompatActivity : OnItemSelectedListener {
@@ -80,3 +91,5 @@ class EventActivity : AppCompatActivity() {
     //}
 
 }
+
+
