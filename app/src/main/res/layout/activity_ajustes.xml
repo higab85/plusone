@@ -12,12 +12,14 @@
         android:layout_height="495dp"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        android:paddingLeft="5dp">
 
         <TextView
             android:id="@+id/textViewAjustesNombre"
             android:layout_width="fill_parent"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/textViewAjustesNombre" />
 
         <LinearLayout
@@ -36,6 +38,14 @@
                 android:inputType="textPersonName"
                 android:text="@string/editTextAjustesNombre" />
 
+            <ImageButton
+                android:id="@+id/imageButtonNombre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                tools:layout_editor_absoluteX="-131dp"
+                tools:layout_editor_absoluteY="481dp" />
+
 
 
         </LinearLayout>
@@ -43,7 +53,8 @@
         <TextView
             android:id="@+id/textViewAjustesAppel"
             android:layout_width="fill_parent"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/textViewAjustesAppel" />
 
         <LinearLayout
@@ -62,6 +73,14 @@
                 android:inputType="textPersonName"
                 android:text="@string/editTextAjustesAppel" />
 
+            <ImageButton
+                android:id="@+id/imageButtonApellido"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                tools:layout_editor_absoluteX="-131dp"
+                tools:layout_editor_absoluteY="481dp" />
+
 
 
         </LinearLayout>
@@ -69,7 +88,8 @@
         <TextView
             android:id="@+id/textViewAjustesEmail"
             android:layout_width="fill_parent"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/textViewAjustesEmail" />
 
         <LinearLayout
@@ -87,6 +107,14 @@
                 android:ems="10"
                 android:inputType="textEmailAddress" />
 
+            <ImageButton
+                android:id="@+id/imageButtonEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                tools:layout_editor_absoluteX="-131dp"
+                tools:layout_editor_absoluteY="481dp" />
+
 
 
         </LinearLayout>
@@ -94,7 +122,8 @@
         <TextView
             android:id="@+id/textViewAjustesContrasena"
             android:layout_width="fill_parent"
-            android:layout_height="27dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/textViewAjustesContrasena"
             />
 
@@ -113,6 +142,14 @@
                 android:ems="10"
                 android:inputType="textPassword" />
 
+            <ImageButton
+                android:id="@+id/imageButtonContrasena"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit"
+                tools:layout_editor_absoluteX="-131dp"
+                tools:layout_editor_absoluteY="481dp" />
+
 
         </LinearLayout>
 
@@ -120,11 +157,12 @@
             android:id="@+id/checkBoxAjustesSexo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="@string/sexoAjustes" />
 
         <Button
             android:id="@+id/cambiarButtonAjustes"
-            android:layout_width="wrap_content"
+            android:layout_width="250px"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:text="@string/cambiarButtonAjustes"
@@ -133,7 +171,7 @@
 
         <Button
             android:id="@+id/cerrarButtonAjustes"
-            android:layout_width="wrap_content"
+            android:layout_width="250px"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:text="@string/cerrarButtonAjustes"
@@ -142,5 +180,6 @@
 
 
     </LinearLayout>
+
 
 </android.support.constraint.ConstraintLayout>
