@@ -25,11 +25,11 @@ object DatabaseConnection {
             var resultset: ResultSet? = null
             try{
                 stmt = conn!!.createStatement()
-                var query = "SELECT * FROM plusone.users WHERE username = '$user';"
+                var query = "SELECT * FROM plusone.users WHERE firstname = '$user';"
                 resultset = stmt!!.executeQuery(query)
                 resultset!!.next()
                 CurrentUser.email = resultset!!.getString("email")
-                CurrentUser.name  = resultset!!.getString("name")
+                CurrentUser.name  = resultset!!.getString("firstname")
                 CurrentUser.userLoggedIn = true
                 CurrentUser.username = user
                 return true
@@ -47,7 +47,7 @@ object DatabaseConnection {
         var resultset: ResultSet? = null
         try{
             stmt = conn!!.createStatement()
-            var query = "SELECT * FROM plusone.users WHERE username = '$user';"
+            var query = "SELECT * FROM plusone.users WHERE firstname = '$user';"
             resultset = stmt!!.executeQuery(query)
             resultset!!.next()
             try {

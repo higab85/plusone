@@ -37,18 +37,36 @@ class EventActivity : AppCompatActivity() {
         createEventButton.setOnClickListener{
             val event = Event()
             event.name = eventName.text.toString()
-            event.description = description.text.toString()
+            event.description=description.text.toString()
             // TODO: change to calculatable format
             event.start = start.text.toString()
             event.end = end.text.toString()
             event.location = location.text.toString()
-            event.type = EventType.OTHER
+            //event.type = EventType.PARTY
             event.reqPeople = peopleNeeded.text.toString().toInt()
             CreateEvent().execute(event)
         }
 
+        /*var optionSpinner :Spinner = findViewById(R.id.eventType) as Spinner
+
+        val options = arrayOf("Sports Event","Food","Party","Entertainment","Learning","Others")
+        optionSpinner.adapter = ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,options)
 
 
+        optionSpinner.onItemClickListener = object : AdapterView.OnItemSelectedListener, AdapterView.OnItemClickListener {
+            override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                event.type = options.get(p2)
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+                event.type = optionSpinner.get(position)
+            }
+        }
+        */
 
 
     }

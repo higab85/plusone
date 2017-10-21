@@ -15,7 +15,7 @@ enum class EventType{
 
 
 class Event {
-    var eventID:String = ""
+    var eventID:Int = 0
     var name:String = ""
     var description:String = ""
     // TODO: change this to calculatable Date format
@@ -24,20 +24,16 @@ class Event {
     var location:String = ""
     var type:EventType = EventType.OTHER
     var reqPeople:Int = 0
+constructor()
+constructor(name: String, location:String,start:String,end:String){
+    this.name=name
+    this.location=location
+    this.start=start
+    this.end=end
 
 
+}
 
-//    // Sets start from a date and a time
-//    fun setStart(date:String, time:String){
-//        val parsableString:String = date+"T"+time
-//        start = LocalDateTime.parse(parsableString)
-//    }
-//
-//    // Sets start from a date and a time
-//    fun setEnd(date:String, time:String){
-//        val parsableString:String = date+"T"+time
-//        end = LocalDateTime.parse(parsableString)
-//    }
 
     fun setType(eventType: String){
         eventType.toLowerCase()
@@ -51,4 +47,16 @@ class Event {
         }
 
     }
+
+//    // Sets start from a date and a time
+//    fun setStart(date:String, time:String){
+//        val parsableString:String = date+"T"+time
+//        start = LocalDateTime.parse(parsableString)
+//    }
+//
+//    // Sets start from a date and a time
+//    fun setEnd(date:String, time:String){
+//        val parsableString:String = date+"T"+time
+//        end = LocalDateTime.parse(parsableString)
+//    }
 }

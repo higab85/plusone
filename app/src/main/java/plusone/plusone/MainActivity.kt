@@ -10,7 +10,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 import android.os.StrictMode
-
+import android.widget.Button
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val imageButtonSettings =findViewById(R.id.imageButtonSettings) as ImageButton
         val imageButtonAddEvent =findViewById(R.id.imageButtonAddEvent) as ImageButton
-
+        val buttonSports = findViewById(R.id.buttonSportsEvents) as  Button
         imageButtonSettings.setOnClickListener{
             Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
         }
@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity() {
             ///Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
             val intent = Intent(this, AjustesActivity::class.java)
             startActivity(intent)
-
+        }
+        buttonSports.setOnClickListener{
+            val intent = Intent(this, CardView::class.java)
+            startActivity(intent)
         }
 
     }

@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="19cdea5ab887aae9fdddf8682228a4f7462e9713">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_845974b4827023a73e0b35fa93b68e880785a2ab\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
@@ -21,12 +30,12 @@
     </item>
     <item
         is-multidex="true"
-        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jar="C:\Users\Usuario\.android\build-cache\ec0716a68937e3885a341332fb9ec43a989d5512\output\jars\classes.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="c46d9b09db77def083dd189daabd606eeabd6c5b">
-        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_845974b4827023a73e0b35fa93b68e880785a2ab\classes.dex" />
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b185970d94ef5aba58ebd2710961fe6a4bbf4346\classes.dex" />
     </item>
 
 </items>
