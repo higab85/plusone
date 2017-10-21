@@ -5,6 +5,7 @@ package plusone.plusone
  */
 
 import android.app.usage.UsageEvents
+import kotlinx.android.synthetic.main.activity_event.*
 import java.sql.*
 import java.util.Properties
 
@@ -69,8 +70,6 @@ object DatabaseConnection {
     //Send informations of the event to the DB
     @Throws (SQLException::class)
     fun createEventDB(event: Event): Boolean{
-
-
         try{
 
             val stmt = conn!!.createStatement()
@@ -92,6 +91,34 @@ object DatabaseConnection {
         }
         return false
     }
+
+    // Will return an array with all the events
+    fun getEventsDB(): List<Event>?{
+        val gatherings:MutableList<Event> = mutableListOf()
+        val query = "SELECT * FROM plusone.events"
+        try{
+            val stmt = conn!!.createStatement()
+            val resultSet = stmt!!.executeQuery(query)
+            while(resultSet!!.next()) {
+                val event = Event()
+                event.name = resultSet.getString("name")
+                event.description= resultSet.getString("description")
+                // TODO: change to calculatable format
+                event.start = resultSet.getString("start_date")
+                event.end = resultSet.getString("end_date")
+                event.location = resultSet.getString("location")
+                event.setType(resultSet.getString("type"))
+                event.reqPeople = resultSet.getString("req_people").toInt()
+                gatherings.add(event)
+            }
+            return gatherings
+        }catch (ex: SQLException) {
+            // TODO: log this
+            ex.printStackTrace()
+        }
+        return null
+    }
+
 
 
 

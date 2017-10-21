@@ -1,5 +1,6 @@
 package plusone.plusone
 
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.DefaultItemAnimator
@@ -10,9 +11,10 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class CardView : AppCompatActivity() {
-     val eventsInfoList:ArrayList<Event> = ArrayList<Event>()
+     private var eventsInfoList:List<Event>? = null
      var myRecyclerView: RecyclerView? = null
      var eventInfoAdapter: EventInfoAdapter? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recycler_view)
@@ -20,35 +22,28 @@ class CardView : AppCompatActivity() {
         supportActionBar?.title = "Events"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        EventData()
+        refreshEventData().execute()
         myRecyclerView = findViewById(R.id.event_recycler_view) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@CardView)
-        eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
-        myRecyclerView?.adapter=eventInfoAdapter
-
-        /*
-          eventInfoAdapter = EventInfoAdapter(eventsInfoList)
-          val mLayoutManager = LinearLayoutManager(applicationContext)
-          recyclerView!!.layoutManager = mLayoutManager
-          recyclerView!!.itemAnimator = DefaultItemAnimator()
-          recyclerView!!.adapter = eventInfoAdapter
-
-          EventData()
-      }
-      */
     }
-      private fun EventData() {
-          var event = Event("Concierto Mozart", "Teatro Real", "19:30", "22:30")
-          eventsInfoList.add(event)
 
-          event = Event("Star Wars VIII", "Kinepolis", "20:30", "22:15")
-          eventsInfoList.add(event)
 
-          event = Event("Torneo LOL", "En cada casa", "12:30", "16:30")
-          eventsInfoList.add(event)
+    inner class refreshEventData: AsyncTask<Void, Void, Boolean>() {
 
-          //eventInfoAdapter!!.notifyDataSetChanged()
-      }
+        override fun doInBackground(vararg params: Void):Boolean{
+            eventsInfoList = DatabaseConnection.getEventsDB()
+            return true
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            print(eventsInfoList!!.first().name)
+            eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
+            myRecyclerView?.adapter=eventInfoAdapter
+        }
+
+        override fun onCancelled() {
+        }
+    }
 
 }

@@ -46,6 +46,7 @@ class DatabaseConnectionTest {
     // test whether events can be saved to db
     @Test
     fun eventCreation(){
+        DatabaseConnection.loginUser("demo", "demo")
         var event = Event()
 
         event.name = "test-title"
@@ -59,6 +60,12 @@ class DatabaseConnectionTest {
         }catch (e:SQLException) {
             fail()
         }
+    }
+
+    @Test
+    fun getEvents(){
+        DatabaseConnection.loginUser("demo", "demo")
+        assertNotNull(DatabaseConnection.getEventsDB())
     }
 
 

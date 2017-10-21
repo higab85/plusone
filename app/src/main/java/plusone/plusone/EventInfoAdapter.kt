@@ -14,7 +14,7 @@ import java.util.ArrayList
 /**
  * Created by Javicraft on 19/10/2017.
  */
-class EventInfoAdapter(private val myContext: Context, private val eventsInfoList:ArrayList<Event>): RecyclerView.Adapter<EventInfoAdapter.MyViewHolder>(){
+class EventInfoAdapter(private val myContext: Context, private val eventsInfoList:List<Event>?): RecyclerView.Adapter<EventInfoAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
         var nameEvent: TextView
@@ -39,7 +39,7 @@ class EventInfoAdapter(private val myContext: Context, private val eventsInfoLis
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val eventInfo = eventsInfoList[position]
+        val eventInfo = eventsInfoList!![position]
         holder.nameEvent.text = eventInfo.name
         holder.locationEvent.text = eventInfo.location
         holder.startEvent.text = eventInfo.start
@@ -49,6 +49,9 @@ class EventInfoAdapter(private val myContext: Context, private val eventsInfoLis
     }
 
     override fun getItemCount(): Int {
-        return eventsInfoList.size
+        if(eventsInfoList==null)
+            return 0
+        else
+            return eventsInfoList.size
     }
 }
