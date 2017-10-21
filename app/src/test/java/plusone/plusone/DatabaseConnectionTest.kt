@@ -21,13 +21,13 @@ class DatabaseConnectionTest {
     // tests whether user with correct credentials can be verified
     @Test
     fun userAuthCorrectCredentials(){
-        assertTrue(DatabaseConnection.verifyUser("demo-user", "demo"))
+        assertTrue(DatabaseConnection.verifyUser("demo", "demo"))
 //        assertFalse(db.verifyUser("Allan", "wrongpass"))
     }
     // tests whether user with wrong password can be verified
     @Test
     fun userAuthWrongPassword(){
-        assertFalse(DatabaseConnection.verifyUser("demo-user", "wrongpass"))
+        assertFalse(DatabaseConnection.verifyUser("demo", "wrongpass"))
     }
 
     // tests whether unregistered can be verified
@@ -39,7 +39,7 @@ class DatabaseConnectionTest {
     // tests whether user object is created
     @Test
     fun userObjectCreation(){
-        DatabaseConnection.loginUser("demo-user", "demo")
+        DatabaseConnection.loginUser("demo", "demo")
         assertTrue(CurrentUser.userLoggedIn)
     }
 

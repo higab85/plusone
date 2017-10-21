@@ -18,7 +18,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/event_name"
-            android:text="Real Madrid vs Barcelona "
             android:textStyle="bold"
             android:textSize="16sp"
             />
@@ -29,7 +28,6 @@
             android:layout_below="@+id/event_name"
             android:id="@+id/event_location"
             android:layout_marginTop="3dp"
-            android:text="Estadio Santiado Bernabéu"
             android:textSize="12sp"
             />
         <TextView
@@ -38,7 +36,6 @@
             android:layout_below="@+id/event_location"
             android:id="@+id/event_start"
             android:layout_marginTop="2dp"
-            android:text="20:45 -"
             android:textSize="12sp"
             />
         <TextView
@@ -48,7 +45,6 @@
             android:layout_marginTop="2dp"
             android:layout_below="@id/event_location"
             android:id="@+id/event_end"
-            android:text=" 22:30"
             android:textSize="12sp"/>
 
     </RelativeLayout>

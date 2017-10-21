@@ -21,15 +21,13 @@ object DatabaseConnection {
     // log user in. This will create a CurrentUser(static) with the user that has logged in
     fun loginUser(user:String, pass:String):Boolean{
         if (verifyUser(user, pass)) {
-            var stmt: Statement? = null
-            var resultset: ResultSet? = null
             try{
-                stmt = conn!!.createStatement()
-                var query = "SELECT * FROM plusone.users WHERE firstname = '$user';"
-                resultset = stmt!!.executeQuery(query)
-                resultset!!.next()
-                CurrentUser.email = resultset!!.getString("email")
-                CurrentUser.name  = resultset!!.getString("firstname")
+                val stmt = conn!!.createStatement()
+                val query = "SELECT * FROM plusone.users WHERE username = '$user';"
+                val resultSet = stmt!!.executeQuery(query)
+                resultSet!!.next()
+                CurrentUser.email = resultSet.getString("email")
+                CurrentUser.name  = resultSet.getString("username")
                 CurrentUser.userLoggedIn = true
                 CurrentUser.username = user
                 return true
@@ -43,15 +41,13 @@ object DatabaseConnection {
 
     // Returns true if password matches user on server.
     fun verifyUser(user:String, pass:String): Boolean {
-        var stmt: Statement? = null
-        var resultset: ResultSet? = null
         try{
-            stmt = conn!!.createStatement()
-            var query = "SELECT * FROM plusone.users WHERE firstname = '$user';"
-            resultset = stmt!!.executeQuery(query)
-            resultset!!.next()
+            val stmt = conn!!.createStatement()
+            val query = "SELECT * FROM plusone.users WHERE username = '$user';"
+            val resultSet = stmt!!.executeQuery(query)
+            resultSet!!.next()
             try {
-                return pass == resultset.getString("pw")
+                return pass == resultSet.getString("pw")
             }
             catch (ex:SQLException) {
                 // TODO: log this
@@ -74,14 +70,13 @@ object DatabaseConnection {
     @Throws (SQLException::class)
     fun createEventDB(event: Event): Boolean{
 
-        var stmt: Statement? = null
 
         try{
 
-            stmt = conn!!.createStatement()
+            val stmt = conn!!.createStatement()
 
             // TODO: Add description
-            var query = "INSERT INTO plusone.events (name,description,start_date, end_date," +
+            val query = "INSERT INTO plusone.events (name,description,start_date, end_date," +
                     "location, type, req_people) VALUES ('${event.name}','${event.description}'," +
                     "'${event.start}','${event.end}','${event.location}','${event.type}'," +
                     "'${event.reqPeople}');"
