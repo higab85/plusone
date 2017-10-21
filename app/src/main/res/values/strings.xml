@@ -63,6 +63,7 @@
     <string name="textViewAjustesAppel">Apellido</string>
     <string name="editTextAjustesNombre"></string>
     <string name="textViewAjustesNombre">Nombre</string>
+
 </resources>
 
 

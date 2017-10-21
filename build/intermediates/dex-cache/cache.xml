@@ -3,7 +3,29 @@
 
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+=======
+        jar="C:\Users\Usuario\.gradle\caches\modules-2\files-2.1\mysql\mysql-connector-java\5.1.30\203cca178350b60899be36d0e56029eca7430d8\mysql-connector-java-5.1.30.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="0203cca178350b60899be36d0e56029eca7430d8">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\mysql-connector-java-5.1.30_3ee725bdea9418c5c9ad339b408edfe7e93bdca5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="19cdea5ab887aae9fdddf8682228a4f7462e9713">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_845974b4827023a73e0b35fa93b68e880785a2ab\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+>>>>>>> master
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
@@ -12,12 +34,21 @@
     </item>
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="283d732581882e17df363aec6b3e8f4988cb25e9">
         <dex dex="C:\Users\Allan\StudioProjects\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_9eec12c89702a9ecf8a25a7ecf1d40b07ed1f473\classes.dex" />
+=======
+        jar="C:\Users\Usuario\.android\build-cache\ec0716a68937e3885a341332fb9ec43a989d5512\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.2"
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_b185970d94ef5aba58ebd2710961fe6a4bbf4346\classes.dex" />
+>>>>>>> master
     </item>
 
 </items>
