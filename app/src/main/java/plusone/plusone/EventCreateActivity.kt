@@ -6,6 +6,9 @@ import kotlinx.android.synthetic.main.activity_event.*
 import android.widget.*
 import android.os.AsyncTask
 import android.view.View
+import android.widget.Spinner
+
+
 
 
 class EventCreateActivity : AppCompatActivity() {
@@ -22,7 +25,8 @@ class EventCreateActivity : AppCompatActivity() {
             event.start = start.text.toString()
             event.end = end.text.toString()
             event.location = location.text.toString()
-            //event.type = EventType.PARTY
+            val spinner = findViewById(R.id.eventType) as Spinner
+            event.type = spinner.getSelectedItem().toString();
             event.reqPeople = peopleNeeded.text.toString().toInt()
             CreateEvent().execute(event)
         }

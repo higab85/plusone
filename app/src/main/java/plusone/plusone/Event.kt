@@ -22,31 +22,32 @@ class Event {
     var start:String = ""
     var end:String = ""
     var location:String = ""
-    var type:EventType = EventType.OTHER
+    var type:String = ""
     var reqPeople:Int = 0
 constructor()
-constructor(name: String, location:String,start:String,end:String){
+constructor(name: String, location:String,start:String,end:String, type:String){
     this.name=name
     this.location=location
     this.start=start
     this.end=end
+    this.type=type
 
 
 }
 
 
-    fun setType(eventType: String){
-        eventType.toLowerCase()
-        when(eventType){
-            "sportsevent" -> type = EventType.SPORTSEVENT
-            "food" -> type = EventType.FOOD
-            "party" -> type = EventType.PARTY
-            "entertainment" -> type = EventType.ENTERTAINMENT
-            "learning" -> type = EventType.LEARNING
-            "other" -> type = EventType.OTHER
-        }
+  ///  fun setType(eventType: String){
+    ///      eventType.toLowerCase()
+    /// when(eventType){
+    ///     "sportsevent" -> type = EventType.SPORTSEVENT
+    ///     "food" -> type = EventType.FOOD
+    ///     "party" -> type = EventType.PARTY
+    ///     "entertainment" -> type = EventType.ENTERTAINMENT
+    ///     "learning" -> type = EventType.LEARNING
+    ///     "other" -> type = EventType.OTHER
+    /// }
 
-    }
+///    }
 
 //    // Sets start from a date and a time
 //    fun setStart(date:String, time:String){
