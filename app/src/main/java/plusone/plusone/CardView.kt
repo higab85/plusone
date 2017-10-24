@@ -10,6 +10,9 @@ import android.view.View
 import java.util.*
 import kotlin.collections.ArrayList
 
+
+// This activity will show an undetailed list of all the events (filtered or not depending on
+// whether a filter has been applied or not).
 class CardView : AppCompatActivity() {
      private var eventsInfoList:List<Event>? = null
      var myRecyclerView: RecyclerView? = null
@@ -28,7 +31,7 @@ class CardView : AppCompatActivity() {
         myRecyclerView?.layoutManager = LinearLayoutManager(this@CardView)
     }
 
-
+    // refresh the list: Synchronises local list of events with database on cloud.
     inner class refreshEventData: AsyncTask<Void, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Void):Boolean{
@@ -44,6 +47,8 @@ class CardView : AppCompatActivity() {
         override fun onCancelled() {
         }
     }
+
+    // updates the list to only show events which are relevant to search query
     inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
