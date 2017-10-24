@@ -51,19 +51,16 @@
     <string name="People">People needed</string>
     <string name="Create">Create</string>
 
-
-    <string name="cerrarButtonAjustes">Log out</string>
-    <string name="cambiarButtonAjustes">Change</string>
-    <string name="sexoAjustes">Gender</string>
-    <string name="editTextAjustesContrasena"></string>
-    <string name="textViewAjustesContrasena">Password</string>
-    <string name="editTextAjustesEmail"></string>
-    <string name="textViewAjustesEmail">Email</string>
-    <string name="editTextAjustesAppel"></string>
-    <string name="textViewAjustesAppel">Surname</string>
-    <string name="editTextAjustesNombre"></string>
-    <string name="textViewAjustesNombre">Name</string>
     <string name="editTextSearch">Search</string>
+
+
+    <string name="log_out">Log out</string>
+    <string name="settingsChangeButton">Change</string>
+    <string name="textViewGender">Gender</string>
+    <string name="editTextSettingsPassword"></string>
+    <string name="editTextAjustesEmail"></string>
+    <string name="editTextSettingsLastName"></string>
+    <string name="editTextSettingsName"></string>
 
 </resources>
 

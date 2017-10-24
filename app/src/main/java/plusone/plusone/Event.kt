@@ -24,40 +24,16 @@ class Event {
     var location:String = ""
     var type:String = ""
     var reqPeople:Int = 0
-constructor()
-constructor(name: String, location:String,start:String,end:String, type:String){
-    this.name=name
-    this.location=location
-    this.start=start
-    this.end=end
-    this.type=type
+
+    constructor()
+    constructor(name: String, location:String,start:String,end:String, type:String){
+        this.name=name
+        this.location=location
+        this.start=start
+        this.end=end
+        this.type=type
 
 
-}
+    }
 
-
-  ///  fun setType(eventType: String){
-    ///      eventType.toLowerCase()
-    /// when(eventType){
-    ///     "sportsevent" -> type = EventType.SPORTSEVENT
-    ///     "food" -> type = EventType.FOOD
-    ///     "party" -> type = EventType.PARTY
-    ///     "entertainment" -> type = EventType.ENTERTAINMENT
-    ///     "learning" -> type = EventType.LEARNING
-    ///     "other" -> type = EventType.OTHER
-    /// }
-
-///    }
-
-//    // Sets start from a date and a time
-//    fun setStart(date:String, time:String){
-//        val parsableString:String = date+"T"+time
-//        start = LocalDateTime.parse(parsableString)
-//    }
-//
-//    // Sets start from a date and a time
-//    fun setEnd(date:String, time:String){
-//        val parsableString:String = date+"T"+time
-//        end = LocalDateTime.parse(parsableString)
-//    }
 }
