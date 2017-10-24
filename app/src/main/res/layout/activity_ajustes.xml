@@ -1,185 +1,205 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:stretchColumns="*"
+
+    app:layout_constraintBottom_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_constraintBottom_creator="1"
+    tools:layout_constraintLeft_creator="1"
+    tools:layout_constraintRight_creator="1"
+    tools:layout_constraintTop_creator="1"
+
+
     tools:context="plusone.plusone.AjustesActivity">
 
 
-    <LinearLayout
-        android:layout_width="368dp"
-        android:layout_height="495dp"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        android:paddingLeft="5dp">
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
 
         <TextView
-            android:id="@+id/textViewAjustesNombre"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/textViewAjustesNombre" />
-
-        <LinearLayout
+            android:id="@+id/textViewSettingsName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:textStyle="bold"
+            android:text="@string/prompt_name" />
 
-            <EditText
-                android:id="@+id/editTextAjustesNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/editTextAjustesNombre" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--tools:layout_editor_absoluteX="8dp"-->
+            <!--tools:layout_editor_absoluteY="8dp">-->
 
-            <ImageButton
-                android:id="@+id/imageButtonNombre"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                tools:layout_editor_absoluteX="-131dp"
-                tools:layout_editor_absoluteY="481dp" />
+        <EditText
+            android:id="@+id/editTextSettingsName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButtonName"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
+                <!--tools:layout_editor_absoluteX="-131dp"-->
+                <!--tools:layout_editor_absoluteY="481dp" />-->
 
 
 
-        </LinearLayout>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
 
         <TextView
-            android:id="@+id/textViewAjustesAppel"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/textViewAjustesAppel" />
-
-        <LinearLayout
+            android:id="@+id/textViewSettingsLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:textStyle="bold"
+            android:text="@string/prompt_surname" />
 
-            <EditText
-                android:id="@+id/editTextAjustesAppel"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:text="@string/editTextAjustesAppel" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--tools:layout_editor_absoluteX="8dp"-->
+            <!--tools:layout_editor_absoluteY="8dp">-->
 
-            <ImageButton
-                android:id="@+id/imageButtonApellido"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                tools:layout_editor_absoluteX="-131dp"
-                tools:layout_editor_absoluteY="481dp" />
+        <EditText
+            android:id="@+id/editTextSettingsLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="10"
+            android:ems="10"
+            android:inputType="textPersonName" />
+
+            <!--<ImageButton-->
+                <!--android:id="@+id/imageButtonLast"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
+                <!--tools:layout_editor_absoluteX="-131dp"-->
+                <!--tools:layout_editor_absoluteY="481dp" />-->
 
 
-
-        </LinearLayout>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
 
         <TextView
             android:id="@+id/textViewAjustesEmail"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/textViewAjustesEmail" />
-
-        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
-
-            <EditText
-                android:id="@+id/editTextAjustesEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/editTextAjustesEmail"
-                android:ems="10"
-                android:inputType="textEmailAddress" />
-
-            <ImageButton
-                android:id="@+id/imageButtonEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                tools:layout_editor_absoluteX="-131dp"
-                tools:layout_editor_absoluteY="481dp" />
+            android:textStyle="bold"
+            android:text="@string/prompt_email" />
 
 
+        <EditText
+            android:id="@+id/editTextAjustesEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textEmailAddress" />
 
-        </LinearLayout>
+        <!--<ImageButton-->
+            <!--android:id="@+id/imageButtonEmail"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
+            <!--tools:layout_editor_absoluteX="-131dp"-->
+            <!--tools:layout_editor_absoluteY="481dp" />-->
+
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
 
         <TextView
-            android:id="@+id/textViewAjustesContrasena"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/textViewAjustesContrasena"
-            />
-
-        <LinearLayout
+            android:id="@+id/textViewSettingsPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="8dp">
+            android:textStyle="bold"
+            android:text="@string/prompt_password"
+            />
 
-            <EditText
-                android:id="@+id/editTextAjustesContrasena"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/editTextAjustesContrasena"
-                android:ems="10"
-                android:inputType="textPassword" />
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal"-->
+            <!--tools:layout_editor_absoluteX="8dp"-->
+            <!--tools:layout_editor_absoluteY="8dp">-->
 
-            <ImageButton
-                android:id="@+id/imageButtonContrasena"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@android:drawable/ic_menu_edit"
-                tools:layout_editor_absoluteX="-131dp"
-                tools:layout_editor_absoluteY="481dp" />
+        <EditText
+            android:id="@+id/editTextSettingsPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword" />
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/imageButtonContrasena"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
+            <!--tools:layout_editor_absoluteX="-131dp"-->
+            <!--tools:layout_editor_absoluteY="481dp" />-->
 
 
-        </LinearLayout>
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
 
         <CheckBox
-            android:id="@+id/checkBoxAjustesSexo"
-            android:layout_width="match_parent"
+            android:id="@+id/checkBoxSettingsGender"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="@string/sexoAjustes" />
+            android:text="@string/textViewGender" />
+
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
 
         <Button
-            android:id="@+id/cambiarButtonAjustes"
+            android:id="@+id/settingsChangeButton"
             android:layout_width="250px"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="@string/cambiarButtonAjustes"
+            android:text="@string/settingsChangeButton"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="273dp" />
+    </TableRow>
 
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
         <Button
-            android:id="@+id/cerrarButtonAjustes"
+            android:id="@+id/settingsCloseButton"
             android:layout_width="250px"
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
-            android:text="@string/cerrarButtonAjustes"
+            android:text="@string/log_out"
             app:layout_constraintLeft_toLeftOf="parent"
             tools:layout_editor_absoluteY="273dp" />
 
+    </TableRow>
 
-    </LinearLayout>
-
-
-</android.support.constraint.ConstraintLayout>
+</TableLayout>

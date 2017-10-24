@@ -10,11 +10,12 @@
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toLeftOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:context="plusone.plusone.EventCreateActivity"
     tools:layout_constraintBottom_creator="1"
     tools:layout_constraintLeft_creator="1"
     tools:layout_constraintRight_creator="1"
-    tools:layout_constraintTop_creator="1">
+    tools:layout_constraintTop_creator="1"
+
+    tools:context="plusone.plusone.EventCreateActivity">
 
     <TableRow
         android:layout_width="match_parent"
@@ -34,6 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="16dp"
             android:ems="10" />
+
     </TableRow>
 
     <TableRow
