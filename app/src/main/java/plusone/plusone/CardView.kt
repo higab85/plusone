@@ -37,7 +37,21 @@ class CardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            print(eventsInfoList!!.first().name)
+            eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
+            myRecyclerView?.adapter=eventInfoAdapter
+        }
+
+        override fun onCancelled() {
+        }
+    }
+    inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: String):Boolean{
+            eventsInfoList = DatabaseConnection.searchEventsDB(searchObject)
+            return true
+        }
+
+        override fun onPostExecute(success: Boolean?) {
             eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
             myRecyclerView?.adapter=eventInfoAdapter
         }

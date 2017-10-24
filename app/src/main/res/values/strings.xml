@@ -52,17 +52,18 @@
     <string name="Create">Create</string>
 
 
-    <string name="cerrarButtonAjustes">Cerrar Sesion</string>
-    <string name="cambiarButtonAjustes">Cambiar</string>
-    <string name="sexoAjustes">Sexo</string>
+    <string name="cerrarButtonAjustes">Log out</string>
+    <string name="cambiarButtonAjustes">Change</string>
+    <string name="sexoAjustes">Gender</string>
     <string name="editTextAjustesContrasena"></string>
-    <string name="textViewAjustesContrasena">Contraseña</string>
+    <string name="textViewAjustesContrasena">Password</string>
     <string name="editTextAjustesEmail"></string>
     <string name="textViewAjustesEmail">Email</string>
     <string name="editTextAjustesAppel"></string>
-    <string name="textViewAjustesAppel">Apellido</string>
+    <string name="textViewAjustesAppel">Surname</string>
     <string name="editTextAjustesNombre"></string>
-    <string name="textViewAjustesNombre">Nombre</string>
+    <string name="textViewAjustesNombre">Name</string>
+    <string name="editTextSearch">Search</string>
 
 </resources>
 

@@ -118,6 +118,32 @@ object DatabaseConnection {
         }
         return null
     }
+    // Will return an array with all the events
+    fun searchEventsDB(searchObject:String): List<Event>?{
+        val gatherings:MutableList<Event> = mutableListOf()
+        val query = "SELECT * FROM plusone.events WHERE events.name LIKE \'$searchObject\'"
+        try{
+            val stmt = conn!!.createStatement()
+            val resultSet = stmt!!.executeQuery(query)
+            while(resultSet!!.next()) {
+                val event = Event()
+                event.name = resultSet.getString("name")
+                event.description= resultSet.getString("description")
+                // TODO: change to calculatable format
+                event.start = resultSet.getString("start_date")
+                event.end = resultSet.getString("end_date")
+                event.location = resultSet.getString("location")
+                event.setType(resultSet.getString("type"))
+                event.reqPeople = resultSet.getString("req_people").toInt()
+                gatherings.add(event)
+            }
+            return gatherings
+        }catch (ex: SQLException) {
+            // TODO: log this
+            ex.printStackTrace()
+        }
+        return null
+    }
 
 
 
