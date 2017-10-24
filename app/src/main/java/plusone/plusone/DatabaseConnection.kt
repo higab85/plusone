@@ -107,7 +107,7 @@ object DatabaseConnection {
                 event.start = resultSet.getString("start_date")
                 event.end = resultSet.getString("end_date")
                 event.location = resultSet.getString("location")
-                event.setType(resultSet.getString("type"))
+                event.type = resultSet.getString("type")
                 event.reqPeople = resultSet.getString("req_people").toInt()
                 gatherings.add(event)
             }

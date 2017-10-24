@@ -22,18 +22,18 @@ class EventCreateActivityTest {
 //        assertTrue(event.start.equals(time))
 //    }
 
-    @Test
-    fun correctType(){
-        var event = Event()
-        event.setType("party")
-        assertTrue(event.type == EventType.PARTY)
-    }
+    ///  @Test
+    ///fun correctType(){
+    /// var event = Event()
+    /// event.setType("party")
+    /// assertTrue(event.type == EventType.PARTY)
+    ///}
 
-    @Test
-    fun checkType(){
-        var event = Event()
-        event.setType("meal")
-        assertFalse(event.type == EventType.PARTY)
-    }
+    ///@Test
+    ///fun checkType(){
+    /// var event = Event()
+    /// event.setType("meal")
+    /// assertFalse(event.type == EventType.PARTY)
+    ///}
 
 }
