@@ -121,7 +121,7 @@ object DatabaseConnection {
     // Will return an array with all the events
     fun searchEventsDB(searchObject:String): List<Event>?{
         val gatherings:MutableList<Event> = mutableListOf()
-        val query = "SELECT * FROM plusone.events WHERE events.name LIKE \'$searchObject\'"
+        val query = "SELECT * FROM plusone.events WHERE events.name LIKE '%$searchObject%'"
         try{
             val stmt = conn!!.createStatement()
             val resultSet = stmt!!.executeQuery(query)

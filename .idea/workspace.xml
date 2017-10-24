@@ -16,21 +16,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59ce5ac6-c523-4af6-835b-a32fcdfd281b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localClassSetAnalysis/localClassSetAnalysis.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/tasks/_app_compileDebugJavaWithJavac/localJarClasspathSnapshot/localJarClasspathSnapshot.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/kotlin-build/artifact-difference.tab" afterPath="$PROJECT_DIR$/build/kotlin-build/artifact-difference.tab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/kotlin-build/artifact-difference.tab.values.at" afterPath="$PROJECT_DIR$/build/kotlin-build/artifact-difference.tab.values.at" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/app.iml" afterPath="$PROJECT_DIR$/app/app.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/AjustesActivity.kt" afterPath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/AjustesActivity.kt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" afterPath="$PROJECT_DIR$/build/intermediates/dex-cache/cache.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt" afterPath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt" />
     </list>
     <ignored path="Plusone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,7 +61,7 @@
     <splitter split-orientation="horizontal" split-proportion="0.61032677">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-          <file leaf-file-name="AjustesActivity.kt" pinned="false" current-in-tab="true">
+          <file leaf-file-name="AjustesActivity.kt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/AjustesActivity.kt">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="420">
@@ -109,11 +96,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="3640">
                   <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
-                  <folding>
-                    <element signature="e#2414#2438#0" expanded="true" />
-                    <element signature="e#3827#3849#0" expanded="true" />
-                    <element signature="e#4871#4896#0" expanded="true" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
               <provider editor-type-id="android-designer2">
@@ -124,18 +107,18 @@
           <file leaf-file-name="EventInfoAdapter.kt" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventInfoAdapter.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1890">
+                <state relative-caret-position="1610">
                   <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DatabaseConnection.kt" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DatabaseConnection.kt" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="4620">
-                  <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
+                <state relative-caret-position="137">
+                  <caret line="123" column="73" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
                   <folding />
                 </state>
               </provider>
@@ -146,9 +129,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="1085">
                   <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#25#218#0" expanded="false" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -178,9 +159,7 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="3605">
                   <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#25#1011#0" expanded="false" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -188,20 +167,13 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
           <file leaf-file-name="activity_ajustes.xml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml">
               <provider editor-type-id="text-editor">
-                <state relative-caret-position="0">
+                <state relative-caret-position="3640">
                   <caret line="104" column="46" selection-start-line="104" selection-start-column="46" selection-end-line="104" selection-end-column="46" />
-                  <folding>
-                    <marker date="1508844027978" expanded="true" signature="71:7330" ph="..." />
-                    <marker date="1508844027978" expanded="true" signature="859:7316" ph="..." />
-                    <marker date="1508844027978" expanded="true" signature="1143:2025" ph="..." />
-                    <marker date="1508844027978" expanded="true" signature="2471:3442" ph="..." />
-                    <marker date="1508844027978" expanded="true" signature="3853:4496" ph="..." />
-                    <marker date="1508844027978" expanded="true" signature="4941:5863" ph="..." />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
               <provider selected="true" editor-type-id="android-designer2">
@@ -212,7 +184,7 @@
           <file leaf-file-name="activity_event.xml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2384">
+                <state relative-caret-position="35">
                   <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
                   <folding />
                 </state>
@@ -2652,7 +2624,6 @@
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/AjustesActivityTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventList.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/DatabaseConnectionTest.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/CardView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_view.xml" />
@@ -2661,13 +2632,14 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/AjustesActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="60" />
     <option name="y" value="46" />
-    <option name="width" value="3080" />
+    <option name="width" value="1537" />
     <option name="height" value="1694" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
@@ -2696,6 +2668,7 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2800,7 +2773,6 @@
       </pane>
       <pane id="Scope" />
       <pane id="ProjectPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3363,8 +3335,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="60" y="46" width="3080" height="1694" extended-state="0" />
-    <editor active="false" />
+    <frame x="60" y="46" width="1537" height="1694" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26486862" sideWeight="0.48184568" order="12" side_tool="false" content_ui="tabs" />
@@ -3373,14 +3345,13 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2883959" sideWeight="0.5181543" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.30359614" sideWeight="0.48865354" order="8" side_tool="false" content_ui="tabs" x="1520" y="841" width="152" height="68" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29570237" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32710928" sideWeight="0.49871653" order="2" side_tool="false" content_ui="tabs" x="64" y="50" width="3064" height="1650" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.50501674" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17090301" sideWeight="0.48969072" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35314444" sideWeight="0.48969072" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964063" sideWeight="0.49638802" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
@@ -3393,6 +3364,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29570237" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32987553" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -3682,9 +3654,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1470">
           <caret line="50" column="78" selection-start-line="50" selection-start-column="78" selection-end-line="50" selection-end-column="78" />
-          <folding>
-            <element signature="e#25#357#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3698,7 +3668,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventInfoAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1890">
+        <state relative-caret-position="1610">
           <caret line="54" column="33" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
           <folding />
         </state>
@@ -3708,9 +3678,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3605">
           <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
-          <folding>
-            <element signature="e#25#1011#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -3718,16 +3686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1085">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#218#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4620">
-          <caret line="135" column="56" selection-start-line="135" selection-start-column="56" selection-end-line="135" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -3760,11 +3718,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3640">
           <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
-          <folding>
-            <element signature="e#2414#2438#0" expanded="true" />
-            <element signature="e#3827#3849#0" expanded="true" />
-            <element signature="e#4871#4896#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
       <provider editor-type-id="android-designer2">
@@ -3773,7 +3727,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2384">
+        <state relative-caret-position="35">
           <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
           <folding />
         </state>
@@ -3794,6 +3748,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="123" column="73" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
           <folding />
         </state>
       </provider>
