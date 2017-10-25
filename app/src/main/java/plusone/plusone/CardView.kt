@@ -26,14 +26,41 @@ class CardView : AppCompatActivity() {
      var eventInfoAdapter: EventInfoAdapter? = null
     val searchWord:String = ""
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recycler_view)
+        val searchHome = this.intent.getStringExtra("searchHome")
 
         supportActionBar?.title = "Events"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        refreshEventData().execute()
+
+        if (searchHome==""){
+            refreshEventData().execute()
+        }
+        else if (searchHome=="Sports Event"){
+            refreshEventByType(searchHome).execute()
+        }
+        else if (searchHome=="Food"){
+            refreshEventByType(searchHome).execute()
+        }
+        else if (searchHome=="Party"){
+            refreshEventByType(searchHome).execute()
+        }
+        else if (searchHome=="Entertainment"){
+            refreshEventByType(searchHome).execute()
+        }
+        else if (searchHome=="Learning"){
+            refreshEventByType(searchHome).execute()
+        }
+        else if (searchHome=="Others"){
+            refreshEventByType(searchHome).execute()
+        }
+        else{
+            refreshSearchEventData(searchHome).execute()
+        }
+
         myRecyclerView = findViewById(R.id.event_recycler_view) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@CardView)
@@ -74,6 +101,23 @@ class CardView : AppCompatActivity() {
 
         override fun doInBackground(vararg params: String):Boolean{
             eventsInfoList = DatabaseConnection.searchEventsDB(searchObject)
+            return true
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
+            myRecyclerView?.adapter=eventInfoAdapter
+        }
+
+        override fun onCancelled() {
+        }
+    }
+
+    // updates the list to only show events which are relevant to search query
+    inner class refreshEventByType(private val type:String): AsyncTask<String, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: String):Boolean{
+            eventsInfoList = DatabaseConnection.searchEventsByType(type)
             return true
         }
 
