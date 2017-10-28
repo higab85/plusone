@@ -3,21 +3,21 @@
 
     <item
         is-multidex="true"
-        jar="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
-        sha1="9942b2617cfe741b0ef30e059f6a95f61e425423">
-        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_5c596a4d0851d1d457594e576283edcbc2469350/classes.dex" />
+        sha1="8349628586108707b15979e6a25d98f7e761d5fd">
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_845974b4827023a73e0b35fa93b68e880785a2ab\classes.dex" />
     </item>
     <item
         is-multidex="true"
-        jar="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jar="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
         optimize="true"
         revision="26.0.2"
         sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
-        <dex dex="/home/tyler/Documents/uni/ISO/Plusone/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_53ffc7cae562dce8063b363b00c1c5ab0a937572/classes.dex" />
+        <dex dex="C:\Users\Usuario\Documents\GitHub\plusone\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_d918bb3e392c7969de8c94a318199a2ed063c6b9\classes.dex" />
     </item>
 
 </items>

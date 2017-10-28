@@ -1,5 +1,6 @@
 package plusone.plusone
 
+import java.io.FileDescriptor
 import java.sql.Time
 import java.time.LocalDateTime
 import java.util.*
@@ -32,8 +33,16 @@ class Event {
         this.start=start
         this.end=end
         this.type=type
-
-
     }
+    constructor(name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int){
+        this.name=name
+        this.description=description
+        this.location=location
+        this.start=start
+        this.end=end
+        this.type=type
+        this.reqPeople=reqPeople
+    }
+
 
 }
