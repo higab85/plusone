@@ -2,7 +2,9 @@ package plusone.plusone
 
 import java.sql.Time
 import java.time.LocalDateTime
+import java.time.LocalTime
 import java.util.*
+import java.time.format.DateTimeFormatter
 
 /**
  * Created by tyler on 13/10/17.
@@ -26,14 +28,20 @@ class Event {
     var reqPeople:Int = 0
 
     constructor()
-    constructor(name: String, location:String,start:String,end:String, type:String){
-        this.name=name
-        this.location=location
-        this.start=start
-        this.end=end
-        this.type=type
+    constructor(name: String, location:String,start:String,end:String, type:String) {
+        this.name = name
+        this.location = location
+        this.start = start
+        this.end = end
+        this.type = type
+    }
 
+    fun getstartDateTime():LocalDateTime{
+        return LocalDateTime.parse(start, DateTimeFormatter.ISO_DATE_TIME)
+    }
 
+    fun getstartTime():LocalTime{
+        return getstartDateTime().toLocalTime()
     }
 
 }
