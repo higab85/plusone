@@ -3,7 +3,9 @@ package plusone.plusone
 import java.io.FileDescriptor
 import java.sql.Time
 import java.time.LocalDateTime
+import java.time.LocalTime
 import java.util.*
+import java.time.format.DateTimeFormatter
 
 /**
  * Created by tyler on 13/10/17.
@@ -43,6 +45,12 @@ class Event {
         this.type=type
         this.reqPeople=reqPeople
     }
+    fun getstartDateTime():LocalDateTime{
+        return LocalDateTime.parse(start, DateTimeFormatter.ISO_DATE_TIME)
+    }
 
+    fun getstartTime():LocalTime{
+        return getstartDateTime().toLocalTime()
+    }
 
 }
