@@ -49,9 +49,9 @@
         <item>Others</item>
     </string-array>
 
-    <string name="People">People needed</string>
+    <string name="PeopleNeeded">People needed</string>
     <string name="Create">Create</string>
-
+    <string name="NumberPeople">People subscribed</string>
     <string name="editTextSearch">Search</string>
 
 
