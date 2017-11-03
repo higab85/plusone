@@ -3,33 +3,24 @@ package plusone.plusone
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.View
-import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageButton
-import android.widget.SearchView
-import java.util.*
-import kotlin.collections.ArrayList
-import android.content.Intent
-import android.util.Log
-
 
 
 // This activity will show an undetailed list of all the events (filtered or not depending on
 // whether a filter has been applied or not).
-class CardView : AppCompatActivity() {
+class EventListCardView : AppCompatActivity() {
      private var eventsInfoList:List<Event>? = null
      var myRecyclerView: RecyclerView? = null
-     var eventInfoAdapter: EventInfoAdapter? = null
+     var eventListInfoAdapter: EventListInfoAdapter? = null
     val searchWord:String = ""
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.recycler_view)
+        setContentView(R.layout.recycler_view_list_events)
         val searchHome = this.intent.getStringExtra("searchHome")
 
         supportActionBar?.title = "Events"
@@ -61,9 +52,9 @@ class CardView : AppCompatActivity() {
             refreshSearchEventData(searchHome).execute()
         }
 
-        myRecyclerView = findViewById(R.id.event_recycler_view) as RecyclerView
+        myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
-        myRecyclerView?.layoutManager = LinearLayoutManager(this@CardView)
+        myRecyclerView?.layoutManager = LinearLayoutManager(this@EventListCardView)
 
 
         val searchButton: ImageButton?  = findViewById(R.id.imageButtonSearch) as ImageButton
@@ -77,6 +68,7 @@ class CardView : AppCompatActivity() {
             }
         }
 
+
     }
 
     // refresh the list: Synchronises local list of events with database on cloud.
@@ -88,8 +80,8 @@ class CardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
-            myRecyclerView?.adapter=eventInfoAdapter
+            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList)
+            myRecyclerView?.adapter= eventListInfoAdapter
         }
 
         override fun onCancelled() {
@@ -105,8 +97,8 @@ class CardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
-            myRecyclerView?.adapter=eventInfoAdapter
+            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList)
+            myRecyclerView?.adapter= eventListInfoAdapter
         }
 
         override fun onCancelled() {
@@ -122,8 +114,8 @@ class CardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventInfoAdapter=EventInfoAdapter(this@CardView,eventsInfoList)
-            myRecyclerView?.adapter=eventInfoAdapter
+            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList)
+            myRecyclerView?.adapter= eventListInfoAdapter
         }
 
         override fun onCancelled() {

@@ -7,10 +7,6 @@ import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.Button
 import android.widget.EditText
-import android.view.View
-import android.app.Activity
-
-
 
 
 class MainActivity : AppCompatActivity() {
@@ -44,44 +40,44 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         buttonSports.setOnClickListener{
-           val intent = Intent(this, CardView::class.java)
+           val intent = Intent(this, EventListCardView::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Sports Event")
             startActivity(intent)
         }
         buttonParty.setOnClickListener{
-            val intent = Intent(this, CardView::class.java)
+            val intent = Intent(this, EventListCardView::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Party")
             startActivity(intent)
         }
         buttonEntertainment.setOnClickListener{
-            val intent = Intent(this, CardView::class.java)
+            val intent = Intent(this, EventListCardView::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Entertainment")
             startActivity(intent)
         }
         buttonLearning.setOnClickListener{
-            val intent = Intent(this, CardView::class.java)
+            val intent = Intent(this, EventListCardView::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Learning")
             startActivity(intent)
         }
         buttonOthers.setOnClickListener{
-            val intent = Intent(this, CardView::class.java)
+            val intent = Intent(this, EventListCardView::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Others")
             startActivity(intent)
         }
         buttonFood.setOnClickListener{
-            val intent = Intent(this, CardView::class.java)
+            val intent = Intent(this, EventListCardView::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Food")
             startActivity(intent)
         }
 
         imageButtonSearchHome.setOnClickListener{
-            val intent = Intent(this, CardView::class.java)
+            val intent = Intent(this, EventListCardView::class.java)
             val searchBar: EditText = findViewById(R.id.editTextSearchHome) as EditText
             val searchWordHome:String = searchBar.text.toString()
             intent.putExtra("searchHome", searchWordHome)

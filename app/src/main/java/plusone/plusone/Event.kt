@@ -1,5 +1,6 @@
 package plusone.plusone
 
+import java.io.FileDescriptor
 import java.sql.Time
 import java.time.LocalDateTime
 import java.time.LocalTime
@@ -28,6 +29,7 @@ class Event {
     var reqPeople:Int = 0
 
     constructor()
+<<<<<<< HEAD
     constructor(name: String, location:String,start:String,end:String, type:String) {
         this.name = name
         this.location = location
@@ -40,6 +42,28 @@ class Event {
         return LocalDateTime.parse(start, DateTimeFormatter.ISO_DATE_TIME)
     }
 
+=======
+    constructor(name: String, location:String,start:String,end:String, type:String){
+        this.name=name
+        this.location=location
+        this.start=start
+        this.end=end
+        this.type=type
+    }
+    constructor(name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int){
+        this.name=name
+        this.description=description
+        this.location=location
+        this.start=start
+        this.end=end
+        this.type=type
+        this.reqPeople=reqPeople
+    }
+    fun getstartDateTime():LocalDateTime{
+        return LocalDateTime.parse(start, DateTimeFormatter.ISO_DATE_TIME)
+    }
+
+>>>>>>> master
     fun getstartTime():LocalTime{
         return getstartDateTime().toLocalTime()
     }

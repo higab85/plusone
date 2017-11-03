@@ -16,6 +16,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="59ce5ac6-c523-4af6-835b-a32fcdfd281b" name="Default" comment="">
+<<<<<<< HEAD
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/LocalEventFilter.kt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/test/java/plusone/plusone/LocalEventFilterTest.kt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileHashes.bin" />
@@ -34,6 +35,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event.kt" afterPath="$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event.kt" />
+=======
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" />
+>>>>>>> master
     </list>
     <ignored path="Plusone.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,10 +49,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Plusone$DatabaseConnectionTest.coverage" NAME="DatabaseConnectionTest Coverage Results" MODIFIED="1507393168088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Plusone$EventActivityTest.coverage" NAME="EventActivityTest Coverage Results" MODIFIED="1508160455197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>plusone.plusone.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/Plusone$EventActivityTest.coverage" NAME="EventActivityTest Coverage Results" MODIFIED="1508160455197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/Plusone$DatabaseConnectionTest.coverage" NAME="DatabaseConnectionTest Coverage Results" MODIFIED="1507393168088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>plusone.plusone.*</FILTER>
     </SUITE>
   </component>
@@ -75,6 +79,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
+<<<<<<< HEAD
       <file leaf-file-name="Event.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event.kt">
           <provider selected="true" editor-type-id="text-editor">
@@ -82,11 +87,32 @@
               <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
               <folding>
                 <element signature="e#25#164#0" expanded="true" />
+=======
+      <file leaf-file-name="activity_all_info_event.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_all_info_event.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="164" column="8" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="46" />
+              <folding>
+                <element signature="e#1051#1066#0" expanded="true" />
+                <element signature="e#1650#1671#0" expanded="true" />
+                <element signature="e#2256#2275#0" expanded="true" />
+                <element signature="e#2850#2867#0" expanded="true" />
+                <element signature="e#3442#3460#0" expanded="true" />
+                <element signature="e#4041#4055#0" expanded="true" />
+                <element signature="e#4641#4663#0" expanded="true" />
+                <element signature="e#5250#5272#0" expanded="true" />
+                <element signature="e#5855#5871#0" expanded="true" />
+>>>>>>> master
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
@@ -123,20 +149,42 @@
             <state relative-caret-position="1575">
               <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
               <folding />
+=======
+      <file leaf-file-name="activity_event.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="157" column="17" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="17" />
+              <folding>
+                <element signature="e#4819#4841#0" expanded="true" />
+              </folding>
+>>>>>>> master
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LocalEventFilter.kt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/LocalEventFilter.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
               <caret line="64" column="67" selection-start-line="64" selection-start-column="67" selection-end-line="64" selection-end-column="67" />
+=======
+      <file leaf-file-name="strings.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+>>>>>>> master
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="LocalEventFilterTest.kt" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/LocalEventFilterTest.kt">
           <provider selected="true" editor-type-id="text-editor">
@@ -149,16 +197,25 @@
           </provider>
         </entry>
       </file>
+=======
+>>>>>>> master
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+<<<<<<< HEAD
         <option value="layoutResourceFile_vertical" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
         <option value="JUnit4 Test Class" />
+=======
+        <option value="JUnit4 Test Class" />
+        <option value="layoutResourceFile_vertical" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+>>>>>>> master
       </list>
     </option>
   </component>
@@ -168,7 +225,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\Usuario\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -181,14 +238,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="Plusone" />
+              <option name="name" value="plusone" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="Plusone" />
+                <option name="name" value="plusone" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -206,7 +263,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'Plusone'." />
+                <option name="description" value="Displays the sub-projects of root project 'plusone'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -293,7 +350,7 @@
                 <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'Plusone'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'plusone'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -627,12 +684,12 @@
                 <option name="name" value="compileLintOptionsAidl" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'Plusone'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'plusone'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'Plusone'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'plusone'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -747,12 +804,12 @@
                 <option name="name" value="generateLintOptionsAssets" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'Plusone'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'plusone'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'Plusone' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'plusone' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -779,7 +836,7 @@
                 <option name="name" value="jarLintOptionsClasses" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'Plusone'." />
+                <option name="description" value="Displays all dependencies declared in root project 'plusone'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -880,7 +937,7 @@
                 <option name="name" value="incrementalLintOptionsJavaCompilationSafeguard" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'Plusone'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'plusone'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -1175,7 +1232,7 @@
                 <option name="name" value="packageDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'Plusone'." />
+                <option name="description" value="Displays the properties of root project 'plusone'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -2157,8 +2214,12 @@
     </option>
     <option name="modificationStamps">
       <map>
+<<<<<<< HEAD
         <entry key="$PROJECT_DIR$" value="4523763560506" />
         <entry key="C:\Users\Usuario\Documents\GitHub\plusone" value="4525141985147" />
+=======
+        <entry key="C:\Users\Usuario\Documents\GitHub\plusone" value="4526592415238" />
+>>>>>>> master
         <entry key="C:\Users\janto\Desktop\GitHub\plusone" value="4523923173613" />
       </map>
     </option>
@@ -2387,144 +2448,144 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="Plusone" />
+              <option name="name" value="plusone" />
               <option name="projectBuildClasspath">
                 <list>
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/announce" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/antlr" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services-groovy" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-cache-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-s3" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/process-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-comparison" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-init" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/cli" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/code-quality" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/launcher" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-http" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-performance-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-play" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/composite-builds" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/dependency-management" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/diagnostics" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ear" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-native" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ide-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/installation-beacon" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-android-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-integ-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-performance-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-testing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ivy" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jacoco" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/javascript" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jetty" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jvm-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-java" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/launcher" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/logging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/maven" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/messaging" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-core" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-groovy" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/open-api" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/osgi" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-native" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-play" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-development" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-use" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugins" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/process-services" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/publish" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/reporting" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-http" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-s3" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-sftp" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/scala" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/signing" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/test-kit" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-base" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-jvm" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-native" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/tooling-api" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/tooling-api-builders" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jetty" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-comparison" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/signing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/build-init" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/messaging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/installation-beacon" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/antlr" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-java" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/testing-base" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/announce" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/model-core" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-use" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/wrapper" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/jvm-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugin-development" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/composite-builds" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/osgi" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/language-groovy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/logging" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/open-api" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/dependency-management" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/base-services" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-jvm" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/workers" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/resources-sftp" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/plugins" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ear" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/reporting" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/cli" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ivy" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/publish" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/ui" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/diagnostics" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/platform-native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/test-kit" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/maven" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/native" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/internal-integ-testing" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/groovy-all-2.4.7.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-messaging-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-launcher-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-docs-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-resources-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-wrapper-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-process-services-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-cli-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-core-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/workers" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/src/wrapper" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-1.9.6.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-version-info-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-open-api-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/ant-launcher-1.9.6.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-cli-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-core-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-docs-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-installation-beacon-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-jvm-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-launcher-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-logging-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-messaging-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-core-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-open-api-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-process-services-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-resources-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-script-kotlin-0.5.1.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-tooling-api-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-ui-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-launcher-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-base-services-groovy-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-installation-beacon-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-model-core-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-version-info-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/gradle-wrapper-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/groovy-all-2.4.7.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-cache-http-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-announce-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-diagnostics-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-dependency-management-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ivy-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-comparison-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-javascript-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-test-kit-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-antlr-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-jvm-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-native-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ear-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-scala-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-maven-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-base-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-development-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-publish-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-reporting-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-http-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-s3-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jetty-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugin-use-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-groovy-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-build-init-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-composite-builds-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-jacoco-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-plugins-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-play-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-osgi-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-code-quality-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-language-java-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-ide-play-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
-                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-platform-native-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-resources-sftp-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-scala-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-signing-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-test-kit-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-base-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-jvm-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-testing-native-3.3.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-tooling-api-builders-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/gradle-workers-3.3.jar" />
+                  <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3/lib/plugins/ivy-2.2.0.jar" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
                   <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
@@ -2541,9 +2602,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/ExampleUnitTest.java" />
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/DatabaseConnecitonTest.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/MySQLDatabaseTest.java" />
+=======
+>>>>>>> master
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/MySQLDatabaseTest.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/LoginPresenter.kt" />
         <option value="$PROJECT_DIR$/build.gradle" />
@@ -2566,7 +2630,10 @@
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/RecyclerView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/EmployeeInfo.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventActivity.kt" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/MainActivity.kt" />
+=======
+>>>>>>> master
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event2.kt" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_card_view.xml" />
@@ -2579,27 +2646,48 @@
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/CardView.kt" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/LoginActivity.kt" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/AjustesActivity.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/EventInfoAdapterTest.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/localEventFilter.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/EventInfoAdapterTest.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/LocalEventFilterTest.java" />
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_list_events.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/recycler_view_event_info.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/MainActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventListCardView.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_card_view_list_events.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/AllInfoEventActivity.kt" />
+        <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventListInfoAdapter.kt" />
+>>>>>>> master
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event.kt" />
         <option value="$PROJECT_DIR$/app/src/main/java/plusone/plusone/LocalEventFilter.kt" />
         <option value="$PROJECT_DIR$/app/src/test/java/plusone/plusone/LocalEventFilterTest.kt" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_all_info_event.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" />
+>>>>>>> master
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
+<<<<<<< HEAD
     <option name="x" value="60" />
     <option name="y" value="46" />
     <option name="width" value="3080" />
     <option name="height" value="1694" />
+=======
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+>>>>>>> master
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -2626,14 +2714,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+<<<<<<< HEAD
       <pane id="PackagesPane" />
+=======
+>>>>>>> master
       <pane id="AndroidView">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plusone" />
+              <option name="myItemId" value="plusone" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
+<<<<<<< HEAD
+=======
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
@@ -2641,7 +2734,82 @@
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Plusone" />
+              <option name="myItemId" value="plusone" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plusone" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plusone" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plusone" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plusone" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plusone" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+>>>>>>> master
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Gradle Scripts" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="plusone" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -2652,7 +2820,11 @@
         </subPane>
       </pane>
       <pane id="ProjectPane" />
+<<<<<<< HEAD
       <pane id="Scope" />
+=======
+      <pane id="PackagesPane" />
+>>>>>>> master
       <pane id="Scratches" />
     </panes>
   </component>
@@ -2660,7 +2832,7 @@
     <property name="android.sdk.path" value="$USER_HOME$/Android/Sdk" />
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="device.picker.selection" value="Nexus_5X_API_24" />
+    <property name="device.picker.selection" value="Nexus_4_API_25" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/test/java/plusone/plusone" />
@@ -3244,27 +3416,41 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="60" y="46" width="3080" height="1694" extended-state="0" />
+=======
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+>>>>>>> master
     <editor active="true" />
     <layout>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26486862" sideWeight="0.48184568" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26450512" sideWeight="0.48184568" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20440382" sideWeight="0.5103093" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2883959" sideWeight="0.5181543" order="7" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.30359614" sideWeight="0.48865354" order="8" side_tool="false" content_ui="tabs" x="1520" y="841" width="152" height="68" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29570237" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32710928" sideWeight="0.49871653" order="2" side_tool="false" content_ui="tabs" x="64" y="50" width="3064" height="1650" />
+=======
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.30359614" sideWeight="0.48865354" order="8" side_tool="false" content_ui="tabs" x="614" y="396" width="74" height="34" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29500756" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32710928" sideWeight="0.49871653" order="2" side_tool="false" content_ui="tabs" x="64" y="50" width="3064" height="1650" />
+>>>>>>> master
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.50501674" order="10" side_tool="true" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21170568" sideWeight="0.48969072" order="0" side_tool="false" content_ui="combo" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1913767" sideWeight="0.48969072" order="0" side_tool="false" content_ui="combo" />
+>>>>>>> master
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964063" sideWeight="0.49638802" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39834026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
@@ -3276,8 +3462,40 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32987553" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32918397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20440382" sideWeight="0.5103093" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2883959" sideWeight="0.5181543" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.30359614" sideWeight="0.48865354" order="8" side_tool="false" content_ui="tabs" x="614" y="396" width="74" height="34" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964063" sideWeight="0.49638802" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39834026" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26450512" sideWeight="0.48184568" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29500756" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32710928" sideWeight="0.49871653" order="2" side_tool="false" content_ui="tabs" x="64" y="50" width="3064" height="1650" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935154" sideWeight="0.4969743" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32943144" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.32987553" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.4969743" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32987553" sideWeight="0.50501674" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1913767" sideWeight="0.48969072" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32764506" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32810047" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -3305,21 +3523,16 @@
           <properties />
           <option name="timeStamp" value="30" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventInfoAdapter.kt</url>
-          <line>50</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="48" />
+      <option name="time" value="50" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -3344,6 +3557,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> master
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_register.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3439,7 +3654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/android/support/v7/widget/RecyclerView.java" />
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/mysql/mysql-connector-java/5.1.30/2b06deec60f4af6bf093a2b05ba87eb166e1a22f/mysql-connector-java-5.1.30-sources.jar!/com/mysql/jdbc/Util.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="122">
@@ -3460,17 +3674,12 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
       <provider editor-type-id="android-designer2">
         <state />
       </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+=======
     <entry file="file://$PROJECT_DIR$/settings.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3478,44 +3687,116 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/android/support/v7/widget/RecyclerView.java" />
+    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-26/android.jar!/android/os/AsyncTask.class" />
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/AjustesActivityTest.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventList.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/AjustesActivity.kt">
+>>>>>>> master
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+<<<<<<< HEAD
+=======
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" column="48" selection-start-line="104" selection-start-column="48" selection-end-line="104" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/RegisterActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/LoginActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+          <folding>
+            <element signature="e#25#1011#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+>>>>>>> master
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
       <provider editor-type-id="android-manifest">
         <state />
       </provider>
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/CurrentUser.kt">
+>>>>>>> master
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/android/support/v7/widget/RecyclerView.java">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_login.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+>>>>>>> master
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_event_info.xml" />
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/platforms/android-26/android.jar!/android/content/Intent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="511" column="34" selection-start-line="511" selection-start-column="34" selection-end-line="511" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/AjustesActivityTest.java" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventList.kt" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_card_view.xml">
+      <provider editor-type-id="android-designer2">
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+>>>>>>> master
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
           <caret line="13" column="32" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/android/support/v7/widget/RecyclerView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="6490" column="28" selection-start-line="6490" selection-start-column="28" selection-end-line="6490" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/platforms/android-26/android.jar!/android/os/AsyncTask.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="400">
-          <caret line="24" column="44" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/AjustesActivityTest.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventList.kt" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_card_view.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3523,18 +3804,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventCreateActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="524">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/LoginActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3605">
           <caret line="129" column="9" selection-start-line="129" selection-start-column="9" selection-end-line="129" selection-end-column="9" />
+=======
+    <entry file="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/recyclerview-v7/26.0.0-alpha1/recyclerview-v7-26.0.0-alpha1-sources.jar!/android/support/v7/widget/RecyclerView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-639">
+          <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/MainActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="980">
@@ -3547,26 +3842,50 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1855">
           <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/recycler_view_list_events.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="605">
+          <caret line="65" column="28" selection-start-line="65" selection-start-column="28" selection-end-line="65" selection-end-column="28" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/CurrentUser.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1850">
+          <caret line="198" column="32" selection-start-line="198" selection-start-column="32" selection-end-line="198" selection-end-column="32" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/RegisterActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventListCardView.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml">
       <provider editor-type-id="android-designer2">
         <state />
@@ -3582,10 +3901,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/MainActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1013">
+          <caret line="66" column="46" selection-start-line="66" selection-start-column="46" selection-end-line="66" selection-end-column="46" />
+          <folding>
+            <element signature="e#25#249#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_card_view_list_events.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventCreateActivity.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1260">
@@ -3598,26 +3937,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
           <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventListInfoAdapter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#386#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/CardView.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1648">
           <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/Event.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/EventInfoAdapterTest.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/LocalEventFilter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1224">
+          <caret line="72" column="1" selection-start-line="72" selection-start-column="1" selection-end-line="72" selection-end-column="1" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/EventInfoAdapter.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-140">
@@ -3630,13 +4000,40 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/AllInfoEventActivity.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#128#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/DatabaseConnectionTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_ajustes.xml">
       <provider editor-type-id="android-designer2">
         <state />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/test/java/plusone/plusone/LocalEventFilterTest.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="1" selection-start-line="27" selection-start-column="1" selection-end-line="27" selection-end-column="1" />
+          <folding>
+            <element signature="e#25#72#0" expanded="true" />
+          </folding>
+        </state>
+>>>>>>> master
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1249">
@@ -3647,27 +4044,66 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+>>>>>>> master
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
           <caret line="10" column="82" selection-start-line="10" selection-start-column="82" selection-end-line="10" selection-end-column="82" />
           <folding />
+=======
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_all_info_event.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="164" column="8" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="46" />
+          <folding>
+            <element signature="e#1051#1066#0" expanded="true" />
+            <element signature="e#1650#1671#0" expanded="true" />
+            <element signature="e#2256#2275#0" expanded="true" />
+            <element signature="e#2850#2867#0" expanded="true" />
+            <element signature="e#3442#3460#0" expanded="true" />
+            <element signature="e#4041#4055#0" expanded="true" />
+            <element signature="e#4641#4663#0" expanded="true" />
+            <element signature="e#5250#5272#0" expanded="true" />
+            <element signature="e#5855#5871#0" expanded="true" />
+          </folding>
+>>>>>>> master
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/plusone/plusone/DatabaseConnection.kt">
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="4200">
           <caret line="123" column="73" selection-start-line="123" selection-start-column="73" selection-end-line="123" selection-end-column="73" />
           <folding />
+=======
+        <state relative-caret-position="221">
+          <caret line="157" column="17" selection-start-line="157" selection-start-column="17" selection-end-line="157" selection-end-column="17" />
+          <folding>
+            <element signature="e#4819#4841#0" expanded="true" />
+          </folding>
+>>>>>>> master
         </state>
       </provider>
     </entry>

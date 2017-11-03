@@ -1,0 +1,192 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="*"
+
+    app:layout_constraintBottom_toTopOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:layout_constraintBottom_creator="1"
+    tools:layout_constraintLeft_creator="1"
+    tools:layout_constraintRight_creator="1"
+    tools:layout_constraintTop_creator="1"
+
+    tools:context="plusone.plusone.EventCreateActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewEventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/event"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/allInfoEventName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/description"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewTimeStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timeStart"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewTimeEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timeEnd"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoEnd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/location"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewEventType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/type"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoEventType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewPeopleNeeded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/PeopleNeeded"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoPeopleNeeded"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
+
+        <TextView
+            android:id="@+id/textViewNumberPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/NumberPeople"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/allInfoNumberPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="100dp">
+
+        <Button
+            android:id="@+id/SignUpButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SignUp" />
+    </TableRow>
+
+
+</TableLayout>
