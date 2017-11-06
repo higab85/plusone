@@ -1,8 +1,10 @@
 package plusone.plusone
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import kotlinx.android.synthetic.main.activity_all_info_event.*
 
 class AllInfoEventActivity : AppCompatActivity() {
 
@@ -13,9 +15,7 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoEventNameTextView: TextView = findViewById(R.id.allInfoEventName) as TextView
         allInfoEventNameTextView.text = allInfoEventName
 
-        val allInfoLocation =this.intent.getStringExtra("allInfoLocation")
-        val allInfoLocationTextView: TextView = findViewById(R.id.allInfoLocation) as TextView
-        allInfoLocationTextView.text = allInfoLocation
+
 
         val allInfoStart =this.intent.getStringExtra("allInfoStart")
         val allInfoStartTextView: TextView = findViewById(R.id.allInfoStart) as TextView
@@ -36,5 +36,11 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoPeopleNeeded =this.intent.getStringExtra("allInfoPeopleNeeded")
         val allInfoPeopleNeededTextView: TextView = findViewById(R.id.allInfoPeopleNeeded) as TextView
         allInfoPeopleNeededTextView.text = allInfoPeopleNeeded
+
+        SeeMapButton.setOnClickListener{
+            val intent = Intent(this, MapsActivity::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            startActivity(intent)
+        }
     }
 }
