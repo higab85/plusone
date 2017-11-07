@@ -37,9 +37,14 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoPeopleNeededTextView: TextView = findViewById(R.id.allInfoPeopleNeeded) as TextView
         allInfoPeopleNeededTextView.text = allInfoPeopleNeeded
 
+        val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
+        val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
+
         SeeMapButton.setOnClickListener{
             val intent = Intent(this, MapsActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.putExtra("latitude",allInfoLatitude)
+            intent.putExtra("longitude",allInfoLongitude)
             startActivity(intent)
         }
     }
