@@ -109,11 +109,11 @@
             android:text="@string/location"
             android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/allInfoLocation"
+        <Button
+            android:id="@+id/SeeMapButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10" />
+            android:text="@string/SeeMap" />
 
     </TableRow>
 
@@ -187,6 +187,7 @@
             android:layout_height="wrap_content"
             android:text="@string/SignUp" />
     </TableRow>
+
 
 
 </TableLayout>

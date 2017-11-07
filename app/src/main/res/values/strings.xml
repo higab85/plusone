@@ -62,6 +62,8 @@
     <string name="editTextAjustesEmail"></string>
     <string name="editTextSettingsLastName"></string>
     <string name="editTextSettingsName"></string>
+    <string name="title_activity_maps">Map</string>
+    <string name="SeeMap">See on map</string>
 
 </resources>
 
