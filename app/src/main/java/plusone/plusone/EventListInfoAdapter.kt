@@ -26,8 +26,6 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         var descriptionEvent:TextView
         var typeEvent:TextView
         var reqPeopleEvent:TextView
-        var latitude:String = ""
-        var longitude:String=""
 
         init {
             nameEvent=itemview.findViewById<TextView>(R.id.event_name)
@@ -51,8 +49,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
                 intent.putExtra("allInfoDescription",descriptionEvent.text)
                 intent.putExtra("allInfoEventType",typeEvent.text)
                 intent.putExtra("allInfoPeopleNeeded",reqPeopleEvent.text)
-                intent.putExtra("allInfoLatitude",latitude)
-                intent.putExtra("allInfoLongitude",longitude)
+
                 itemView.context.startActivity(intent)
             }
         }
