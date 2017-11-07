@@ -13,11 +13,13 @@ import com.google.android.gms.maps.model.MarkerOptions
 class MapsActivity : FragmentActivity(), OnMapReadyCallback {
 
     private var mMap: GoogleMap? = null
-
+    var latitude =this.intent.getStringExtra("latitude")
+    var longitude =this.intent.getStringExtra("longitude")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -35,11 +37,13 @@ class MapsActivity : FragmentActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-
+        latitude= ("-34.0")
+        longitude=("151.0")
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
+        val sydney = LatLng(latitude.toDouble(),longitude.toDouble())
         val zoom=16f
         mMap!!.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney,zoom))
     }
 }
+

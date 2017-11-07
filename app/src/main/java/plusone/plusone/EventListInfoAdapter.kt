@@ -12,7 +12,6 @@ import android.content.Intent
 /**
  * Created by Javicraft on 19/10/2017.
  */
-
 class EventListInfoAdapter(private val myContext: Context, private val eventsInfoList:List<Event>?): RecyclerView.Adapter<EventListInfoAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
@@ -23,6 +22,8 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         var descriptionEvent:TextView
         var typeEvent:TextView
         var reqPeopleEvent:TextView
+        var latitude:String = ""
+        var longitude:String=""
 
         init {
             nameEvent=itemview.findViewById<TextView>(R.id.event_name)
@@ -37,7 +38,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         }
         fun bind(eventsInfoList: Event){
             itemView.setOnClickListener{View->
-               //Toast.makeText(itemView.context,"Boton pulsado:" + eventsInfoList.name,Toast.LENGTH_LONG).show()
+                //Toast.makeText(itemView.context,"Boton pulsado:" + eventsInfoList.name,Toast.LENGTH_LONG).show()
                 val intent = Intent(myContext, AllInfoEventActivity::class.java)
                 intent.putExtra("allInfoEventName",nameEvent.text)
                 intent.putExtra("allInfoLocation",locationEvent.text)
@@ -46,7 +47,8 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
                 intent.putExtra("allInfoDescription",descriptionEvent.text)
                 intent.putExtra("allInfoEventType",typeEvent.text)
                 intent.putExtra("allInfoPeopleNeeded",reqPeopleEvent.text)
-
+                intent.putExtra("allInfoLatitude",latitude)
+                intent.putExtra("allInfoLongitude",longitude)
                 itemView.context.startActivity(intent)
             }
         }
