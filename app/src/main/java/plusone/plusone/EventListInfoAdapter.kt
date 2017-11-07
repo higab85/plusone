@@ -8,9 +8,6 @@ import android.view.ViewGroup
 //import com.example.kotlin.myapplication.R
 import android.content.Context
 import android.content.Intent
-import android.support.v4.content.ContextCompat.startActivity
-import android.widget.Toast
-
 
 /**
  * Created by Javicraft on 19/10/2017.

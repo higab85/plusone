@@ -46,38 +46,38 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         buttonParty.setOnClickListener{
-            val intent = Intent(this, EventListCardView::class.java)
+            val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Party")
             startActivity(intent)
         }
         buttonEntertainment.setOnClickListener{
-            val intent = Intent(this, EventListCardView::class.java)
+            val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Entertainment")
             startActivity(intent)
         }
         buttonLearning.setOnClickListener{
-            val intent = Intent(this, EventListCardView::class.java)
+            val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Learning")
             startActivity(intent)
         }
         buttonOthers.setOnClickListener{
-            val intent = Intent(this, EventListCardView::class.java)
+            val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Others")
             startActivity(intent)
         }
         buttonFood.setOnClickListener{
-            val intent = Intent(this, EventListCardView::class.java)
+            val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Food")
             startActivity(intent)
         }
 
         imageButtonSearchHome.setOnClickListener{
-            val intent = Intent(this, EventListCardView::class.java)
+            val intent = Intent(this, EventList::class.java)
             val searchBar: EditText = findViewById(R.id.editTextSearchHome) as EditText
             val searchWordHome:String = searchBar.text.toString()
             intent.putExtra("searchHome", searchWordHome)
