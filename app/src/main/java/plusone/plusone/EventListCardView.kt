@@ -52,7 +52,7 @@ class EventListCardView : AppCompatActivity() {
             refreshSearchEventData(searchHome).execute()
         }
 
-        myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
+        myRecyclerView = findViewById(R.id.event_list_recycler_viewoo) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventListCardView)
 

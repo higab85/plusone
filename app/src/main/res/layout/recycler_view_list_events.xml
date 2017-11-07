@@ -6,24 +6,6 @@ android:layout_width="match_parent"
 android:layout_height="match_parent"
     tools:context="plusone.plusone.EventListCardView">
 
-    <!--<EditText
-        android:id="@+id/editTextSearch"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:hint="@string/editTextSearch"
-        tools:layout_constraintTop_creator="1"
-        tools:layout_constraintRight_creator="1"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="16dp"
-        tools:layout_constraintLeft_creator="1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintHorizontal_bias="0.0" />-->
-
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -56,7 +38,7 @@ android:layout_height="match_parent"
 
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/event_list_recycler_view"
+        android:id="@+id/event_list_recycler_viewoo"
         android:layout_width="0dp"
         android:layout_height="0dp"
         tools:layout_constraintTop_creator="1"

@@ -47,6 +47,7 @@
         </activity>
         <!-- <activity android:name=".AjustesActivity"></activity> -->
         <activity android:name=".EventListCardView" />
+        <activity android:name=".EventList" />
         <activity android:name=".AllInfoEventActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

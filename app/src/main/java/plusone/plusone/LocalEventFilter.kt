@@ -71,6 +71,6 @@ object LocalEventFilter {
             events.filter { it.getstartDateTime() <= startTime }
 
     fun orderTimeLastToFirst(events: List<Event>): List<Event> =
-            mergeSort(events, "time").toMutableList().toList()
+            mergeSort(events, "time").reversed()
 
 }
