@@ -58,7 +58,7 @@
 
     <string name="editTextSortTime">Time</string>
     <string name="editTextSortDistance">Distance</string>
-    <string name="editTextFilter">Filter</string>
+    <string name="editTextFilter">Events after</string>
 
 
     <string name="log_out">Log out</string>

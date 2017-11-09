@@ -1,19 +1,28 @@
 package plusone.plusone
 
+import android.app.DatePickerDialog
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.app.SearchManager
+import android.app.TimePickerDialog
 import android.content.Intent
+import android.icu.util.Calendar
+import android.view.View
 import android.widget.*
+import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.LocalTime
+import java.time.format.DateTimeFormatter
 
 
 // This activity will show an undetailed list of all the events (filtered or not depending on
 // whether a filter has been applied or not).
 class EventList : AppCompatActivity() {
     private var eventsInfoList:List<Event>? = null
+    private var eventsInfoListCurated:List<Event>? = null
     var myRecyclerView: RecyclerView? = null
     var eventListInfoAdapter: EventListInfoAdapter? = null
     val searchWord:String = ""
@@ -54,17 +63,18 @@ class EventList : AppCompatActivity() {
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventList)
 
+
         val searchButton: Button?  = findViewById(R.id.imageButtonSearch) as Button
         val timeSortButton: Button?  = findViewById(R.id.sortTimeButton) as Button
         val distanceSortButton: Button?  = findViewById(R.id.sortDistanceButton) as Button
-
+        val filterButton:Button? = findViewById(R.id.filterButton) as Button
 
         if (searchButton != null){
             searchButton.setOnClickListener{view->
                 val searchBar: EditText = findViewById(R.id.editTextSearch2) as EditText
                 val searchWord:String = searchBar.text.toString()
-                eventsInfoList = LocalEventFilter.searchEventByName(eventsInfoList, searchWord)
-                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList)
+                eventsInfoListCurated = LocalEventFilter.searchEventByName(eventsInfoList, searchWord)
+                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)
                 myRecyclerView?.adapter= eventListInfoAdapter
             }
         }
@@ -77,6 +87,22 @@ class EventList : AppCompatActivity() {
             }
         }
 
+//        if (filterButton != null){
+//            filterButton.setOnClickListener{
+//                var dh: TimePickerDialogHandler = TimePickerDialogHandler()
+//                dh.show(this@EventList.fragmentManager, "time_picker")
+//            }
+//
+//        }
+
+
+
+//        fun onTimeSet(view:TimePicker, hourOfDay:Int, minute:Int) {
+//            // Do something with the time chosen by the user
+//            pickerHour = hourOfDay;
+//            pickerMin = minute;
+//        }
+
 //        if (distanceSortButton != null){
 //            distanceSortButton.setOnClickListener{view->
 //                eventsInfoList = LocalEventFilter.orderDistanceClosestFirst(eventsInfoList)
@@ -84,6 +110,55 @@ class EventList : AppCompatActivity() {
 //                myRecyclerView?.adapter= eventListInfoAdapter
 //            }
 //        }
+
+    }
+
+    fun funTime(view: View, date:String){
+        val c = Calendar.getInstance()
+        val hour = c.get(Calendar.HOUR_OF_DAY)
+        val minute = c.get(Calendar.MINUTE)
+        val filterButton:Button? = findViewById(R.id.filterButton) as Button
+
+        val dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
+                TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
+                    myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
+                    myRecyclerView?.setHasFixedSize(true)
+                    myRecyclerView?.layoutManager = LinearLayoutManager(this@EventList)
+
+                    val time = LocalDateTime.parse(date + "T$hour:$minute", DateTimeFormatter.ISO_DATE_TIME)
+
+                    eventsInfoListCurated = LocalEventFilter.filterByStartTimeAfter(eventsInfoList!!, time)
+                    eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)
+                    myRecyclerView?.adapter= eventListInfoAdapter
+                },hour, minute, true)
+
+        // show timepicker
+        dpd.show()
+    }
+
+
+    fun funDate(view: View){
+        val c = Calendar.getInstance()
+        val day = c.get(Calendar.DAY_OF_MONTH)
+        val month = c.get(Calendar.MONTH)
+        val year = c.get(Calendar.YEAR)
+        val filterButton:Button? = findViewById(R.id.filterButton) as Button
+        var returnDate:String? = null
+
+        fun dayParser(day:Int):String{
+            if(day < 10)
+                return "0$day"
+            return day.toString()
+        }
+
+        val dpd = DatePickerDialog(this, android.R.style.Animation_Dialog,
+                DatePickerDialog.OnDateSetListener{ datePicker, year, monthOfYear, dayOfMonth ->
+                        funTime(view, "$year-$monthOfYear-${dayParser(dayOfMonth)}")
+
+                }, year, month, day)
+
+        // show datepicker
+        dpd.show()
 
     }
 

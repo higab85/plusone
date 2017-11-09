@@ -50,8 +50,8 @@ class DatabaseConnectionTest {
         var event = Event()
 
         event.name = "test-title"
-        event.start = "02/04/2017 at 02:00"
-        event.end = "02/04/2017 at 02:30"
+        event.start = "2017-12-03T13:12"
+        event.end = "2017-12-03T14:12"
         event.location = "club"
         event.type = "OTHER"
         event.reqPeople = 1

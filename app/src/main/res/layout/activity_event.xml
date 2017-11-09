@@ -64,19 +64,13 @@
         android:layout_height="match_parent"
         android:layout_margin="9dp">
 
-        <TextView
-            android:id="@+id/textViewTimeStart"
+        <Button
+            android:id="@+id/eventStartsAtButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timeStart"
-            android:textSize="20dp" />
+            android:onClick="funDate"
+            android:text="@string/timeStart" />
 
-        <EditText
-            android:id="@+id/start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="time" />
     </TableRow>
 
     <TableRow
