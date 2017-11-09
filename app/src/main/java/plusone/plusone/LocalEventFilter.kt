@@ -73,4 +73,7 @@ object LocalEventFilter {
     fun orderTimeLastToFirst(events: List<Event>): List<Event> =
             mergeSort(events, "time").reversed()
 
+    fun searchEventByName(events: List<Event>?, query:String): List<Event> =
+            events!!.filter { it.name.contains(query) }
+
 }

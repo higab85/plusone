@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter
  * Created by tyler on 28/10/17.
  */
 class LocalEventFilterTest{
-    var event1:Event = Event("1", "0,0", "2017-12-03T12:30", "2017-12-03T13:30", "PARTY")
+    var event1:Event = Event("1.3", "0,0", "2017-12-03T12:30", "2017-12-03T13:30", "PARTY")
     var event2:Event = Event("2", "1,1", "2017-12-03T13:00", "2017-12-03T13:30", "FOOD")
     var event3:Event = Event("3", "2,1", "2017-12-03T10:00", "2017-12-03T14:30", "FOOD")
     var event4:Event = Event("4", "2,1", "2017-12-03T09:00", "2017-12-03T10:30", "FOOD")
@@ -21,7 +21,7 @@ class LocalEventFilterTest{
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events)
         assertTrue(organisedEvents.get(0).name == "4")
         assertTrue(organisedEvents.get(1).name == "3")
-        assertTrue(organisedEvents.get(2).name == "1")
+        assertTrue(organisedEvents.get(2).name == "1.3")
         assertTrue(organisedEvents.get(3).name == "2")
     }
 
@@ -30,7 +30,7 @@ class LocalEventFilterTest{
     fun displayEventsCorrectOrderTimeLastToFirst(){
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events)
         assertTrue(organisedEvents.get(0).name == "2")
-        assertTrue(organisedEvents.get(1).name == "1")
+        assertTrue(organisedEvents.get(1).name == "1.3")
         assertTrue(organisedEvents.get(2).name == "3")
         assertTrue(organisedEvents.get(3).name == "4")
     }
@@ -65,6 +65,13 @@ class LocalEventFilterTest{
         assertTrue(organisedEvents1.count() == 1)
         assertTrue(organisedEvents2.count() == 0)
         assertTrue(organisedEvents3.count() == 3)
+    }
+
+    // Tests whether only events related to search query are filtered
+    @Test
+    fun displaySearchedEvents(){
+        val query:String = "3"
+        val filteredEvents = LocalEventFilter.searchEventByName(events, query)
     }
 
 }

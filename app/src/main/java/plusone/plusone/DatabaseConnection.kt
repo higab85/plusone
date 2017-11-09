@@ -91,6 +91,8 @@ object DatabaseConnection {
         }
         return false
     }
+    
+
 
     // Will return an array with all the events
     fun getEventsDB(): List<Event>?{
