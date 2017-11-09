@@ -24,6 +24,7 @@ class Event {
     var location:String = ""
     var type:String = ""
     var reqPeople:Int = 0
+    var distance:Double = 0.0
 
     constructor()
     constructor(name: String, location:String,start:String,end:String, type:String){
@@ -44,6 +45,14 @@ class Event {
         this.type=type
         this.reqPeople=reqPeople
     }
+    constructor(name: String, location:String,start:String,end:String, type:String,distance:Double){
+        this.name=name
+        this.location=location
+        this.start=start
+        this.end=end
+        this.type=type
+        this.distance=distance
+    }
     fun getstartDateTime():LocalDateTime{
         return LocalDateTime.parse(start, DateTimeFormatter.ISO_DATE_TIME)
     }
@@ -51,5 +60,9 @@ class Event {
     fun getstartTime():LocalTime{
         return getstartDateTime().toLocalTime()
     }
+
+
+
+
 
 }

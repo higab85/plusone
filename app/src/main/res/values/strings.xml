@@ -56,6 +56,10 @@
     <string name="NumberPeople">People subscribed</string>
     <string name="editTextSearch">Search</string>
 
+    <string name="editTextSortTime">Time</string>
+    <string name="editTextSortDistance">Distance</string>
+    <string name="editTextFilter">Filter</string>
+
 
     <string name="log_out">Log out</string>
     <string name="settingsChangeButton">Change</string>
@@ -155,6 +159,8 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+    <string name="search_title">Search...</string>
+    <string name="search_hint">Birras...</string>
 
 </resources>
 

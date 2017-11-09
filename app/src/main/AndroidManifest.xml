@@ -47,7 +47,14 @@
         </activity>
         <!-- <activity android:name=".AjustesActivity"></activity> -->
         <activity android:name=".EventListCardView" />
-        <activity android:name=".EventList" />
+        <activity android:name=".EventList" >
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".AllInfoEventActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

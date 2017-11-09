@@ -1,5 +1,7 @@
 package plusone.plusone
 
+import android.renderscript.RSInvalidStateException
+import android.support.annotation.IntegerRes
 import java.time.LocalDateTime
 
 /**
@@ -10,7 +12,7 @@ object LocalEventFilter {
 
     // adapted from:
     // https://rosettacode.org/wiki/Sorting_algorithms/Merge_sort#Kotlin
-    private fun mergeSort(list: List<Event>, type: String): List<Event> {
+    fun mergeSort(list: List<Event>, type: String): List<Event> {
         if (list.size <= 1) {
             return list
         }
@@ -41,6 +43,16 @@ object LocalEventFilter {
                         add(right[indexRight])
                         indexRight++
                     }
+                } else if (type == "distance") {
+                    if (left[indexLeft].distance <= right[indexRight].distance) {
+                        add(left[indexLeft])
+                        indexLeft++
+                    } else {
+                        add(right[indexRight])
+                        indexRight++
+                    }
+                } else {
+                    throw RSInvalidStateException("No vayas de sobrao")
                 }
             }
             while (indexLeft < left.size) {
@@ -52,6 +64,7 @@ object LocalEventFilter {
                 add(right[indexRight])
                 indexRight++
             }
+
         }
 
         return merge(mergeSort(left, type), mergeSort(right, type))
@@ -73,4 +86,15 @@ object LocalEventFilter {
     fun orderTimeLastToFirst(events: List<Event>): List<Event> =
             mergeSort(events, "time").reversed()
 
+    fun orderEventsByDistance(events: List<Event>): List<Event> {
+        /*for (event in events){
+        print(event.name)
+    }*/
+        return mergeSort(events, "distance")
+    }
+
+    fun searchEventByName(events: List<Event>?, query:String): List<Event> =
+            events!!.filter { it.name.contains(query) }
+
 }
+
