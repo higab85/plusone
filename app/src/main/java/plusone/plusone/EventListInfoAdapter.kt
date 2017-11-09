@@ -26,6 +26,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         var latitude:String = ""
         var longitude:String=""
 
+
         init {
 
             nameEvent=itemview.findViewById<TextView>(R.id.event_name)

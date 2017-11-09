@@ -82,7 +82,8 @@
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="9dp">
+        android:layout_margin="9dp"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewTimeEnd"
@@ -100,26 +101,35 @@
 
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="9dp">
 
-        <TextView
-            android:id="@+id/textViewLocation"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/location"
-            android:textSize="20dp" />
+            android:layout_margin="9dp"
+            android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPostalAddress" />
+            <TextView
+                android:id="@+id/textViewLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location"
+                android:textSize="20dp" />
 
-    </TableRow>
+
+            <EditText
+                android:id="@+id/eventAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10" />
+
+            <ImageButton
+                android:id="@+id/addAddressButon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_map" />
+
+        </LinearLayout>
+
 
     <TableRow
         android:layout_width="match_parent"

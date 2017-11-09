@@ -40,6 +40,7 @@
     <string name="type">Type</string>
     <string name="Subscribe">Subscribe</string>
     <string name="Unsubscribe">UnSubscribe</string>
+    <string name="addAddress">Add Address</string>
 
     <string-array name="arrayEventTypes">
         <item>Sports Event</item>

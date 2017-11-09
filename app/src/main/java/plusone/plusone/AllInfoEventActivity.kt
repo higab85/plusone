@@ -1,6 +1,7 @@
 package plusone.plusone
 
 import android.content.Intent
+import android.net.Uri
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -39,8 +40,10 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoPeopleNeededTextView: TextView = findViewById(R.id.allInfoPeopleNeeded) as TextView
         allInfoPeopleNeededTextView.text = allInfoPeopleNeeded
 
-        val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
-        val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
+        //val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
+        //val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
+
+        val allInfoLocation =this.intent.getStringExtra("allInfoLocation")
 
 
 
@@ -53,11 +56,18 @@ class AllInfoEventActivity : AppCompatActivity() {
         }
 
         SeeMapButton.setOnClickListener{
-            val intent = Intent(this, MapsActivity::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("latitude",allInfoLatitude)
-            intent.putExtra("longitude",allInfoLongitude)
-            startActivity(intent)
+            ///val intent = Intent(this, MapsActivity::class.java)
+            ///intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            ///intent.putExtra("latitude",allInfoLatitude)
+            /// intent.putExtra("longitude",allInfoLongitude)
+
+            val gmmIntentUri = Uri.parse("geo:0,0?q="+allInfoLocation+"")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.`package` = "com.google.android.apps.maps"
+            startActivity(mapIntent)
+
+
+           /// startActivity(intent)
         }
     }
     inner class subscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
