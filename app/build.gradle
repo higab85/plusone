@@ -47,9 +47,10 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:11.0.4'
     testCompile 'junit:junit:4.12'
 
+    compile "org.jetbrains.kotlin:kotlin-test:$kotlin_version"
 
-//    implementation "com.google.dagger:dagger:$daggerVersion"
-//    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+    // https://github.com/wdullaer/MaterialDateTimePicker
+//    compile 'com.wdullaer:materialdatetimepicker:3.4.0'
 }
 repositories {
     mavenCentral()
