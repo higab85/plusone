@@ -1,6 +1,7 @@
 package plusone.plusone
 
 import android.content.Intent
+import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
@@ -14,7 +15,8 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoEventName =this.intent.getStringExtra("allInfoEventName")
         val allInfoEventNameTextView: TextView = findViewById(R.id.allInfoEventName) as TextView
         allInfoEventNameTextView.text = allInfoEventName
-
+        val id = this.intent.getStringExtra("id")
+        val id2 = intent.getIntExtra("id", 0)
 
 
         val allInfoStart =this.intent.getStringExtra("allInfoStart")
@@ -40,12 +42,48 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
         val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
 
+
+
+        Subscribe.setOnClickListener {
+            val subscribeButton = subscribeEvent(0, id2).execute()
+        }
+
+        Unsubscribe.setOnClickListener {
+                val Unsubscribe = unsubscribeEvent(0,id2).execute()
+        }
+
         SeeMapButton.setOnClickListener{
             val intent = Intent(this, MapsActivity::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("latitude",allInfoLatitude)
             intent.putExtra("longitude",allInfoLongitude)
             startActivity(intent)
+        }
+    }
+    inner class subscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: Event): Boolean {
+            return DatabaseConnection.subscribeEventDB(idevent, iduser)
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            finish()
+        }
+
+        override fun onCancelled() {
+        }
+    }
+    inner class unsubscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: Event): Boolean {
+            return DatabaseConnection.dessubscribeEventDB(idevent, iduser)
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            finish()
+        }
+
+        override fun onCancelled() {
         }
     }
 }

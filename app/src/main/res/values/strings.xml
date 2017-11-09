@@ -38,7 +38,8 @@
     <string name="timeEnd">Finishes at</string>
     <string name="location"> Location</string>
     <string name="type">Type</string>
-    <string name="SignUp">Sign Up</string>
+    <string name="Subscribe">Subscribe</string>
+    <string name="Unsubscribe">UnSubscribe</string>
 
     <string-array name="arrayEventTypes">
         <item>Sports Event</item>

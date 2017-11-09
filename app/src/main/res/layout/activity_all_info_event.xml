@@ -182,10 +182,21 @@
         android:layout_marginLeft="100dp">
 
         <Button
-            android:id="@+id/SignUpButton"
+            android:id="@+id/Subscribe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/SignUp" />
+            android:text="@string/Subscribe" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="100dp">
+
+        <Button
+            android:id="@+id/Unsubscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Unsubscribe" />
     </TableRow>
 
 

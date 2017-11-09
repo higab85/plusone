@@ -27,13 +27,15 @@ class Event {
 
     constructor()
     constructor(name: String, location:String,start:String,end:String, type:String){
+
         this.name=name
         this.location=location
         this.start=start
         this.end=end
         this.type=type
     }
-    constructor(name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int){
+    constructor(eventID:Int,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int){
+        this.eventID=eventID
         this.name=name
         this.description=description
         this.location=location

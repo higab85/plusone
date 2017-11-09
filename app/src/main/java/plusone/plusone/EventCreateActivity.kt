@@ -29,6 +29,7 @@ class EventCreateActivity : AppCompatActivity() {
             event.type = spinner.getSelectedItem().toString();
             event.reqPeople = peopleNeeded.text.toString().toInt()
             CreateEvent().execute(event)
+
         }
 
     }
@@ -45,6 +46,9 @@ class EventCreateActivity : AppCompatActivity() {
         override fun onCancelled() {
         }
     }
+
+
+
 }
 
 

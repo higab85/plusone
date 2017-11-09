@@ -15,6 +15,7 @@ import android.content.Intent
 class EventListInfoAdapter(private val myContext: Context, private val eventsInfoList:List<Event>?): RecyclerView.Adapter<EventListInfoAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
+        var id: Int = 100
         var nameEvent: TextView
         var locationEvent: TextView
         var startEvent: TextView
@@ -26,6 +27,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         var longitude:String=""
 
         init {
+
             nameEvent=itemview.findViewById<TextView>(R.id.event_name)
             locationEvent = itemview.findViewById<TextView>(R.id.event_location)
             startEvent = itemview.findViewById<TextView>(R.id.event_start)
@@ -40,6 +42,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
             itemView.setOnClickListener{View->
                 //Toast.makeText(itemView.context,"Boton pulsado:" + eventsInfoList.name,Toast.LENGTH_LONG).show()
                 val intent = Intent(myContext, AllInfoEventActivity::class.java)
+                intent.putExtra("id", id)
                 intent.putExtra("allInfoEventName",nameEvent.text)
                 intent.putExtra("allInfoLocation",locationEvent.text)
                 intent.putExtra("allInfoStart",startEvent.text)
@@ -63,6 +66,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val eventInfo = eventsInfoList!![position]
+        holder.id = eventInfo.eventID
         holder.nameEvent.text = eventInfo.name
         holder.locationEvent.text = eventInfo.location
         holder.startEvent.text = eventInfo.start

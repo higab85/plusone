@@ -109,6 +109,7 @@ object DatabaseConnection {
                 event.location = resultSet.getString("location")
                 event.type = resultSet.getString("type")
                 event.reqPeople = resultSet.getString("req_people").toInt()
+                event.eventID = resultSet.getInt("id")
                 gatherings.add(event)
             }
             return gatherings
@@ -135,6 +136,7 @@ object DatabaseConnection {
                 event.location = resultSet.getString("location")
                 event.type = resultSet.getString("type")
                 event.reqPeople = resultSet.getString("req_people").toInt()
+                event.eventID = resultSet.getInt("id")
                 gatherings.add(event)
             }
             return gatherings
@@ -162,6 +164,7 @@ object DatabaseConnection {
                 event.location = resultSet.getString("location")
                 event.type = resultSet.getString("type")
                 event.reqPeople = resultSet.getString("req_people").toInt()
+                event.eventID = resultSet.getInt("id")
                 gatherings.add(event)
             }
             return gatherings
@@ -172,8 +175,47 @@ object DatabaseConnection {
         return null
     }
 
+    @Throws (SQLException::class)
+    fun subscribeEventDB(idUser: Int ,idEvent: Int): Boolean{
+        try{
 
+            val stmt = conn!!.createStatement()
 
+            // TODO: Add description
+            val query = "INSERT INTO plusone.events_users (id_userSub, id_eventSubs)" +
+                    "VALUES ('${idUser}','${idEvent}');"
+
+            stmt!!.executeUpdate(query)
+
+//        conn!!.commit()
+//        conn!!.close()
+            return true
+        } catch (ex: SQLException) {
+            // TODO: log this
+            ex.printStackTrace()
+        }
+        return false
+    }
+
+    @Throws (SQLException::class)
+    fun dessubscribeEventDB(idUser: Int ,idEvent: Int): Boolean{
+        try{
+
+            val stmt = conn!!.createStatement()
+
+            // TODO: Add description
+            val query = "DELETE FROM  plusone.events_users WHERE id_eventSubs = '$idEvent' AND id_userSub = '$idUser'"
+            stmt!!.executeUpdate(query)
+
+//        conn!!.commit()
+//        conn!!.close()
+            return true
+        } catch (ex: SQLException) {
+            // TODO: log this
+            ex.printStackTrace()
+        }
+        return false
+    }
 
     /**
      * This method makes a connection to MySQL Server and initialises conn.
