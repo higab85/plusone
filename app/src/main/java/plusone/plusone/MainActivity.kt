@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
         buttonSports.setOnClickListener{
-           val intent = Intent(this, EventListCardView::class.java)
+           val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
             intent.putExtra("searchHome", "Sports Event")
             startActivity(intent)
