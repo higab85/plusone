@@ -166,20 +166,20 @@ class LocalEventFilterTest{
     }
 
 
-    //test para cuando la lista está vacía y te ordena por distancia
+    //test para cuando la lista está vacía y te ordena por tiempo de inicio a final
     @Test
-    fun orderByTimeEventListEmpty(){
+    fun orderByTimeStartEndEventListEmpty(){
         val events3:List<Event> = listOf()
         assertTrue(LocalEventFilter.orderTimeFirstToLast(events3).count()==0)
     }
-    //test para cuando la lista tiene 4 eventos y te ordena por distancia
+    //test para cuando la lista tiene 4 eventos y te ordena por tiempo de inicio a final
     @Test
-    fun orderByTimeEventListHas4Events(){
+    fun orderByTimeStartEndEventListHas4Events(){
         assertTrue(LocalEventFilter.orderTimeFirstToLast(events2).count()==4)
     }
     //test que ordena por tiempo de inicio a final y están ya los eventos ordenados
     @Test
-    fun orderByTimeEventAlreadyOrdered(){
+    fun orderByTimeStartEndEventAlreadyOrdered(){
         val events3:List<Event> = listOf(event4,event3,event1,event2)
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events3)
         assertTrue(organisedEvents.get(0).name == "4")
@@ -189,7 +189,7 @@ class LocalEventFilterTest{
     }
     //test que ordena por tiempo de inicio a final y están desordenadas
     @Test
-    fun orderByTimeEventSimpleCase(){
+    fun orderByTimeStartEndEventSimpleCase(){
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events)
         assertTrue(organisedEvents.get(0).name == "4")
         assertTrue(organisedEvents.get(1).name == "3")
@@ -198,7 +198,7 @@ class LocalEventFilterTest{
     }
     //test que ordena por tiempo de inicio a final y están ya los eventos ordenados
     @Test
-    fun orderByTimeEventOneRepeated(){
+    fun orderByTimeStartEndEventOneRepeated(){
         val events3:List<Event> = listOf(event1,event1,event4,event3)
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events3)
         /* for (event in organisedEvents){
@@ -211,7 +211,7 @@ class LocalEventFilterTest{
     }
     //test que ordena por tiempo de inicio a final y tienen el mismo nombre y distinta distancia
     @Test
-    fun orderByTimeEvent2EventsSameNameDifferentDistance(){
+    fun orderByTimeEventStartEnd2EventsSameNameDifferentTime(){
         var eventSpecial:Event = Event("EventSpecial", "2.1", "2017-12-03T08:30", "2017-12-03T10:30", "FOOD")
         val events3:List<Event> = listOf(event1,event2,event4,eventSpecial)
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events3)
@@ -222,7 +222,7 @@ class LocalEventFilterTest{
     }
     //test que ordena por tiempo de inicio a final y misma distancia y diferente nombre
     @Test
-    fun orderByTimeEventSameDistanceDifferentName(){
+    fun orderByTimeEventStartEndSameTimeDifferentName(){
         var eventSpecial:Event = Event("EventSpecial", "2.1", "2017-12-03T10:00", "2017-12-03T10:30", "FOOD")
         val events3:List<Event> = listOf(event3,event2,event1,eventSpecial)
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events3)
@@ -236,10 +236,89 @@ class LocalEventFilterTest{
     }
     //test en el que se mete un evento incorrecto
     @Test
-    fun orderByTimeEventIncorrectEvent(){
+    fun orderByTimeEventStartEndIncorrectEvent(){
         var eventE:Event = Event()
         val events3:List<Event> = listOf(eventE)
         val organisedEvents:List<Event> = LocalEventFilter.orderTimeFirstToLast(events3)
+        assertFalse(organisedEvents.get(0).name == "EventE")
+    }
+
+
+
+    //test para cuando la lista está vacía y te ordena por tiempo de inicio a final
+    @Test
+    fun orderByTimeEventEndStartListEmpty(){
+        val events3:List<Event> = listOf()
+        assertTrue(LocalEventFilter.orderTimeLastToFirst(events3).count()==0)
+    }
+    //test para cuando la lista tiene 4 eventos y te ordena por tiempo de inicio a final
+    @Test
+    fun orderByTimeEventEndStartListHas4Events(){
+        assertTrue(LocalEventFilter.orderTimeLastToFirst(events2).count()==4)
+    }
+    //test que ordena por tiempo de inicio a final y están ya los eventos ordenados
+    @Test
+    fun orderByTimeEventEndStartAlreadyOrdered(){
+        val events3:List<Event> = listOf(event2,event1,event3,event4)
+        val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events3)
+        assertTrue(organisedEvents.get(0).name == "2")
+        assertTrue(organisedEvents.get(1).name == "1")
+        assertTrue(organisedEvents.get(2).name == "3")
+        assertTrue(organisedEvents.get(3).name == "4")
+    }
+    //test que ordena por tiempo de inicio a final y están desordenadas
+    @Test
+    fun orderByTimeEventEndStartSimpleCase(){
+        val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events)
+        assertTrue(organisedEvents.get(0).name == "2")
+        assertTrue(organisedEvents.get(1).name == "1")
+        assertTrue(organisedEvents.get(2).name == "3")
+        assertTrue(organisedEvents.get(3).name == "4")
+    }
+    //test que ordena por tiempo de inicio a final y están ya los eventos ordenados
+    @Test
+    fun orderByTimeEventEndStartOneRepeated(){
+        val events3:List<Event> = listOf(event1,event1,event4,event3)
+        val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events3)
+        /* for (event in organisedEvents){
+            print(event.name)
+        }*/
+        assertTrue(organisedEvents.get(0).name == "1")
+        assertTrue(organisedEvents.get(1).name == "1")
+        assertTrue(organisedEvents.get(2).name == "3")
+        assertTrue(organisedEvents.get(3).name == "4")
+    }
+    //test que ordena por tiempo de inicio a final y tienen el mismo nombre y distinta distancia
+    @Test
+    fun orderByTimeEventEndStart2EventsSameNameDifferentTime(){
+        var eventSpecial:Event = Event("EventSpecial", "2.1", "2017-12-03T08:30", "2017-12-03T10:30", "FOOD")
+        val events3:List<Event> = listOf(event1,event2,event4,eventSpecial)
+        val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events3)
+        assertTrue(organisedEvents.get(0).name == "2")
+        assertTrue(organisedEvents.get(1).name == "1")
+        assertTrue(organisedEvents.get(2).name == "4")
+        assertTrue(organisedEvents.get(3).name == "EventSpecial")
+    }
+    //test que ordena por tiempo de inicio a final y misma distancia y diferente nombre
+    @Test
+    fun orderByTimeEventEndStartSameTimeDifferentName(){
+        var eventSpecial:Event = Event("EventSpecial", "2.1", "2017-12-03T10:00", "2017-12-03T10:30", "FOOD")
+        val events3:List<Event> = listOf(event3,event2,event1,eventSpecial)
+        val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events3)
+        /*for (event in organisedEvents){
+            print(event.name)
+        }*/
+        assertTrue(organisedEvents.get(0).name == "2")
+        assertTrue(organisedEvents.get(1).name == "1")
+        assertTrue(organisedEvents.get(2).name == "EventSpecial")
+        assertTrue(organisedEvents.get(3).name == "3")
+    }
+    //test en el que se mete un evento incorrecto
+    @Test
+    fun orderByTimeEventEndStartIncorrectEvent(){
+        var eventE:Event = Event()
+        val events3:List<Event> = listOf(eventE)
+        val organisedEvents:List<Event> = LocalEventFilter.orderTimeLastToFirst(events3)
         assertFalse(organisedEvents.get(0).name == "EventE")
     }
 }
