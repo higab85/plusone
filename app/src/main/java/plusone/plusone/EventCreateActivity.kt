@@ -58,9 +58,15 @@ class EventCreateActivity : AppCompatActivity() {
         val minute = c.get(Calendar.MINUTE)
         val filterButton:Button? = findViewById(R.id.filterButton) as Button
 
+        fun singleDigitParser(value:Int):String {
+            if (value < 10)
+                return "0$value"
+            return value.toString()
+        }
+
         val dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
                 TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
-                    eventStart = date + "T$hour:$minute"
+                    eventStart = date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}"
                 },hour, minute, true)
 
         // show timepicker
@@ -76,15 +82,15 @@ class EventCreateActivity : AppCompatActivity() {
         val filterButton:Button? = findViewById(R.id.filterButton) as Button
         var returnDate:String? = null
 
-        fun dayParser(day:Int):String{
-            if(day < 10)
-                return "0$day"
-            return day.toString()
+        fun singleDigitParser(value:Int):String {
+            if (value < 10)
+                return "0$value"
+            return value.toString()
         }
 
         val dpd = DatePickerDialog(this, android.R.style.Animation_Dialog,
                 DatePickerDialog.OnDateSetListener{ datePicker, year, monthOfYear, dayOfMonth ->
-                    funTime(view, "$year-$monthOfYear-${dayParser(dayOfMonth)}")
+                    funTime(view, "$year-${singleDigitParser(monthOfYear+1)}-${singleDigitParser(dayOfMonth)}")
 
                 }, year, month, day)
 

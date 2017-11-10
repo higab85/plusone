@@ -12,9 +12,7 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.view.View
 import android.widget.*
-import java.time.LocalDate
 import java.time.LocalDateTime
-import java.time.LocalTime
 import java.time.format.DateTimeFormatter
 
 
@@ -23,6 +21,7 @@ import java.time.format.DateTimeFormatter
 class EventList : AppCompatActivity() {
     private var eventsInfoList:List<Event>? = null
     private var eventsInfoListCurated:List<Event>? = null
+
     var myRecyclerView: RecyclerView? = null
     var eventListInfoAdapter: EventListInfoAdapter? = null
     val searchWord:String = ""
@@ -86,46 +85,26 @@ class EventList : AppCompatActivity() {
                 myRecyclerView?.adapter= eventListInfoAdapter
             }
         }
-
-//        if (filterButton != null){
-//            filterButton.setOnClickListener{
-//                var dh: TimePickerDialogHandler = TimePickerDialogHandler()
-//                dh.show(this@EventList.fragmentManager, "time_picker")
-//            }
-//
-//        }
-
-
-
-//        fun onTimeSet(view:TimePicker, hourOfDay:Int, minute:Int) {
-//            // Do something with the time chosen by the user
-//            pickerHour = hourOfDay;
-//            pickerMin = minute;
-//        }
-
-//        if (distanceSortButton != null){
-//            distanceSortButton.setOnClickListener{view->
-//                eventsInfoList = LocalEventFilter.orderDistanceClosestFirst(eventsInfoList)
-//                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList)
-//                myRecyclerView?.adapter= eventListInfoAdapter
-//            }
-//        }
-
     }
 
     fun funTime(view: View, date:String){
         val c = Calendar.getInstance()
         val hour = c.get(Calendar.HOUR_OF_DAY)
         val minute = c.get(Calendar.MINUTE)
-        val filterButton:Button? = findViewById(R.id.filterButton) as Button
 
+        myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
+        myRecyclerView?.setHasFixedSize(true)
+        myRecyclerView?.layoutManager = LinearLayoutManager(this@EventList)
+
+        fun singleDigitParser(value:Int):String {
+            if (value < 10)
+                return "0$value"
+            return value.toString()
+        }
         val dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
                 TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
-                    myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
-                    myRecyclerView?.setHasFixedSize(true)
-                    myRecyclerView?.layoutManager = LinearLayoutManager(this@EventList)
 
-                    val time = LocalDateTime.parse(date + "T$hour:$minute", DateTimeFormatter.ISO_DATE_TIME)
+                    val time = LocalDateTime.parse(date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}", DateTimeFormatter.ISO_DATE_TIME)
 
                     eventsInfoListCurated = LocalEventFilter.filterByStartTimeAfter(eventsInfoList!!, time)
                     eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)
@@ -145,15 +124,16 @@ class EventList : AppCompatActivity() {
         val filterButton:Button? = findViewById(R.id.filterButton) as Button
         var returnDate:String? = null
 
-        fun dayParser(day:Int):String{
-            if(day < 10)
-                return "0$day"
-            return day.toString()
+        fun singleDigitParser(value:Int):String{
+            if(value < 10)
+                return "0$value"
+            return value.toString()
         }
 
         val dpd = DatePickerDialog(this, android.R.style.Animation_Dialog,
                 DatePickerDialog.OnDateSetListener{ datePicker, year, monthOfYear, dayOfMonth ->
-                        funTime(view, "$year-$monthOfYear-${dayParser(dayOfMonth)}")
+                    // MonthOfYear + 1 because january is month 0
+                        funTime(view, "$year-${singleDigitParser(monthOfYear + 1)}-${singleDigitParser(dayOfMonth)}")
 
                 }, year, month, day)
 
@@ -173,7 +153,6 @@ class EventList : AppCompatActivity() {
         if (Intent.ACTION_SEARCH == intent.action) {
             val query = intent.getStringExtra(SearchManager.QUERY)
             //use the query to search your data somehow
-            Toast.makeText(this,"Testing: " + query,Toast.LENGTH_SHORT).show()
         }
     }
 
