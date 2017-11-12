@@ -76,9 +76,9 @@ object DatabaseConnection {
 
             // TODO: Add description
             val query = "INSERT INTO plusone.events (name,description,start_date, end_date," +
-                    "location, type, req_people) VALUES ('${event.name}','${event.description}'," +
+                    "location, type, req_people, latitude, longitude) VALUES ('${event.name}','${event.description}'," +
                     "'${event.start}','${event.end}','${event.location}','${event.type}'," +
-                    "'${event.reqPeople}');"
+                    "'${event.reqPeople}','${event.latitude}','${event.longitude}');"
 
             stmt!!.executeUpdate(query)
 
