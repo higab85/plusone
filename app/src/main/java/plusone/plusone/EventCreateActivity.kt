@@ -28,53 +28,26 @@ class EventCreateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event)
 
-        val nameFrom =this.intent.getStringExtra("name")
-        eventName.setText(nameFrom)
-        val descriptionFrom =this.intent.getStringExtra("description")
-        description.setText(descriptionFrom)
-        val startFrom =this.intent.getStringExtra("start")
-        start.setText(startFrom)
-        val endFrom =this.intent.getStringExtra("end")
-        end.setText(endFrom)
-        val addressFrom = this.intent.getStringExtra("address")
-        eventAddress.setText(addressFrom)
-
-        val latitudeFrom = this.intent.getDoubleExtra("latitude",0.0)
-        val longitudeFrom = this.intent.getDoubleExtra("longitude",0.0)
-
-
         createEventButton.setOnClickListener{
             val event = Event()
             event.name = eventName.text.toString()
             event.description=description.text.toString()
             // TODO: change to calculatable format
-            event.start = start.text.toString()
+            event.start = eventStart!!
             event.end = end.text.toString()
             event.location = eventAddress.text.toString()
             val spinner = findViewById(R.id.eventType) as Spinner
             event.type = spinner.getSelectedItem().toString();
             event.reqPeople = peopleNeeded.text.toString().toInt()
-            event.latitude = latitudeFrom
-            event.longitude = longitudeFrom
-
             CreateEvent().execute(event)
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
 
         }
-        addAddressButon.setOnClickListener{View->
-            /// val gmmIntentUri = Uri.parse("geo:0,0?q="+eventAddress.text.toString()+"")
-            ///val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            ///mapIntent.`package` = "com.google.android.apps.maps"
-            ///startActivity(mapIntent)
-            val intent = Intent(this, MapsActivity::class.java)
-            intent.putExtra("name",eventName.text.toString() )
-            intent.putExtra("description",description.text.toString() )
-            intent.putExtra("start",start.text.toString() )
-            intent.putExtra("end",end.text.toString() )
-            intent.putExtra("address",eventAddress.text.toString() )
-            //intent.putExtra("reqPeople",peopleNeeded.text.toString().toInt() )
-            startActivity(intent)
+        addAddressButon.setOnClickListener{
+            val gmmIntentUri = Uri.parse("geo:0,0?q="+eventAddress.text.toString()+"")
+            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            mapIntent.`package` = "com.google.android.apps.maps"
+            startActivity(mapIntent)
+
         }
 
     }
