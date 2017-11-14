@@ -25,6 +25,8 @@ class Event {
     var type:String = ""
     var reqPeople:Int = 0
     var distance:Double = 0.0
+    var latitude:Double = 0.0
+    var longitude:Double = 0.0
 
     constructor()
     constructor(name: String, location:String,start:String,end:String, type:String){
@@ -35,7 +37,7 @@ class Event {
         this.end=end
         this.type=type
     }
-    constructor(eventID:Int,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int){
+    constructor(eventID:Int,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int, latitude:Double, longitude:Double){
         this.eventID=eventID
         this.name=name
         this.description=description
@@ -44,6 +46,9 @@ class Event {
         this.end=end
         this.type=type
         this.reqPeople=reqPeople
+        this.latitude = latitude
+        this.longitude = longitude
+
     }
     constructor(name: String, location:String,start:String,end:String, type:String,distance:Double){
         this.name=name
