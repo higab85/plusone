@@ -50,13 +50,20 @@ class EventCreateActivity : AppCompatActivity() {
 
         }
 
+        val eventStartsAtButton:Button? = findViewById(R.id.eventStartsAtButton) as Button
+
+        if (eventStartsAtButton != null){
+            eventStartsAtButton.setOnClickListener{view->
+                funDate()
+            }
+        }
+
     }
 
-    fun funTime(view: View, date:String){
+    fun funTime(date:String){
         val c = Calendar.getInstance()
         val hour = c.get(Calendar.HOUR_OF_DAY)
         val minute = c.get(Calendar.MINUTE)
-        val filterButton:Button? = findViewById(R.id.filterButton) as Button
 
         fun singleDigitParser(value:Int):String {
             if (value < 10)
@@ -74,12 +81,11 @@ class EventCreateActivity : AppCompatActivity() {
     }
 
 
-    fun funDate(view: View){
+    fun funDate(){
         val c = Calendar.getInstance()
         val day = c.get(Calendar.DAY_OF_MONTH)
         val month = c.get(Calendar.MONTH)
         val year = c.get(Calendar.YEAR)
-        val filterButton:Button? = findViewById(R.id.filterButton) as Button
         var returnDate:String? = null
 
         fun singleDigitParser(value:Int):String {
@@ -90,7 +96,7 @@ class EventCreateActivity : AppCompatActivity() {
 
         val dpd = DatePickerDialog(this, android.R.style.Animation_Dialog,
                 DatePickerDialog.OnDateSetListener{ datePicker, year, monthOfYear, dayOfMonth ->
-                    funTime(view, "$year-${singleDigitParser(monthOfYear+1)}-${singleDigitParser(dayOfMonth)}")
+                    funTime("$year-${singleDigitParser(monthOfYear+1)}-${singleDigitParser(dayOfMonth)}")
 
                 }, year, month, day)
 
