@@ -1,7 +1,8 @@
 package plusone.plusone
 
-import java.time.LocalDateTime
-import java.time.LocalTime
+import org.joda.time.*
+import org.joda.time.format.ISODateTimeFormat
+
 import java.time.format.DateTimeFormatter
 
 /**
@@ -59,7 +60,7 @@ class Event {
         this.distance=distance
     }
     fun getstartDateTime():LocalDateTime{
-        return LocalDateTime.parse(start, DateTimeFormatter.ISO_DATE_TIME)
+        return LocalDateTime.parse(start, ISODateTimeFormat.dateTime())
     }
 
     fun getstartTime():LocalTime{

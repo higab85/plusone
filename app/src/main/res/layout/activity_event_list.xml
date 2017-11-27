@@ -38,7 +38,7 @@
                 android:orientation="horizontal"
                 app:layout_scrollFlags="scroll|enterAlways">
 
-                <EditText
+                    <EditText
                     android:id="@+id/editTextSearch2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

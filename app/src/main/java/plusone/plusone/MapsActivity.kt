@@ -62,7 +62,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import android.location.Geocoder
 import java.io.IOException
-import android.location.Address;
+import android.location.Address
 import android.util.Log
 import android.widget.Toast
 import com.google.android.gms.maps.model.Marker
@@ -152,7 +152,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                         .title("Your Event Location").draggable(true).snippet("Latitude: "+address.latitude+"/ Longitude: "+address.longitude))
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
                 Toast.makeText(this, "Click on Marker to add it as a position!",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_SHORT).show()
                 addressTo = SearchAddress
             }
         }

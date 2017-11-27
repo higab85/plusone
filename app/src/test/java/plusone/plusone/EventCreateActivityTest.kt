@@ -9,6 +9,4 @@ import java.util.*
 /**
  * Created by tyler on 16/10/17.
  */
-class EventCreateActivityTest {
-
-}
+class EventCreateActivityTest

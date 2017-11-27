@@ -7,6 +7,7 @@ import android.widget.ImageButton
 import android.widget.Toast
 import android.widget.Button
 import android.widget.EditText
+import net.danlew.android.joda.JodaTimeAndroid
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        JodaTimeAndroid.init(this);
 
         val imageButtonSettings =findViewById(R.id.imageButtonSettings) as ImageButton
         val imageButtonAddEvent =findViewById(R.id.imageButtonAddEvent) as ImageButton
@@ -41,37 +43,37 @@ class MainActivity : AppCompatActivity() {
         }
         buttonSports.setOnClickListener{
            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             intent.putExtra("searchHome", "Sports Event")
             startActivity(intent)
         }
         buttonParty.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             intent.putExtra("searchHome", "Party")
             startActivity(intent)
         }
         buttonEntertainment.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             intent.putExtra("searchHome", "Entertainment")
             startActivity(intent)
         }
         buttonLearning.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             intent.putExtra("searchHome", "Learning")
             startActivity(intent)
         }
         buttonOthers.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             intent.putExtra("searchHome", "Others")
             startActivity(intent)
         }
         buttonFood.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
             intent.putExtra("searchHome", "Food")
             startActivity(intent)
         }
@@ -81,7 +83,7 @@ class MainActivity : AppCompatActivity() {
             val searchBar: EditText = findViewById(R.id.editTextSearchHome) as EditText
             val searchWordHome:String = searchBar.text.toString()
             intent.putExtra("searchHome", searchWordHome)
-            intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+            intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK)
             startActivity(intent)
         }
     }

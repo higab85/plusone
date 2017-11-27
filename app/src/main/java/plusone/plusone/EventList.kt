@@ -12,8 +12,8 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.view.View
 import android.widget.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import org.joda.time.*
+import org.joda.time.format.ISODateTimeFormat
 
 
 // This activity will show an undetailed list of all the events (filtered or not depending on
@@ -104,7 +104,7 @@ class EventList : AppCompatActivity() {
         val dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
                 TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
 
-                    val time = LocalDateTime.parse(date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}", DateTimeFormatter.ISO_DATE_TIME)
+                    val time = LocalDateTime.parse(date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}", ISODateTimeFormat.dateTime())
 
                     eventsInfoListCurated = LocalEventFilter.filterByStartTimeAfter(eventsInfoList!!, time)
                     eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)

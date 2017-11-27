@@ -1,11 +1,13 @@
 package plusone.plusone
 
 import android.renderscript.RSInvalidStateException
+import net.danlew.android.joda.JodaTimeAndroid
 import org.junit.Assert.*
 import org.junit.Test
 import plusone.plusone.LocalEventFilter.mergeSort
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
+import org.joda.time.LocalDateTime
+import org.joda.time.format.ISODateTimeFormat
+import org.junit.Before
 import kotlin.test.*
 
 /**
@@ -24,6 +26,8 @@ class LocalEventFilterTest{
     var event32:Event = Event("Event3", "2.1", "2017-12-03T10:00", "2017-12-03T14:30", "FOOD",7.5)
     var event42:Event = Event("Event4", "2.1", "2017-12-03T09:00", "2017-12-03T10:30", "FOOD",5.5)
     val events2:List<Event> = listOf(event12,event22,event32,event42)
+
+
     // Tests whether events are in order from first occurring to last
     @Test
     fun displayEventsCorrectOrderTimeFirstToLast(){
@@ -47,9 +51,9 @@ class LocalEventFilterTest{
     // Tests whether only events after a certain time are filtered
     @Test
     fun displayEventsAfterSpecificTime(){
-        val dateTime1 = LocalDateTime.parse( "2017-12-03T09:30", DateTimeFormatter.ISO_DATE_TIME)
-        val dateTime2 = LocalDateTime.parse( "2017-12-03T09:00", DateTimeFormatter.ISO_DATE_TIME)
-        val dateTime3 = LocalDateTime.parse( "2017-12-03T12:15", DateTimeFormatter.ISO_DATE_TIME)
+        val dateTime1 = LocalDateTime.parse( "2017-12-03T09:30", ISODateTimeFormat.dateTime())
+        val dateTime2 = LocalDateTime.parse( "2017-12-03T09:00", ISODateTimeFormat.dateTime())
+        val dateTime3 = LocalDateTime.parse( "2017-12-03T12:15", ISODateTimeFormat.dateTime())
 
         val organisedEvents1:List<Event> = LocalEventFilter.filterByStartTimeAfter(events, dateTime1)
         val organisedEvents2:List<Event> = LocalEventFilter.filterByStartTimeAfter(events, dateTime2)
@@ -63,9 +67,9 @@ class LocalEventFilterTest{
     // Tests whether only events before a certain time are filtered
     @Test
     fun displayEventsBeforeSpecificTime(){
-        val dateTime1 = LocalDateTime.parse( "2017-12-03T09:30", DateTimeFormatter.ISO_DATE_TIME)
-        val dateTime2 = LocalDateTime.parse( "2017-12-03T08:00", DateTimeFormatter.ISO_DATE_TIME)
-        val dateTime3 = LocalDateTime.parse( "2017-12-03T12:30", DateTimeFormatter.ISO_DATE_TIME)
+        val dateTime1 = LocalDateTime.parse( "2017-12-03T09:30", ISODateTimeFormat.dateTime())
+        val dateTime2 = LocalDateTime.parse( "2017-12-03T08:00", ISODateTimeFormat.dateTime())
+        val dateTime3 = LocalDateTime.parse( "2017-12-03T12:30", ISODateTimeFormat.dateTime())
 
         val organisedEvents1:List<Event> = LocalEventFilter.filterByStartTimeBefore(events, dateTime1)
         val organisedEvents2:List<Event> = LocalEventFilter.filterByStartTimeBefore(events, dateTime2)
@@ -91,29 +95,29 @@ class LocalEventFilterTest{
     fun orderByDistanceEventAlreadyOrdered(){
         val events3:List<Event> = listOf(event22,event12,event42,event32)
         val organisedEvents:List<Event> = LocalEventFilter.orderEventsByDistance(events3)
-        assertTrue(organisedEvents.get(0).name == "Event2")
-        assertTrue(organisedEvents.get(1).name == "Event1")
-        assertTrue(organisedEvents.get(2).name == "Event4")
-        assertTrue(organisedEvents.get(3).name == "Event3")
+        assertTrue(organisedEvents[0].name == "Event2")
+        assertTrue(organisedEvents[1].name == "Event1")
+        assertTrue(organisedEvents[2].name == "Event4")
+        assertTrue(organisedEvents[3].name == "Event3")
     }
     //test que ordena por distancia y están desordenadas
     @Test
     fun orderByDistanceEventSimpleCase(){
         val organisedEvents:List<Event> = LocalEventFilter.orderEventsByDistance(events2)
-        assertTrue(organisedEvents.get(0).name == "Event2")
-        assertTrue(organisedEvents.get(1).name == "Event1")
-        assertTrue(organisedEvents.get(2).name == "Event4")
-        assertTrue(organisedEvents.get(3).name == "Event3")
+        assertTrue(organisedEvents[0].name == "Event2")
+        assertTrue(organisedEvents[1].name == "Event1")
+        assertTrue(organisedEvents[2].name == "Event4")
+        assertTrue(organisedEvents[3].name == "Event3")
     }
     //test que ordena por distancia y están ya los eventos ordenados
     @Test
     fun orderByDistanceEventOneRepeated(){
         val events3:List<Event> = listOf(event12,event12,event42,event32)
         val organisedEvents:List<Event> = LocalEventFilter.orderEventsByDistance(events3)
-        assertTrue(organisedEvents.get(0).name == "Event1")
-        assertTrue(organisedEvents.get(1).name == "Event1")
-        assertTrue(organisedEvents.get(2).name == "Event4")
-        assertTrue(organisedEvents.get(3).name == "Event3")
+        assertTrue(organisedEvents[0].name == "Event1")
+        assertTrue(organisedEvents[1].name == "Event1")
+        assertTrue(organisedEvents[2].name == "Event4")
+        assertTrue(organisedEvents[3].name == "Event3")
     }
     //test que ordena por distancia y tienen el mismo nombre y distinta distancia
     @Test
