@@ -29,7 +29,7 @@ class EventCreateActivity : AppCompatActivity() {
             event.start = eventStart!!
             event.end = end.text.toString()
             event.location = eventAddress.text.toString()
-            val spinner = findViewById<Spinner>(R.id.eventType) as Spinner
+            val spinner = findViewById<Spinner>(R.id.eventType)
             event.type = spinner.getSelectedItem().toString();
             event.reqPeople = peopleNeeded.text.toString().toInt()
             CreateEvent().execute(event)
@@ -43,7 +43,7 @@ class EventCreateActivity : AppCompatActivity() {
 
         }
 
-        val eventStartsAtButton:Button? = findViewById<Button>(R.id.eventStartsAtButton) as Button
+        val eventStartsAtButton:Button? = findViewById<Button>(R.id.eventStartsAtButton)
 
         if (eventStartsAtButton != null){
             eventStartsAtButton.setOnClickListener{view->

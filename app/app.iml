@@ -143,6 +143,7 @@
     <orderEntry type="library" exported="" name="support-vector-drawable-26.1.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="hamcrest-integration-1.3" level="project" />
     <orderEntry type="library" exported="" name="support-core-utils-26.1.0" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="espresso-intents-3.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="espresso-core-3.0.1" level="project" />
     <orderEntry type="library" exported="" name="kotlin-stdlib-jre7-1.1.51" level="project" />
     <orderEntry type="library" exported="" name="play-services-basement-11.0.4" level="project" />

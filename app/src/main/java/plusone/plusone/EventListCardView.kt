@@ -52,17 +52,17 @@ class EventListCardView : AppCompatActivity() {
             refreshSearchEventData(searchHome).execute()
         }
 
-        myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_viewoo) as RecyclerView
+        myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_viewoo)
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventListCardView)
 
 
-        val searchButton: ImageButton?  = findViewById<ImageButton>(R.id.imageButtonSearch) as ImageButton
+        val searchButton: ImageButton?  = findViewById<ImageButton>(R.id.imageButtonSearch)
 
 
         if (searchButton != null){
             searchButton.setOnClickListener{view->
-                val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2) as EditText
+                val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2)
                 val searchWord:String = searchBar.text.toString()
                 refreshSearchEventData(searchWord).execute()
             }
