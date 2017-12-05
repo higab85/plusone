@@ -248,16 +248,16 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
                                                    private val activityIntent: Intent) : AsyncTask<Void, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Void): Boolean{
-            return DatabaseConnection.loginUser(mUser, mPassword)
+            CurrentUser.username = mUser
+            CurrentUser.password = mPassword
+            return ServerConnection.loginUser()
         }
 
         override fun onPostExecute(success: Boolean) {
             mAuthTask = null
             showProgress(false)
             if (success) {
-                CurrentUser.userLoggedIn = true
                 startActivity(activityIntent)
-
             } else {
                 password.error = getString(R.string.error_incorrect_password)
                 password.requestFocus()

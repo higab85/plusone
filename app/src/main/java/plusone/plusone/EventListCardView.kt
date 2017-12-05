@@ -1,8 +1,8 @@
 package plusone.plusone
 
 import android.os.AsyncTask
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.widget.EditText
@@ -52,17 +52,17 @@ class EventListCardView : AppCompatActivity() {
             refreshSearchEventData(searchHome).execute()
         }
 
-        myRecyclerView = findViewById(R.id.event_list_recycler_viewoo) as RecyclerView
+        myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_viewoo) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventListCardView)
 
 
-        val searchButton: ImageButton?  = findViewById(R.id.imageButtonSearch) as ImageButton
+        val searchButton: ImageButton?  = findViewById<ImageButton>(R.id.imageButtonSearch) as ImageButton
 
 
         if (searchButton != null){
             searchButton.setOnClickListener{view->
-                val searchBar: EditText = findViewById(R.id.editTextSearch2) as EditText
+                val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2) as EditText
                 val searchWord:String = searchBar.text.toString()
                 refreshSearchEventData(searchWord).execute()
             }

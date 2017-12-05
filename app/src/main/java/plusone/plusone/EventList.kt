@@ -58,19 +58,19 @@ class EventList : AppCompatActivity() {
             refreshSearchEventData(searchHome).execute()
         }
 
-        myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
+        myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_view) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventList)
 
 
-        val searchButton: Button?  = findViewById(R.id.imageButtonSearch) as Button
-        val timeSortButton: Button?  = findViewById(R.id.sortTimeButton) as Button
-        val distanceSortButton: Button?  = findViewById(R.id.sortDistanceButton) as Button
-        val filterButton:Button? = findViewById(R.id.filterButton) as Button
+        val searchButton: Button?  = findViewById<Button>(R.id.imageButtonSearch) as Button
+        val timeSortButton: Button?  = findViewById<Button>(R.id.sortTimeButton) as Button
+        val distanceSortButton: Button?  = findViewById<Button>(R.id.sortDistanceButton) as Button
+        val filterButton:Button? = findViewById<Button>(R.id.filterButton) as Button
 
         if (searchButton != null){
             searchButton.setOnClickListener{view->
-                val searchBar: EditText = findViewById(R.id.editTextSearch2) as EditText
+                val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2) as EditText
                 val searchWord:String = searchBar.text.toString()
                 eventsInfoListCurated = LocalEventFilter.searchEventByName(eventsInfoList, searchWord)
                 eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)
@@ -92,7 +92,7 @@ class EventList : AppCompatActivity() {
         val hour = c.get(Calendar.HOUR_OF_DAY)
         val minute = c.get(Calendar.MINUTE)
 
-        myRecyclerView = findViewById(R.id.event_list_recycler_view) as RecyclerView
+        myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_view) as RecyclerView
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventList)
 
@@ -121,7 +121,7 @@ class EventList : AppCompatActivity() {
         val day = c.get(Calendar.DAY_OF_MONTH)
         val month = c.get(Calendar.MONTH)
         val year = c.get(Calendar.YEAR)
-        val filterButton:Button? = findViewById(R.id.filterButton) as Button
+        val filterButton:Button? = findViewById<Button>(R.id.filterButton) as Button
         var returnDate:String? = null
 
         fun singleDigitParser(value:Int):String{
