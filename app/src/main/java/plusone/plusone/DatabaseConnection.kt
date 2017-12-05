@@ -4,8 +4,6 @@ package plusone.plusone
  * Created by Gabriel on 6/10/17.
  */
 
-import android.app.usage.UsageEvents
-import kotlinx.android.synthetic.main.activity_event.*
 import java.sql.*
 import java.util.Properties
 

@@ -22,11 +22,12 @@ class Event {
     var start:String = ""
     var end:String = ""
     var location:String = ""
+    var latitude = ""
+    var longitude = ""
     var type:String = ""
     var reqPeople:Int = 0
     var distance:Double = 0.0
-    var latitude:Double = 0.0
-    var longitude:Double = 0.0
+    var subscription:Boolean? = null
 
     constructor()
     constructor(name: String, location:String,start:String,end:String, type:String){
