@@ -101,7 +101,7 @@ class EventCreateActivity : AppCompatActivity() {
     inner class CreateEvent: AsyncTask<Event, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Event): Boolean {
-            return DatabaseConnection.createEventDB(params[0])
+            return ServerConnection.createEvent(params[0])
         }
 
         override fun onPostExecute(success: Boolean?) {

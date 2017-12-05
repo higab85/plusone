@@ -2,6 +2,7 @@ package plusone.plusone
 
 import android.os.AsyncTask
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -75,7 +76,7 @@ class EventListCardView : AppCompatActivity() {
     inner class refreshEventData: AsyncTask<Void, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Void):Boolean{
-            eventsInfoList = DatabaseConnection.getEventsDB()
+            eventsInfoList = ServerConnection.getEvents()
             return true
         }
 
@@ -92,7 +93,9 @@ class EventListCardView : AppCompatActivity() {
     inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
-            eventsInfoList = DatabaseConnection.searchEventsDB(searchObject)
+            // TODO implement serverconnection
+//            eventsInfoList = ServerConnection.searchEventsDB(searchObject)
+            eventsInfoList = ServerConnection.getEvents()
             return true
         }
 
@@ -109,7 +112,9 @@ class EventListCardView : AppCompatActivity() {
     inner class refreshEventByType(private val type:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
-            eventsInfoList = DatabaseConnection.searchEventsByType(type)
+            // todo implement serverconnection
+//            eventsInfoList = DatabaseConnection.searchEventsByType(type)
+            eventsInfoList = ServerConnection.getEvents()
             return true
         }
 
