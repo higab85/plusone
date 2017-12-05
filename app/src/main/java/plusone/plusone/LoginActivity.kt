@@ -152,7 +152,8 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
 
     private fun isPasswordValid(password: String): Boolean {
         //TODO: Replace this with your own logic
-        return password.length > 3
+//        return password.length > 3
+        return true
     }
 
     /**
@@ -248,7 +249,7 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
                                                    private val activityIntent: Intent) : AsyncTask<Void, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Void): Boolean{
-            CurrentUser.username = mUser
+            CurrentUser.email = mUser
             CurrentUser.password = mPassword
             return ServerConnection.loginUser()
         }

@@ -71,6 +71,7 @@ class AllInfoEventActivity : AppCompatActivity() {
            /// startActivity(intent)
         }
     }
+    // TODO cambiar a serverconnection
     inner class subscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Event): Boolean {
