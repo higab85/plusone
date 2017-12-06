@@ -15,6 +15,7 @@ import android.widget.Spinner
 class EventCreateActivity : AppCompatActivity() {
 
     var eventStart:String? = null
+    var eventEnd:String? = null
 //    var eventEnd:String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,8 +27,10 @@ class EventCreateActivity : AppCompatActivity() {
             event.name = eventName.text.toString()
             event.description=description.text.toString()
             // TODO: change to calculatable format
+            System.out.println(eventStart)
+            System.out.println(eventEnd)
             event.start = eventStart!!
-            event.end = end.text.toString()
+            event.end = eventEnd!!
             event.location = eventAddress.text.toString()
             val spinner = findViewById<Spinner>(R.id.eventType)
             event.type = spinner.getSelectedItem().toString();
@@ -47,13 +50,22 @@ class EventCreateActivity : AppCompatActivity() {
 
         if (eventStartsAtButton != null){
             eventStartsAtButton.setOnClickListener{view->
-                funDate()
+                 funDate(true)
+            }
+        }
+        val eventEndsAtButton:Button? = findViewById<Button>(R.id.eventEndsAtButton)
+
+        if (eventEndsAtButton != null){
+            eventEndsAtButton.setOnClickListener{view->
+                funDate(false)
             }
         }
 
     }
 
-    fun funTime(date:String){
+
+    var time:String = ""
+    fun funTime(date:String?, start:Boolean){
         val c = Calendar.getInstance()
         val hour = c.get(Calendar.HOUR_OF_DAY)
         val minute = c.get(Calendar.MINUTE)
@@ -64,22 +76,28 @@ class EventCreateActivity : AppCompatActivity() {
             return value.toString()
         }
 
-        val dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
-                TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
-                    eventStart = date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}"
-                },hour, minute, true)
+        var dpd:TimePickerDialog?
+        if(start)
+             dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
+                    TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
+                        eventStart = date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}"
+                    },hour, minute, true)
+        else
+            dpd = TimePickerDialog(this, android.R.style.Animation_Dialog,
+                    TimePickerDialog.OnTimeSetListener{ timePicker, hour, minute ->
+                        eventEnd = date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}"
+                    },hour, minute, true)
 
         // show timepicker
         dpd.show()
     }
 
 
-    fun funDate(){
+    fun funDate(start:Boolean){
         val c = Calendar.getInstance()
         val day = c.get(Calendar.DAY_OF_MONTH)
         val month = c.get(Calendar.MONTH)
         val year = c.get(Calendar.YEAR)
-        var returnDate:String? = null
 
         fun singleDigitParser(value:Int):String {
             if (value < 10)
@@ -89,13 +107,11 @@ class EventCreateActivity : AppCompatActivity() {
 
         val dpd = DatePickerDialog(this, android.R.style.Animation_Dialog,
                 DatePickerDialog.OnDateSetListener{ datePicker, year, monthOfYear, dayOfMonth ->
-                    funTime("$year-${singleDigitParser(monthOfYear+1)}-${singleDigitParser(dayOfMonth)}")
-
+                    funTime("$year-${singleDigitParser(monthOfYear+1)}-${singleDigitParser(dayOfMonth)}", start)
                 }, year, month, day)
 
         // show datepicker
         dpd.show()
-
     }
 
     inner class CreateEvent: AsyncTask<Event, Void, Boolean>() {

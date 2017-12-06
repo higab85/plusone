@@ -36,22 +36,22 @@ class EventList : AppCompatActivity() {
         if (searchHome==""){
             refreshEventData().execute()
         }
-        else if (searchHome=="Sports Event"){
+        else if (searchHome=="SPORTS EVENT"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="Food"){
+        else if (searchHome=="FOOD"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="Party"){
+        else if (searchHome=="PARTY"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="Entertainment"){
+        else if (searchHome=="ENTERTAINMENT"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="Learning"){
+        else if (searchHome=="LEARNING"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="Others"){
+        else if (searchHome=="OTHER"){
             refreshEventByType(searchHome).execute()
         }
         else{
@@ -177,9 +177,8 @@ class EventList : AppCompatActivity() {
     inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
-//            TODO: implementar searchEvents en ServerConnection
-//            eventsInfoList = ServerConnection.searchEvents()
-            eventsInfoList = ServerConnection.getEvents()
+            val query = mapOf("name" to searchObject)
+            eventsInfoList = ServerConnection.getEvents(query)
             return true
         }
 
@@ -196,9 +195,8 @@ class EventList : AppCompatActivity() {
     inner class refreshEventByType(private val type:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
-//            TODO: implementar funcion search
-//            eventsInfoList = ServerConnection.searchEventsByType(type)
-            eventsInfoList = ServerConnection.getEvents()
+            val query = mapOf("type" to type)
+            eventsInfoList = ServerConnection.getEvents(query)
             return true
         }
 

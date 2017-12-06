@@ -8,6 +8,7 @@ import android.view.ViewGroup
 //import com.example.kotlin.myapplication.R
 import android.content.Context
 import android.content.Intent
+import java.io.Serializable
 
 /**
  * Created by Javicraft on 19/10/2017.
@@ -15,7 +16,7 @@ import android.content.Intent
 class EventListInfoAdapter(private val myContext: Context, private val eventsInfoList:List<Event>?): RecyclerView.Adapter<EventListInfoAdapter.MyViewHolder>(){
 
     inner class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
-        var id: Int = 100
+        var id: String = "100"
         var nameEvent: TextView
         var locationEvent: TextView
         var startEvent: TextView
@@ -39,20 +40,11 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
 
 
         }
-        fun bind(eventsInfoList: Event){
+        fun bind(event: Event){
             itemView.setOnClickListener{View->
                 //Toast.makeText(itemView.context,"Boton pulsado:" + eventsInfoList.name,Toast.LENGTH_LONG).show()
                 val intent = Intent(myContext, AllInfoEventActivity::class.java)
-                intent.putExtra("id", id)
-                intent.putExtra("allInfoEventName",nameEvent.text)
-                intent.putExtra("allInfoLocation",locationEvent.text)
-                intent.putExtra("allInfoStart",startEvent.text)
-                intent.putExtra("allInfoEnd",endEvent.text)
-                intent.putExtra("allInfoDescription",descriptionEvent.text)
-                intent.putExtra("allInfoEventType",typeEvent.text)
-                intent.putExtra("allInfoPeopleNeeded",reqPeopleEvent.text)
-                intent.putExtra("allInfoLatitude",latitude)
-                intent.putExtra("allInfoLongitude",longitude)
+                intent.putExtra("event", event as Serializable)
                 itemView.context.startActivity(intent)
             }
         }
@@ -67,7 +59,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val eventInfo = eventsInfoList!![position]
-        holder.id = eventInfo.eventID
+        holder.id = eventInfo.id
         holder.nameEvent.text = eventInfo.name
         holder.locationEvent.text = eventInfo.location
         holder.startEvent.text = eventInfo.start

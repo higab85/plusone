@@ -43,37 +43,37 @@ class MainActivity : AppCompatActivity() {
         buttonSports.setOnClickListener{
            val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Sports Event")
+            intent.putExtra("searchHome", "SPORTS EVENT")
             startActivity(intent)
         }
         buttonParty.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Party")
+            intent.putExtra("searchHome", "PARTY")
             startActivity(intent)
         }
         buttonEntertainment.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Entertainment")
+            intent.putExtra("searchHome", "ENTERTAINMENT")
             startActivity(intent)
         }
         buttonLearning.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Learning")
+            intent.putExtra("searchHome", "LEARNING")
             startActivity(intent)
         }
         buttonOthers.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Others")
+            intent.putExtra("searchHome", "OTHER")
             startActivity(intent)
         }
         buttonFood.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Food")
+            intent.putExtra("searchHome", "FOOD")
             startActivity(intent)
         }
 

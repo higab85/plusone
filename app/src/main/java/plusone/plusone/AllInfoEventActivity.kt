@@ -17,29 +17,28 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoEventName =this.intent.getStringExtra("allInfoEventName")
         val allInfoEventNameTextView: TextView = findViewById<TextView>(R.id.allInfoEventName)
         allInfoEventNameTextView.text = allInfoEventName
-        val id = this.intent.getStringExtra("id")
-        val id2 = intent.getIntExtra("id", 0)
 
+        val event:Event = this.intent.getSerializableExtra("event") as Event
 
-        val allInfoStart =this.intent.getStringExtra("allInfoStart")
+        val allInfoStart = event.start
         val allInfoStartTextView: TextView = findViewById<TextView>(R.id.allInfoStart)
         allInfoStartTextView.text = allInfoStart
 
-        val allInfoEnd =this.intent.getStringExtra("allInfoEnd")
+        val allInfoEnd = event.end
         val allInfoEndTextView: TextView = findViewById<TextView>(R.id.allInfoEnd)
         allInfoEndTextView.text = allInfoEnd
 
-        val allInfoDescription =this.intent.getStringExtra("allInfoDescription")
+        val allInfoDescription = event.description
         val allInfoDescriptionTextView: TextView = findViewById<TextView>(R.id.allInfoDescription)
         allInfoDescriptionTextView.text = allInfoDescription
 
-        val allInfoEventType =this.intent.getStringExtra("allInfoEventType")
+        val allInfoEventType = event.type
         val allInfoEventTypeTextView: TextView = findViewById<TextView>(R.id.allInfoEventType)
         allInfoEventTypeTextView.text = allInfoEventType
 
-        val allInfoPeopleNeeded =this.intent.getStringExtra("allInfoPeopleNeeded")
+        val allInfoPeopleNeeded = event.reqPeople
         val allInfoPeopleNeededTextView: TextView = findViewById<TextView>(R.id.allInfoPeopleNeeded)
-        allInfoPeopleNeededTextView.text = allInfoPeopleNeeded
+        allInfoPeopleNeededTextView.text = allInfoPeopleNeeded.toString()
 
         //val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
         //val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
@@ -49,11 +48,11 @@ class AllInfoEventActivity : AppCompatActivity() {
 
 
         Subscribe.setOnClickListener {
-            val subscribeButton = subscribeEvent(0, id2).execute()
+            toggleSubscribeEvent(event).execute()
         }
 
         Unsubscribe.setOnClickListener {
-                val Unsubscribe = unsubscribeEvent(0,id2).execute()
+            toggleSubscribeEvent(event).execute()
         }
 
         SeeMapButton.setOnClickListener{
@@ -71,24 +70,11 @@ class AllInfoEventActivity : AppCompatActivity() {
            /// startActivity(intent)
         }
     }
-    // TODO cambiar a serverconnection
-    inner class subscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
+
+    inner class toggleSubscribeEvent (private val event:Event): AsyncTask<Event, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Event): Boolean {
-            return DatabaseConnection.subscribeEventDB(idevent, iduser)
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            finish()
-        }
-
-        override fun onCancelled() {
-        }
-    }
-    inner class unsubscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: Event): Boolean {
-            return DatabaseConnection.dessubscribeEventDB(idevent, iduser)
+            return ServerConnection.toggleSubscriptionToEvent(event)
         }
 
         override fun onPostExecute(success: Boolean?) {
