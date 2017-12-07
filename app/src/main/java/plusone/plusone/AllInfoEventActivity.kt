@@ -6,66 +6,62 @@ import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.mysql.fabric.Server
 import kotlinx.android.synthetic.main.activity_all_info_event.*
 import org.w3c.dom.Text
+import java.io.Serializable
 
 class AllInfoEventActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_info_event)
-        val allInfoEventName =this.intent.getStringExtra("allInfoEventName")
-        val allInfoEventNameTextView: TextView = findViewById<TextView>(R.id.allInfoEventName)
-        allInfoEventNameTextView.text = allInfoEventName
 
         val event:Event = this.intent.getSerializableExtra("event") as Event
 
-        val allInfoStart = event.start
+        System.out.println("Subscription: ${event.subscription}")
+
+        val allInfoEventNameTextView: TextView = findViewById<TextView>(R.id.allInfoEventName)
+        allInfoEventNameTextView.text = event.name
+
         val allInfoStartTextView: TextView = findViewById<TextView>(R.id.allInfoStart)
-        allInfoStartTextView.text = allInfoStart
+        allInfoStartTextView.text = event.start
 
-        val allInfoEnd = event.end
         val allInfoEndTextView: TextView = findViewById<TextView>(R.id.allInfoEnd)
-        allInfoEndTextView.text = allInfoEnd
+        allInfoEndTextView.text = event.end
 
-        val allInfoDescription = event.description
+
         val allInfoDescriptionTextView: TextView = findViewById<TextView>(R.id.allInfoDescription)
-        allInfoDescriptionTextView.text = allInfoDescription
+        allInfoDescriptionTextView.text = event.description
 
-        val allInfoEventType = event.type
         val allInfoEventTypeTextView: TextView = findViewById<TextView>(R.id.allInfoEventType)
-        allInfoEventTypeTextView.text = allInfoEventType
+        allInfoEventTypeTextView.text = event.type
 
-        val allInfoPeopleNeeded = event.reqPeople
         val allInfoPeopleNeededTextView: TextView = findViewById<TextView>(R.id.allInfoPeopleNeeded)
-        allInfoPeopleNeededTextView.text = allInfoPeopleNeeded.toString()
+        allInfoPeopleNeededTextView.text = event.reqPeople.toString()
 
-        //val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
-        //val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
+        val subscriptionTextView: TextView = findViewById<TextView>(R.id.Subscribe)
 
-        val allInfoLocation =this.intent.getStringExtra("allInfoLocation")
+        val allInfoLocation = event.location
 
+        isAttendingEvent(event)
 
 
         Subscribe.setOnClickListener {
             toggleSubscribeEvent(event).execute()
+            if(event.subscription == true)
+                subscriptionTextView.text = "Subscribe"
+            else
+                subscriptionTextView.text = "Unsubscribe"
         }
 
-        Unsubscribe.setOnClickListener {
-            toggleSubscribeEvent(event).execute()
-        }
 
         SeeMapButton.setOnClickListener{
-            ///val intent = Intent(this, MapsActivity::class.java)
-            ///intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            ///intent.putExtra("latitude",allInfoLatitude)
-            /// intent.putExtra("longitude",allInfoLongitude)
-
             val gmmIntentUri = Uri.parse("geo:0,0?q="+allInfoLocation+"")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.`package` = "com.google.android.apps.maps"
             startActivity(mapIntent)
-
 
            /// startActivity(intent)
         }
@@ -83,5 +79,26 @@ class AllInfoEventActivity : AppCompatActivity() {
 
         override fun onCancelled() {
         }
+    }
+    inner class isAttendingEvent (private val event:Event): AsyncTask<Event, Boolean, Boolean>() {
+
+        override fun doInBackground(vararg params: Event): Boolean? {
+            return ServerConnection.isAttending(event)
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            answer(success)
+        }
+
+        override fun onCancelled() {
+        }
+    }
+
+    fun answer(ans:Boolean?){
+        val subscriptionTextView: TextView = findViewById<TextView>(R.id.Subscribe)
+        if(ans!!)
+            subscriptionTextView.text = "Unsubscribe"
+        else
+            subscriptionTextView.text = "Subscribe"
     }
 }

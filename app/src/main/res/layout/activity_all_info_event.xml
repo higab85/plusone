@@ -184,8 +184,7 @@
         <Button
             android:id="@+id/Subscribe"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/Subscribe" />
+            android:layout_height="wrap_content"/>
     </TableRow>
     <TableRow
         android:layout_width="match_parent"
@@ -193,10 +192,10 @@
         android:layout_marginLeft="100dp">
 
         <Button
-            android:id="@+id/Unsubscribe"
+            android:id="@+id/Chat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Unsubscribe" />
+            android:text="@string/Chat" />
     </TableRow>
 
 

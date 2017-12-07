@@ -36,22 +36,22 @@ class EventList : AppCompatActivity() {
         if (searchHome==""){
             refreshEventData().execute()
         }
-        else if (searchHome=="SPORTS EVENT"){
+        else if (searchHome=="Sports Event"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="FOOD"){
+        else if (searchHome=="Food"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="PARTY"){
+        else if (searchHome=="Party"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="ENTERTAINMENT"){
+        else if (searchHome=="Entertainment"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="LEARNING"){
+        else if (searchHome=="Learning"){
             refreshEventByType(searchHome).execute()
         }
-        else if (searchHome=="OTHER"){
+        else if (searchHome=="Others"){
             refreshEventByType(searchHome).execute()
         }
         else{

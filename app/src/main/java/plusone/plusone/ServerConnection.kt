@@ -132,7 +132,7 @@ object ServerConnection{
     fun toggleSubscriptionToEvent(event:Event):Boolean{
         val gson = Gson()
         val json = gson.toJson(CurrentUser)
-        val url = urlHost + "/event" + event.id
+        val url = urlHost + "/event/" + event.id
         val response:UsableResponse? = post(url, json, true)
         // TODO: this error is wrong, but needs to be fixed on server first.
         if (response?.message == "401")
@@ -176,4 +176,6 @@ object ServerConnection{
         val response = client.newCall(request)?.execute()
         return UsableResponse(response)
     }
+
+
 }
