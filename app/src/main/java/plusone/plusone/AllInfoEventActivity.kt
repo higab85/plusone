@@ -57,6 +57,11 @@ class AllInfoEventActivity : AppCompatActivity() {
         }
 
 
+        Chat.setOnClickListener {
+            val intent = Intent(this, plusone.plusone.Chat.MainActivity::class.java)
+            startActivity(intent)
+        }
+
         SeeMapButton.setOnClickListener{
             val gmmIntentUri = Uri.parse("geo:0,0?q="+allInfoLocation+"")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
