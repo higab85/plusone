@@ -63,10 +63,14 @@ class AllInfoEventActivity : AppCompatActivity() {
         }
 
         SeeMapButton.setOnClickListener{
-            val gmmIntentUri = Uri.parse("geo:0,0?q="+allInfoLocation+"")
-            val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-            mapIntent.`package` = "com.google.android.apps.maps"
-            startActivity(mapIntent)
+            ///val gmmIntentUri = Uri.parse("geo:0,0?q="+allInfoLocation+"")
+            ///val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+            ///mapIntent.`package` = "com.google.android.apps.maps"
+            val intent = Intent(this, MapsActivity::class.java)
+            intent.putExtra("all","Justlikethat")
+            intent.putExtra("latitudeGiven",event.latitude)
+            intent.putExtra("longitudeGiven",event.longitude)
+            startActivity(intent)
 
            /// startActivity(intent)
         }

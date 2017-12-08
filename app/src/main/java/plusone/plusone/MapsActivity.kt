@@ -64,9 +64,12 @@ import android.location.Geocoder
 import java.io.IOException
 import android.location.Address;
 import android.util.Log
+import android.view.View
+import android.widget.LinearLayout
 import android.widget.Toast
 import com.google.android.gms.maps.model.Marker
 import kotlinx.android.synthetic.main.activity_event.*
+import plusone.plusone.R.id.linear
 
 /**
  * An activity that displays a Google map with a marker (pin) to indicate a particular location.
@@ -91,10 +94,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val reqPeople =this.intent.getStringExtra("reqPeople")
         val addressKey =this.intent.getStringExtra("address")
 
+        val pageAllInfo = this.intent.getStringExtra("all")
 
 
-        val searchBar: EditText = findViewById(R.id.SearchAddress) as EditText
+
+        val searchBar: EditText = findViewById<EditText>(R.id.SearchAddress) as EditText
+        val linear:LinearLayout = findViewById<LinearLayout>(R.id.linear) as LinearLayout
+
+        if (pageAllInfo!=null && pageAllInfo!=""){
+            linear.setVisibility(View.GONE)
+        }
+
         searchBar.setText(addressKey)
+
 
 
     }
@@ -111,22 +123,35 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * installed Google Play services and returned to the app.
      */
     override fun onMapReady(googleMap: GoogleMap) {
-        // Add a marker in Sydney, Australia,
-        // and move the map's camera to the same location.
-        // val sydney = LatLng(-33.852, 151.211)
+
 
         var addressList:List<Address>? = null
 
-        val SearchMapButton =findViewById(R.id.SearchMapButton) as ImageButton
+        val SearchMapButton =findViewById<ImageButton>(R.id.SearchMapButton) as ImageButton
         var marker:Marker? = null
 
         var addressTo: String = ""
         var latitudeTo: Double= 0.0
         var longitudeTo: Double =0.0
 
+        val pageAllInfo = this.intent.getStringExtra("all")
+
+        if (pageAllInfo!=null && pageAllInfo!=""){
+            var latitudeGiven = this.intent.getStringExtra("latitudeGiven")
+            var longitudeGiven = this.intent.getStringExtra("longitudeGiven")
+            var latLngGiven: LatLng = LatLng(latitudeGiven.toDouble(),longitudeGiven.toDouble())
+
+            marker = googleMap.addMarker(MarkerOptions().position(latLngGiven)
+                    .title("Your Event Location").draggable(true).snippet("Latitude: "+latitudeGiven.toDouble()+"/ Longitude: "+longitudeGiven.toDouble()))
+            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLngGiven))
+            Toast.makeText(this, "Click on Marker to return to the previous page!",
+                    Toast.LENGTH_LONG).show();
+        }
+
         SearchMapButton.setOnClickListener{view->
-            val searchBar2: EditText = findViewById(R.id.SearchAddress) as EditText
+            val searchBar2: EditText = findViewById<EditText>(R.id.SearchAddress) as EditText
             val SearchAddress:String = searchBar2.text.toString()
+
 
 
             if(SearchAddress!=null || SearchAddress!=""){
@@ -149,31 +174,43 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     googleMap.clear()
                 }
                 marker = googleMap.addMarker(MarkerOptions().position(latLng)
-                        .title("Your Event Location").draggable(true).snippet("Latitude: "+address.latitude+"/ Longitude: "+address.longitude))
+                        .title("Your Event Location :"+SearchAddress).draggable(true).snippet("Latitude: "+address.latitude+"/ Longitude: "+address.longitude))
                 googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
                 Toast.makeText(this, "Click on Marker to add it as a position!",
-                        Toast.LENGTH_SHORT).show();
+                        Toast.LENGTH_LONG).show();
                 addressTo = SearchAddress
             }
         }
 
         googleMap.setOnInfoWindowClickListener{
 
-            val name =this.intent.getStringExtra("name")
-            val description =this.intent.getStringExtra("description")
-            val start =this.intent.getStringExtra("start")
-            val end =this.intent.getStringExtra("end")
-            val address = addressTo
+            if (pageAllInfo!=null && pageAllInfo!=""){
+                super.onBackPressed();
+            }
+            else{
+               /** val name =this.intent.getStringExtra("name")
+                val description =this.intent.getStringExtra("description")
+                val start =this.intent.getStringExtra("start")
+                val end =this.intent.getStringExtra("end")
+                val address = addressTo
 
-            val intent = Intent(this, EventCreateActivity::class.java)
-            intent.putExtra("name",name )
-            intent.putExtra("description",description)
-            intent.putExtra("start",start )
-            intent.putExtra("end",end )
-            intent.putExtra("address", address)
-            intent.putExtra("latitude", latitudeTo)
-            intent.putExtra("longitude", longitudeTo)
-            startActivity(intent)
+                val intent = Intent(this, EventCreateActivity::class.java)
+                intent.putExtra("name",name )
+                intent.putExtra("description",description)
+                intent.putExtra("start",start )
+                intent.putExtra("end",end )
+                intent.putExtra("address", address)
+                intent.putExtra("latitude", latitudeTo)
+                intent.putExtra("longitude", longitudeTo)
+                startActivity(intent)**/
+                val intent = Intent()
+                intent.putExtra("latitude", latitudeTo)
+                intent.putExtra("longitude", longitudeTo)
+                setResult(RESULT_OK, intent);
+                finish()
+
+            }
+
         }
 
 

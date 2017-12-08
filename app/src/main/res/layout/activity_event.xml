@@ -68,7 +68,7 @@
         android:layout_height="match_parent"
         android:layout_margin="9dp">
 
-        <TextView
+        <Button
             android:id="@+id/textViewTimeStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

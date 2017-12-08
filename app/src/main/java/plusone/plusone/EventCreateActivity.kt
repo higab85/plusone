@@ -1,7 +1,9 @@
 package plusone.plusone
 
+import android.app.Activity
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
+import android.content.Context
 import android.content.Intent
 import android.icu.util.Calendar
 import android.net.Uri
@@ -11,12 +13,19 @@ import kotlinx.android.synthetic.main.activity_event.*
 import android.widget.*
 import android.os.AsyncTask
 import android.widget.Spinner
+import android.provider.ContactsContract.CommonDataKinds.Phone
+
+
 
 class EventCreateActivity : AppCompatActivity() {
 
     var eventStart:String? = null
     var eventEnd:String? = null
 //    var eventEnd:String? = null
+    private val ID = 1
+
+    var latitudeFrom = 0.0
+    var longitudeFrom = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,14 +36,11 @@ class EventCreateActivity : AppCompatActivity() {
         val descriptionFrom =this.intent.getStringExtra("description")
         description.setText(descriptionFrom)
         val startFrom =this.intent.getStringExtra("start")
-        start.setText(startFrom)
+        //textViewTimeStart.setText(startFrom)
         val endFrom =this.intent.getStringExtra("end")
-        end.setText(endFrom)
+        //end.setText(endFrom)
         val addressFrom = this.intent.getStringExtra("address")
         eventAddress.setText(addressFrom)
-
-        val latitudeFrom = this.intent.getDoubleExtra("latitude",0.0)
-        val longitudeFrom = this.intent.getDoubleExtra("longitude",0.0)
 
 
         createEventButton.setOnClickListener{
@@ -50,8 +56,10 @@ class EventCreateActivity : AppCompatActivity() {
             val spinner = findViewById<Spinner>(R.id.eventType)
             event.type = spinner.getSelectedItem().toString();
             event.reqPeople = peopleNeeded.text.toString().toInt()
-            event.latitude = latitudeFrom
-            event.longitude = longitudeFrom
+            event.latitude = latitudeFrom.toString()
+            event.longitude = longitudeFrom.toString()
+
+
 
             CreateEvent().execute(event)
             val intent = Intent(this, MainActivity::class.java)
@@ -64,16 +72,16 @@ class EventCreateActivity : AppCompatActivity() {
             ///mapIntent.`package` = "com.google.android.apps.maps"
             ///startActivity(mapIntent)
             val intent = Intent(this, MapsActivity::class.java)
-            intent.putExtra("name",eventName.text.toString() )
-            intent.putExtra("description",description.text.toString() )
-            intent.putExtra("start",start.text.toString() )
-            intent.putExtra("end",end.text.toString() )
+            //intent.putExtra("name",eventName.text.toString() )
+            //intent.putExtra("description",description.text.toString() )
+            //intent.putExtra("start",start.text.toString() )
+           // intent.putExtra("end",end.text.toString() )
             intent.putExtra("address",eventAddress.text.toString() )
             //intent.putExtra("reqPeople",peopleNeeded.text.toString().toInt() )
-            startActivity(intent)
+            startActivityForResult(intent,ID)
         }
 
-        val eventStartsAtButton:Button? = findViewById<Button>(R.id.eventStartsAtButton)
+        val eventStartsAtButton:Button? = findViewById<Button>(R.id.textViewTimeStart)
 
         if (eventStartsAtButton != null){
             eventStartsAtButton.setOnClickListener{view->
@@ -155,6 +163,18 @@ class EventCreateActivity : AppCompatActivity() {
         }
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+        // Check which request we're responding to
+        if (requestCode == ID) {
+            // Make sure the request was successful
+            if (resultCode == Activity.RESULT_OK) {
+
+                latitudeFrom = data.getDoubleExtra("latitude",0.0)
+                longitudeFrom = data.getDoubleExtra("longitude",0.0)
+
+            }
+        }
+    }
 
 
 }
