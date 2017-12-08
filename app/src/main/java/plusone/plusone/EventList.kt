@@ -177,9 +177,8 @@ class EventList : AppCompatActivity() {
     inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
-//            TODO: implementar searchEvents en ServerConnection
-//            eventsInfoList = ServerConnection.searchEvents()
-            eventsInfoList = ServerConnection.getEvents()
+            val query = mapOf("name" to searchObject)
+            eventsInfoList = ServerConnection.getEvents(query)
             return true
         }
 
@@ -196,9 +195,8 @@ class EventList : AppCompatActivity() {
     inner class refreshEventByType(private val type:String): AsyncTask<String, Void, Boolean>() {
 
         override fun doInBackground(vararg params: String):Boolean{
-//            TODO: implementar funcion search
-//            eventsInfoList = ServerConnection.searchEventsByType(type)
-            eventsInfoList = ServerConnection.getEvents()
+            val query = mapOf("type" to type)
+            eventsInfoList = ServerConnection.getEvents(query)
             return true
         }
 

@@ -80,9 +80,25 @@ object ServerConnection{
         return list
     }
 
+    fun getEvents(queryMap:Map<String,String>):List<Event>?{
+        val gson = Gson()
+        var query = ""
+        queryMap.forEach { key, value -> query += ",$key=$value" }
+        query = query.removePrefix(",")
+        val url = urlHost + "/event?$query"
+        System.out.println(url)
+        val response:UsableResponse? = get(url,CurrentUser.token)
+
+//        https://futurestud.io/tutorials/gson-mapping-of-arrays-and-lists-of-objects
+        val eventListType = object : TypeToken<List<Event>>() {
+        }.type
+        val list:List<Event> = gson.fromJson(response?.body, eventListType)
+        return list
+    }
+
     fun getEvent(event:Event):Event?{
         val gson = Gson()
-        val url = urlHost + "/user/" + event.eventID
+        val url = urlHost + "/user/" + event.id
         val response:UsableResponse? = get(url, CurrentUser.token)
         if (response?.message == "OK")
             return gson.fromJson(response?.body, Event::class.java)
@@ -92,7 +108,7 @@ object ServerConnection{
 
     fun isAttending(event: Event):Boolean?{
         val gson = Gson()
-        val url = urlHost + "/event/" + event.eventID
+        val url = urlHost + "/event/" + event.id
         val response:UsableResponse? = get(url, CurrentUser.token)
         // TODO: this error is wrong, but needs to be fixed on server first.
         if (response?.message == "OK")
@@ -116,7 +132,7 @@ object ServerConnection{
     fun toggleSubscriptionToEvent(event:Event):Boolean{
         val gson = Gson()
         val json = gson.toJson(CurrentUser)
-        val url = urlHost + "/event" + event.eventID
+        val url = urlHost + "/event/" + event.id
         val response:UsableResponse? = post(url, json, true)
         // TODO: this error is wrong, but needs to be fixed on server first.
         if (response?.message == "401")
@@ -160,4 +176,6 @@ object ServerConnection{
         val response = client.newCall(request)?.execute()
         return UsableResponse(response)
     }
+
+
 }

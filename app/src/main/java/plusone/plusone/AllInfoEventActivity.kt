@@ -6,76 +6,76 @@ import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import com.mysql.fabric.Server
 import kotlinx.android.synthetic.main.activity_all_info_event.*
 import org.w3c.dom.Text
+import java.io.Serializable
 
 class AllInfoEventActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_info_event)
-        val allInfoEventName =this.intent.getStringExtra("allInfoEventName")
+
+        val event:Event = this.intent.getSerializableExtra("event") as Event
+
+        System.out.println("Subscription: ${event.subscription}")
+
         val allInfoEventNameTextView: TextView = findViewById<TextView>(R.id.allInfoEventName)
-        allInfoEventNameTextView.text = allInfoEventName
-        val id = this.intent.getStringExtra("id")
-        val id2 = intent.getIntExtra("id", 0)
+        allInfoEventNameTextView.text = event.name
 
-
-        val allInfoStart =this.intent.getStringExtra("allInfoStart")
         val allInfoStartTextView: TextView = findViewById<TextView>(R.id.allInfoStart)
-        allInfoStartTextView.text = allInfoStart
+        allInfoStartTextView.text = event.start
 
-        val allInfoEnd =this.intent.getStringExtra("allInfoEnd")
         val allInfoEndTextView: TextView = findViewById<TextView>(R.id.allInfoEnd)
-        allInfoEndTextView.text = allInfoEnd
+        allInfoEndTextView.text = event.end
 
-        val allInfoDescription =this.intent.getStringExtra("allInfoDescription")
+
         val allInfoDescriptionTextView: TextView = findViewById<TextView>(R.id.allInfoDescription)
-        allInfoDescriptionTextView.text = allInfoDescription
+        allInfoDescriptionTextView.text = event.description
 
-        val allInfoEventType =this.intent.getStringExtra("allInfoEventType")
         val allInfoEventTypeTextView: TextView = findViewById<TextView>(R.id.allInfoEventType)
-        allInfoEventTypeTextView.text = allInfoEventType
+        allInfoEventTypeTextView.text = event.type
 
-        val allInfoPeopleNeeded =this.intent.getStringExtra("allInfoPeopleNeeded")
         val allInfoPeopleNeededTextView: TextView = findViewById<TextView>(R.id.allInfoPeopleNeeded)
-        allInfoPeopleNeededTextView.text = allInfoPeopleNeeded
+        allInfoPeopleNeededTextView.text = event.reqPeople.toString()
 
-        //val allInfoLatitude =this.intent.getStringExtra("allInfoLatitude")
-        //val allInfoLongitude =this.intent.getStringExtra("allInfoLongitude")
+        val subscriptionTextView: TextView = findViewById<TextView>(R.id.Subscribe)
 
-        val allInfoLocation =this.intent.getStringExtra("allInfoLocation")
+        val allInfoLocation = event.location
 
+        isAttendingEvent(event)
 
 
         Subscribe.setOnClickListener {
-            val subscribeButton = subscribeEvent(0, id2).execute()
+            toggleSubscribeEvent(event).execute()
+            if(event.subscription == true)
+                subscriptionTextView.text = "Subscribe"
+            else
+                subscriptionTextView.text = "Unsubscribe"
         }
 
-        Unsubscribe.setOnClickListener {
-                val Unsubscribe = unsubscribeEvent(0,id2).execute()
+
+        Chat.setOnClickListener {
+            val intent = Intent(this, plusone.plusone.Chat.MainActivity::class.java)
+            startActivity(intent)
         }
 
         SeeMapButton.setOnClickListener{
-            ///val intent = Intent(this, MapsActivity::class.java)
-            ///intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            ///intent.putExtra("latitude",allInfoLatitude)
-            /// intent.putExtra("longitude",allInfoLongitude)
-
             val gmmIntentUri = Uri.parse("geo:0,0?q="+allInfoLocation+"")
             val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
             mapIntent.`package` = "com.google.android.apps.maps"
             startActivity(mapIntent)
 
-
            /// startActivity(intent)
         }
     }
-    // TODO cambiar a serverconnection
-    inner class subscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
+
+    inner class toggleSubscribeEvent (private val event:Event): AsyncTask<Event, Void, Boolean>() {
 
         override fun doInBackground(vararg params: Event): Boolean {
-            return DatabaseConnection.subscribeEventDB(idevent, iduser)
+            return ServerConnection.toggleSubscriptionToEvent(event)
         }
 
         override fun onPostExecute(success: Boolean?) {
@@ -85,17 +85,25 @@ class AllInfoEventActivity : AppCompatActivity() {
         override fun onCancelled() {
         }
     }
-    inner class unsubscribeEvent (private val idevent: Int, private val iduser: Int): AsyncTask<Event, Void, Boolean>() {
+    inner class isAttendingEvent (private val event:Event): AsyncTask<Event, Boolean, Boolean>() {
 
-        override fun doInBackground(vararg params: Event): Boolean {
-            return DatabaseConnection.dessubscribeEventDB(idevent, iduser)
+        override fun doInBackground(vararg params: Event): Boolean? {
+            return ServerConnection.isAttending(event)
         }
 
         override fun onPostExecute(success: Boolean?) {
-            finish()
+            answer(success)
         }
 
         override fun onCancelled() {
         }
+    }
+
+    fun answer(ans:Boolean?){
+        val subscriptionTextView: TextView = findViewById<TextView>(R.id.Subscribe)
+        if(ans!!)
+            subscriptionTextView.text = "Unsubscribe"
+        else
+            subscriptionTextView.text = "Subscribe"
     }
 }

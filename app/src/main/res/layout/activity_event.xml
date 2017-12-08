@@ -72,42 +72,17 @@
             android:id="@+id/textViewTimeStart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/timeStart"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/start"
+            android:onClick="funDate"
+            android:text="@string/timeStart" />
+        <Button
+            android:id="@+id/eventEndsAtButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="time" />
-
-
-
+            android:onClick="funDate"
+            android:text="@string/timeEnd" />
     </TableRow>
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="9dp"
-        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewTimeEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/timeEnd"
-            android:textSize="20dp" />
-
-        <EditText
-            android:id="@+id/end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="time"
-            />
-
-    </TableRow>
 
 
         <LinearLayout

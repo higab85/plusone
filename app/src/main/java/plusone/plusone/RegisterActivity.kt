@@ -2,6 +2,7 @@ package plusone.plusone
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import plusone.plusone.R
 
 class RegisterActivity : AppCompatActivity() {
 

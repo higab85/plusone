@@ -22,11 +22,8 @@ import android.widget.ArrayAdapter
 import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
-import android.Manifest.permission.INTERNET
 import android.content.Intent
-import android.support.annotation.IntegerRes
 import kotlinx.android.synthetic.main.activity_login.*
-import org.jetbrains.anko.toast
 
 
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
