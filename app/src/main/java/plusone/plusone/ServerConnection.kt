@@ -42,9 +42,9 @@ object ServerConnection{
         return true
     }
 
-    fun registerUser():Boolean{
+    fun registerUser(user: User):Boolean{
         val gson = Gson()
-        val json = gson.toJson(CurrentUser)
+        val json = gson.toJson(user)
 
         val url = urlHost + "/user"
         val response:UsableResponse? = post(url, json, false)

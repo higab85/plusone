@@ -29,24 +29,24 @@
 
 
     <TextView
-        android:id="@+id/surnameText"
+        android:id="@+id/userNameText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:text="@string/prompt_surname"
+        android:text="@string/prompt_username"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/name"
         tools:layout_editor_absoluteY="111dp" />
 
     <EditText
-        android:id="@+id/surname"
+        android:id="@+id/userName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/surnameText"
+        app:layout_constraintTop_toBottomOf="@id/userNameText"
         tools:layout_editor_absoluteY="143dp" />
 
 
@@ -57,11 +57,11 @@
         android:layout_marginLeft="16dp"
         android:text="@string/prompt_email"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/surname"
+        app:layout_constraintTop_toBottomOf="@id/userName"
         tools:layout_editor_absoluteY="196dp" />
 
     <EditText
-        android:id="@+id/user"
+        android:id="@+id/emailRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -79,11 +79,11 @@
         android:layout_marginLeft="16dp"
         android:text="@string/prompt_password"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/user"
+        app:layout_constraintTop_toBottomOf="@id/emailRegister"
         tools:layout_editor_absoluteY="276dp" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/password2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
@@ -94,12 +94,12 @@
         tools:layout_editor_absoluteY="303dp" />
 
     <Button
-        android:id="@+id/registerButton"
+        android:id="@+id/registerButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:text="@string/action_register"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/password2"
         tools:layout_editor_absoluteY="273dp" />
 </android.support.constraint.ConstraintLayout>
