@@ -136,6 +136,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val pageAllInfo = this.intent.getStringExtra("all")
 
+        googleMap.uiSettings.setZoomControlsEnabled(true);
+
         if (pageAllInfo!=null && pageAllInfo!=""){
             var latitudeGiven = this.intent.getStringExtra("latitudeGiven")
             var longitudeGiven = this.intent.getStringExtra("longitudeGiven")
@@ -143,7 +145,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
             marker = googleMap.addMarker(MarkerOptions().position(latLngGiven)
                     .title("Your Event Location").draggable(true).snippet("Latitude: "+latitudeGiven.toDouble()+"/ Longitude: "+longitudeGiven.toDouble()))
-            googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLngGiven))
+            val zoomLevel = 16.0f
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLngGiven, zoomLevel))
             Toast.makeText(this, "Click on Marker to return to the previous page!",
                     Toast.LENGTH_LONG).show();
         }
@@ -175,7 +178,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 }
                 marker = googleMap.addMarker(MarkerOptions().position(latLng)
                         .title("Your Event Location :"+SearchAddress).draggable(true).snippet("Latitude: "+address.latitude+"/ Longitude: "+address.longitude))
-                googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+                //googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+                val zoomLevel = 16.0f
+                googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoomLevel))
                 Toast.makeText(this, "Click on Marker to add it as a position!",
                         Toast.LENGTH_LONG).show();
                 addressTo = SearchAddress
