@@ -47,6 +47,11 @@ class AllInfoEventActivity : AppCompatActivity() {
 
         isAttendingEvent(event)
 
+        if ((event.latitude=="0.0" && event.longitude=="0.0") || (event.latitude=="" && event.longitude=="")){
+            SeeMapButton.text = "No Localisation!"
+            SeeMapButton.setEnabled(false)
+        }
+
 
         Subscribe.setOnClickListener {
             toggleSubscribeEvent(event).execute()
