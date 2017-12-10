@@ -3,10 +3,16 @@ package plusone.plusone;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.content.Intent;
+import android.support.test.espresso.ViewInteraction;
 import android.support.test.espresso.intent.Intents;
 import android.support.test.filters.LargeTest;
 import android.support.test.rule.ActivityTestRule;
 
+import org.hamcrest.Description;
+import org.hamcrest.Matcher;
+import org.hamcrest.Matchers;
+import org.hamcrest.TypeSafeMatcher;
+import org.hamcrest.core.IsInstanceOf;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -22,9 +28,11 @@ import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard
 import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static android.support.test.espresso.intent.Intents.intended;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.hasComponent;
 import static android.support.test.espresso.intent.matcher.IntentMatchers.isInternal;
+import static android.support.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withResourceName;
@@ -42,11 +50,16 @@ import static org.junit.Assert.assertNotNull;
 import android.app.Activity;
 import android.app.Instrumentation;
 import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import java.security.spec.RSAOtherPrimeInfo;
 
@@ -55,10 +68,12 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static org.junit.Assert.*;
+import static plusone.plusone.R.id.event_list_recycler_view;
 
 /**
  * Created by Usuario on 14/11/2017.
  */
+@RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
     @Rule
     public ActivityTestRule<MainActivity> myActivityTestRule = new ActivityTestRule<MainActivity>(MainActivity.class);
@@ -95,33 +110,7 @@ public class MainActivityTest {
         onView(withId(R.id.editTextSearchHome)).toString().compareTo(texto);
         //closeSoftKeyboard();
     }
-    /*@Test
-    public void createEventAndItIsShown(){
-        myActivityTestRule.launchActivity(new Intent());
 
-
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
-        onView(withId(R.id.eventName)).check(matches((isDisplayed())));
-        onView(withId(R.id.eventName)).perform(clearText(),typeText("Evento de testeo"),closeSoftKeyboard());
-        onView(withId(R.id.description)).check(matches((isDisplayed())));
-        onView(withId(R.id.description)).perform(clearText(),typeText("Que dise loco"),closeSoftKeyboard());
-        onView(withId(R.id.end)).check(matches((isDisplayed())));
-        onView(withId(R.id.end)).perform(clearText(),typeText("21-12-2017-14:30"),closeSoftKeyboard());
-        onView(withId(R.id.peopleNeeded)).check(matches((isDisplayed())));
-        onView(withId(R.id.peopleNeeded)).perform(clearText(),typeText("4"),closeSoftKeyboard());
-        onView(withId(R.id.createEventButton)).check(matches((isDisplayed())));
-        onView(withId(R.id.createEventButton)).perform(scrollTo(),click());
-
-
-        //assertNotNull(myActivity.findViewById(R.id.buttonSportsEvents));
-        //onView(withId(R.id.buttonSportsEvents)).perform(click());
-        //intended(hasComponent(EventListCardView.class.getName()));
-        *//*//**//*onView(withId(R.id.buttonSportsEvents)).perform(closeSoftKeyboard());
-        Activity secondActivity = getInstrumentation().waitForMonitorWithTimeout(monitorSportsEvents,5000);
-        assertNotNull(secondActivity);
-        secondActivity.finish();*//*
-
-    }*/
     @Test
     public void buttonCreateEventWorks2(){
         //myActivityTestRule.launchActivity(new Intent());
@@ -147,6 +136,191 @@ public class MainActivityTest {
         onView(withId(R.id.buttonLearning)).check(matches(withText("Learning")));
         onView(withId(R.id.buttonOthers)).check(matches(withText("Others")));
     }
+   /* @Test
+   public void createEventConLOCALIZACION(){
+        myActivityTestRule.launchActivity(new Intent());
+
+        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+
+        onView(withId(R.id.eventName)).check(matches((isDisplayed())));
+        onView(withId(R.id.eventName)).perform(clearText(),typeText("Evento de testeo2"),closeSoftKeyboard());
+        onView(withId(R.id.description)).check(matches((isDisplayed())));
+        onView(withId(R.id.description)).perform(clearText(),typeText("Que dise loco"),closeSoftKeyboard());
+
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
+        appCompatButton2.perform(click());
+
+        ViewInteraction appCompatButton3 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton3.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton4 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton4.perform(scrollTo(), click());
+
+
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.eventEndsAtButton), withText("Finishes at"), isDisplayed()));
+        appCompatButton5.perform(click());
+
+        ViewInteraction appCompatButton6 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton6.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton7 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton7.perform(scrollTo(), click());
+
+        onView(withId(R.id.addAddressButon)).perform(click());
+
+        onView(withId(R.id.eventAddress)).check(matches((isCompletelyDisplayed())));
+        onView(withId(R.id.eventAddress)).perform(clearText(),typeText("Where ever you want"));
+        onView(withId(R.id.eventAddress)).perform(closeSoftKeyboard());
+
+        onView(withId(R.id.eventType)).perform(click());
+        onData(allOf(is(instanceOf(String.class)),is("Learning"))).perform(click());
+        onView(withId(R.id.peopleNeeded)).check(matches((isDisplayed())));
+        onView(withId(R.id.peopleNeeded)).perform(clearText(),typeText("4"),closeSoftKeyboard());
+
+
+
+        onView(withId(R.id.createEventButton)).check(matches((isCompletelyDisplayed())));
+        onView(withId(R.id.createEventButton)).perform(closeSoftKeyboard()).perform(click());
+
+        onView(withId(R.id.buttonLearning)).check(matches((isCompletelyDisplayed())));
+        onView(withId(R.id.buttonLearning)).perform(closeSoftKeyboard()).perform(click());
+
+    }*/
+    @Test
+    public void CreateEventSinLOCALIZACION(){
+        myActivityTestRule.launchActivity(new Intent());
+
+        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+
+        onView(withId(R.id.eventName)).check(matches((isDisplayed())));
+        onView(withId(R.id.eventName)).perform(clearText(),typeText("Evento de testeo2"),closeSoftKeyboard());
+        onView(withId(R.id.description)).check(matches((isDisplayed())));
+        onView(withId(R.id.description)).perform(clearText(),typeText("Que dise loco"),closeSoftKeyboard());
+
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
+        appCompatButton2.perform(click());
+
+        ViewInteraction appCompatButton3 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton3.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton4 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton4.perform(scrollTo(), click());
+
+
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.eventEndsAtButton), withText("Finishes at"), isDisplayed()));
+        appCompatButton5.perform(click());
+
+        ViewInteraction appCompatButton6 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton6.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton7 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton7.perform(scrollTo(), click());
+
+        onView(withId(R.id.eventAddress)).check(matches((isCompletelyDisplayed())));
+        onView(withId(R.id.eventAddress)).perform(clearText(),typeText("Where ever you want"));
+        onView(withId(R.id.eventAddress)).perform(closeSoftKeyboard());
+
+        onView(withId(R.id.eventType)).perform(click());
+        onData(allOf(is(instanceOf(String.class)),is("Learning"))).perform(click());
+        onView(withId(R.id.peopleNeeded)).check(matches((isDisplayed())));
+        onView(withId(R.id.peopleNeeded)).perform(clearText(),typeText("4"),closeSoftKeyboard());
+
+
+
+        onView(withId(R.id.createEventButton)).check(matches((isCompletelyDisplayed())));
+        onView(withId(R.id.createEventButton)).perform(closeSoftKeyboard()).perform(click());
+
+
+    }
+    @Test
+    public void startEventFunciona() {
+        myActivityTestRule.launchActivity(new Intent());
+
+        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
+        appCompatButton2.perform(click());
+
+        ViewInteraction appCompatButton3 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton3.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton4 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton4.perform(scrollTo(), click());
+    }
+    @Test
+    public void endEventFunciona() {
+        myActivityTestRule.launchActivity(new Intent());
+
+        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.eventEndsAtButton), withText("Finishes at"), isDisplayed()));
+        appCompatButton5.perform(click());
+
+        ViewInteraction appCompatButton6 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton6.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton7 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton7.perform(scrollTo(), click());
+    }
+    @Test
+    public void startEventYEndEventFunciona() {
+        myActivityTestRule.launchActivity(new Intent());
+
+        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        ViewInteraction appCompatButton2 = onView(
+                allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
+        appCompatButton2.perform(click());
+
+        ViewInteraction appCompatButton3 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton3.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton4 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton4.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton5 = onView(
+                allOf(withId(R.id.eventEndsAtButton), withText("Finishes at"), isDisplayed()));
+        appCompatButton5.perform(click());
+
+        ViewInteraction appCompatButton6 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton6.perform(scrollTo(), click());
+
+        ViewInteraction appCompatButton7 = onView(
+                allOf(withId(android.R.id.button1), withText("OK")));
+        appCompatButton7.perform(scrollTo(), click());
+    }
+    @Test
+    public void escribirEnSearchTextBar(){
+        myActivityTestRule.launchActivity(new Intent());
+        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+
+        String texto ="Que pasa Julio!!";
+        onView(withId(R.id.eventName)).check(matches((isDisplayed())));
+        onView(withId(R.id.eventName)).perform(clearText(),typeText(texto),closeSoftKeyboard());
+        onView(withId(R.id.eventName)).toString().compareTo(texto);
+    }
+
     @After
     public void tearDown() throws Exception {
         Intents.release();

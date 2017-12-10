@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             ///Toast.makeText(this,"Testing",Toast.LENGTH_SHORT).show()
             val intent = Intent(this, AjustesActivity::class.java)
             startActivity(intent)
+
         }
         buttonSports.setOnClickListener{
            val intent = Intent(this, EventList::class.java)

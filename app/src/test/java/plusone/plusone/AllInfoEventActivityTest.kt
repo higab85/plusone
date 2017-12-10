@@ -1,3 +1,4 @@
+/*
 package plusone.plusone
 
 import org.junit.After
@@ -6,9 +7,11 @@ import org.junit.Before
 import org.junit.Assert.*
 import org.junit.Test
 import kotlin.test.*
+*/
 /**
  * Created by Juanan on 10/11/2017.
- */
+ *//*
+
 class AllInfoEventActivityTest {
     @Before
     fun setUp() {
@@ -49,4 +52,4 @@ class AllInfoEventActivityTest {
     }
 
 
-}
+}*/
