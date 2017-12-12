@@ -1,3 +1,4 @@
+/*
 package plusone.plusone
 
 import kotlinx.android.synthetic.main.activity_event.*
@@ -6,9 +7,10 @@ import org.junit.Test
 import java.sql.SQLException
 import java.time.LocalDateTime
 import kotlin.test.*
-/**
+*
  * Created by tyler on 6/10/17.
- */
+
+
 class DatabaseConnectionTest {
 
 
@@ -138,6 +140,8 @@ class DatabaseConnectionTest {
             fail()
         }
     }
+    */
+/*
     @Test
     fun comprobarFuncionamientoFuncionSuscribeEvent(){
         DatabaseConnection.loginUser("demo", "demo")
@@ -183,3 +187,4 @@ class DatabaseConnectionTest {
 
 
 }
+*/

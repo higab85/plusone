@@ -5,7 +5,7 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_name">Name</string>
-    <string name="prompt_surname">Surname</string>
+    <string name="prompt_username">Username</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in</string>
     <string name="action_register">Register</string>
@@ -34,13 +34,14 @@
     <string name="event">Event Name </string>
     <string name="description">Description</string>
     <string name="date">Date </string>
-    <string name="timeStart">Starts at</string>
     <string name="timeEnd">Finishes at</string>
+    <string name="timeStart">Starts at</string>
     <string name="location"> Location</string>
     <string name="type">Type</string>
     <string name="Subscribe">Subscribe</string>
     <string name="Unsubscribe">UnSubscribe</string>
     <string name="addAddress">Add Address</string>
+    <string name="searchMap">Search</string>
 
     <string-array name="arrayEventTypes">
         <item>Sports Event</item>

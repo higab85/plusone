@@ -42,6 +42,9 @@ class Event: Serializable {
         this.end=end
         this.type=type
         this.reqPeople=reqPeople
+        this.latitude = latitude
+        this.longitude = longitude
+
     }
     constructor(name: String, location:String,start:String,end:String, type:String,distance:Double){
         this.name=name

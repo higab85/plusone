@@ -65,7 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:text="@string/prompt_surname" />
+            android:text="@string/prompt_username" />
 
         <!--<LinearLayout-->
             <!--android:layout_width="wrap_content"-->
