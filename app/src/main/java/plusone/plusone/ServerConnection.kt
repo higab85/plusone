@@ -6,6 +6,7 @@ import java.io.IOException
 import kotlin.jvm.java
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
+import plusone.plusone.Chat.User
 
 
 /**
@@ -29,6 +30,15 @@ object ServerConnection{
     val client = OkHttpClient()
     val urlHost = "https://fierce-plateau-73728.herokuapp.com"
 
+    fun getUserData():User?{
+        val gson = Gson()
+        val url = urlHost + "/user/" + CurrentUser.email
+        val response:UsableResponse? = get(url, CurrentUser.token)
+        if (response?.message == "OK")
+            return gson.fromJson(response?.body, User::class.java)
+        return null
+
+    }
 
     fun loginUser():Boolean{
         val url = urlHost + "/login"
@@ -39,6 +49,7 @@ object ServerConnection{
             return false
 
         CurrentUser.token = response?.body!!
+        CurrentUser.username = getUserData()!!.name
         return true
     }
 
@@ -98,7 +109,7 @@ object ServerConnection{
 
     fun getEvent(event:Event):Event?{
         val gson = Gson()
-        val url = urlHost + "/user/" + event.id
+        val url = urlHost + "/event/" + event.id
         val response:UsableResponse? = get(url, CurrentUser.token)
         if (response?.message == "OK")
             return gson.fromJson(response?.body, Event::class.java)
@@ -121,7 +132,7 @@ object ServerConnection{
     fun searchEvent():Boolean{
         val gson = Gson()
         val json = gson.toJson(CurrentUser)
-        val url = urlHost + "/user"
+        val url = urlHost + "/event"
         val response:UsableResponse? = post(url, json, true)
         // TODO: this error is wrong, but needs to be fixed on server first.
         if (response?.message == "401")

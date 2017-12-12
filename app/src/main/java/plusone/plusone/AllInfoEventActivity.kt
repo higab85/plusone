@@ -59,6 +59,8 @@ class AllInfoEventActivity : AppCompatActivity() {
 
         Chat.setOnClickListener {
             val intent = Intent(this, plusone.plusone.Chat.MainActivity::class.java)
+            intent.putExtra("eventID", event.id)
+            intent.putExtra("username", CurrentUser.username)
             startActivity(intent)
         }
 

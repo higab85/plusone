@@ -35,6 +35,8 @@ import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
 
 import static android.app.Activity.RESULT_OK;
+import static plusone.plusone.Chat.MainActivity.eventID;
+import static plusone.plusone.Chat.MainActivity.username;
 
 
 /**
@@ -75,15 +77,15 @@ public class MainFragment extends Fragment {
             JSONObject data = (JSONObject) args[0];
 
             int numUsers;
-            try {
-                numUsers = data.getInt("numUsers");
-            } catch (JSONException e) {
-                return;
-            }
+//            try {
+//                numUsers = data.getInt("numUsers");
+//            } catch (JSONException e) {
+//                return;
+//            }
 
             Intent intent = new Intent();
             intent.putExtra("username", mUsername);
-            intent.putExtra("numUsers", numUsers);
+//            intent.putExtra("numUsers", numUsers);
 //            setResult(RESULT_OK, intent);
 //            finish();
         }
@@ -126,8 +128,16 @@ public class MainFragment extends Fragment {
         mSocket.on("login", onLogin);
 
         mSocket.connect();
-        mUsername = "Keeat";
-        mSocket.emit("add user", mUsername);
+        JSONObject payload = new JSONObject();
+        mUsername = username;
+        try {
+            payload.put("username", mUsername);
+
+            payload.put("room", eventID);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        mSocket.emit("join", payload);
 
 //        startSignIn();
     }
@@ -217,10 +227,10 @@ public class MainFragment extends Fragment {
         }
 
         mUsername = "Keeat";
-        int numUsers = data.getIntExtra("numUsers", 1);
+//        int numUsers = data.getIntExtra("numUsers", 1);
 
         addLog(getResources().getString(R.string.message_welcome));
-        addParticipantsLog(numUsers);
+//        addParticipantsLog(numUsers);
     }
 
 //    @Override
@@ -252,9 +262,9 @@ public class MainFragment extends Fragment {
         scrollToBottom();
     }
 
-    private void addParticipantsLog(int numUsers) {
-        addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
-    }
+//    private void addParticipantsLog(int numUsers) {
+//        addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
+//    }
 
     private void addMessage(String username, String message) {
         mMessages.add(new Message.Builder(Message.TYPE_MESSAGE)
@@ -293,10 +303,10 @@ public class MainFragment extends Fragment {
         }
 
         mInputMessageView.setText("");
-        addMessage(mUsername, message);
+//        addMessage(mUsername, message);
 
         // perform the sending message attempt.
-        mSocket.emit("new message", message);
+        mSocket.emit("new message",message);
     }
 
 
@@ -334,7 +344,7 @@ public class MainFragment extends Fragment {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    Log.i(TAG, "diconnected");
+                    Log.i(TAG, "disconnected");
                     isConnected = false;
                     Toast.makeText(getActivity().getApplicationContext(),
                             R.string.disconnect, Toast.LENGTH_LONG).show();
@@ -387,19 +397,24 @@ public class MainFragment extends Fragment {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    JSONObject data = (JSONObject) args[0];
+                    JSONObject data;
+                    try {
+                        data = (JSONObject) args[0];
+                    }catch (Exception e) {
+                        return;
+                    }
                     String username;
                     int numUsers;
                     try {
                         username = data.getString("username");
-                        numUsers = data.getInt("numUsers");
+//                        numUsers = data.getInt("numUsers");
                     } catch (JSONException e) {
                         Log.e(TAG, e.getMessage());
                         return;
                     }
 
                     addLog(getResources().getString(R.string.message_user_joined, username));
-                    addParticipantsLog(numUsers);
+//                    addParticipantsLog(numUsers);
                 }
             });
         }
@@ -416,14 +431,14 @@ public class MainFragment extends Fragment {
                     int numUsers;
                     try {
                         username = data.getString("username");
-                        numUsers = data.getInt("numUsers");
+//                        numUsers = data.getInt("numUsers");
                     } catch (JSONException e) {
                         Log.e(TAG, e.getMessage());
                         return;
                     }
 
                     addLog(getResources().getString(R.string.message_user_left, username));
-                    addParticipantsLog(numUsers);
+//                    addParticipantsLog(numUsers);
                     removeTyping(username);
                 }
             });

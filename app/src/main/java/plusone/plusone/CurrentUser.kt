@@ -9,7 +9,7 @@ import android.media.session.MediaSession
 object CurrentUser{
     var name:String = ""
     var email:String = ""
-    var username:String = ""
+    var username:String = "user"
     var password:String = ""
     var userLoggedIn:Boolean = false
     var token:String = ""
