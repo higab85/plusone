@@ -6,7 +6,6 @@ import java.io.IOException
 import kotlin.jvm.java
 import com.google.gson.reflect.TypeToken
 import okhttp3.*
-import plusone.plusone.Chat.User
 
 
 /**

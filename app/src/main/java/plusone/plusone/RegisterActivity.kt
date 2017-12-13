@@ -33,8 +33,8 @@ class RegisterActivity : AppCompatActivity() {
 
     inner class RegisterUser: AsyncTask<User, Void, Boolean>() {
 
-        override fun doInBackground(vararg params: User): Boolean {
-            return ServerConnection.registerUser(params[0])
+        override fun doInBackground(vararg user: User): Boolean {
+            return ServerConnection.registerUser(user[0])
         }
 
         override fun onPostExecute(success: Boolean?) {

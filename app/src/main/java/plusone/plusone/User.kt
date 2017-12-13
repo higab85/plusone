@@ -9,6 +9,8 @@ class User : Serializable {
     var email:String = ""
     var username:String = ""
     var password:String = ""
+    val public_id = ""
+
 
 
     constructor()

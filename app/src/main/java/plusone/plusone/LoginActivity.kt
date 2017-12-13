@@ -192,30 +192,19 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
     }
 
     override fun onCreateLoader(i: Int, bundle: Bundle?): Loader<Cursor> {
-        return CursorLoader(this,
-                // Retrieve data rows for the device user's 'profile' contact.
-                Uri.withAppendedPath(ContactsContract.Profile.CONTENT_URI,
-                        ContactsContract.Contacts.Data.CONTENT_DIRECTORY), ProfileQuery.PROJECTION,
-
-                // Select only email addresses.
-                ContactsContract.Contacts.Data.MIMETYPE + " = ?", arrayOf(ContactsContract.CommonDataKinds.Email
-                .CONTENT_ITEM_TYPE),
-
-                // Show primary email addresses first. Note that there won't be
-                // a primary email address if the user hasn't specified one.
-                ContactsContract.Contacts.Data.IS_PRIMARY + " DESC")
+        return Loader<Cursor>(this)
     }
+        override fun onLoadFinished(cursorLoader: Loader<Cursor>, cursor: Cursor) {
+            val emails = ArrayList<String>()
+            cursor.moveToFirst()
+            while (!cursor.isAfterLast) {
+                emails.add(cursor.getString(ProfileQuery.ADDRESS))
+                cursor.moveToNext()
+            }
 
-    override fun onLoadFinished(cursorLoader: Loader<Cursor>, cursor: Cursor) {
-        val emails = ArrayList<String>()
-        cursor.moveToFirst()
-        while (!cursor.isAfterLast) {
-            emails.add(cursor.getString(ProfileQuery.ADDRESS))
-            cursor.moveToNext()
+            addEmailsToAutoComplete(emails)
         }
 
-        addEmailsToAutoComplete(emails)
-    }
 
     override fun onLoaderReset(cursorLoader: Loader<Cursor>) {
 
