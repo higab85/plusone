@@ -68,9 +68,9 @@ object ServerConnection{
         return false
     }
 
-    fun modifyUser(user: User):Boolean{
+    fun modifyUser():Boolean{
         val gson = Gson()
-        val json = gson.toJson(user)
+        val json = gson.toJson(CurrentUser)
 
         val url = urlHost + "/user"
         val response:UsableResponse? = put(url, json)
