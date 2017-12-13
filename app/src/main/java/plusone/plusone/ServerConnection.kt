@@ -29,13 +29,15 @@ object ServerConnection{
     val client = OkHttpClient()
     val urlHost = "https://fierce-plateau-73728.herokuapp.com"
 
-    fun getUserData():User?{
+    fun getUserData(){
         val gson = Gson()
         val url = urlHost + "/user/" + CurrentUser.email
         val response:UsableResponse? = get(url, CurrentUser.token)
-        if (response?.message == "OK")
-            return gson.fromJson(response?.body, User::class.java)
-        return null
+        if (response?.message == "OK") {
+            var user = gson.fromJson(response?.body, User::class.java)
+            CurrentUser.username = user.username
+            CurrentUser.email = user.email
+        }
 
     }
 
@@ -48,7 +50,7 @@ object ServerConnection{
             return false
 
         CurrentUser.token = response?.body!!
-        CurrentUser.username = getUserData()!!.name
+        getUserData()
         return true
     }
 
@@ -63,6 +65,21 @@ object ServerConnection{
             loginUser()
             return true
         }
+        return false
+    }
+
+    fun modifyUser(user: User):Boolean{
+        val gson = Gson()
+        val json = gson.toJson(user)
+
+        val url = urlHost + "/user"
+        val response:UsableResponse? = put(url, json)
+
+        if (response?.message == "OK") {
+            getUserData()
+            return true
+        }
+
         return false
     }
 
@@ -175,6 +192,22 @@ object ServerConnection{
 
         return UsableResponse(response)
     }
+
+    @Throws(IOException::class)
+    fun put(url:String, json:String): UsableResponse? {
+
+        val reqBody = RequestBody.create(JSON, json)
+        var request = Request.Builder()
+                        .url(url)
+                        .header("Authorization", CurrentUser.token)
+                        .put(reqBody)
+                        .build()
+
+        val response = client?.newCall(request)?.execute()
+
+        return UsableResponse(response)
+    }
+
     @Throws(IOException::class)
     fun get(url:String, authorization:String): UsableResponse? {
         val request = Request.Builder()
