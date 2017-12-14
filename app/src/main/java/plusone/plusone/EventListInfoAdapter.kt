@@ -70,7 +70,6 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         holder.locationEvent.text = eventInfo.location
         holder.startEvent.text = "Start: "+eventInfo.start.subSequence(0,10)+" At: "+eventInfo.start.subSequence(11,16)
         holder.endEvent.text = "  End: "+eventInfo.end.subSequence(0,10)+" At: "+eventInfo.end.subSequence(11,16)
-
         holder.descriptionEvent.text=eventInfo.description
         holder.typeEvent.text=eventInfo.type
         holder.reqPeopleEvent.text=eventInfo.reqPeople.toString()
@@ -80,6 +79,7 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
             var distanceResults = FloatArray(1)
             var temp = Location.distanceBetween(eventInfo.latitude.toDouble(),eventInfo.longitude.toDouble(), deviceLatitude,deviceLongitude,distanceResults)
             holder.distance.text = "Distance: "+(distanceResults[0]/1000).toString()+"Km"
+            eventInfo.distance = (distanceResults[0]/1000).toDouble()
         }
         holder.bind(eventsInfoList[position])
 

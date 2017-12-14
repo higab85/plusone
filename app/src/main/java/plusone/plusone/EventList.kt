@@ -113,6 +113,14 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
             }
         }
 
+        if (distanceSortButton != null){
+            distanceSortButton.setOnClickListener{view->
+                eventsInfoList = LocalEventFilter.orderEventsByDistance(eventsInfoList!!)
+                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
+                myRecyclerView?.adapter= eventListInfoAdapter
+            }
+        }
+
 
     }
 
