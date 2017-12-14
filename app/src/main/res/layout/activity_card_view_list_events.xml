@@ -39,7 +39,7 @@
             android:id="@+id/event_start"
             android:layout_marginTop="2dp"
             android:textSize="12sp"
-            android:text="Prueba"
+            android:text="StarDate "
             />
         <TextView
             android:layout_width="wrap_content"
@@ -49,8 +49,18 @@
             android:layout_below="@id/event_location"
             android:id="@+id/event_end"
             android:textSize="12sp"
-            android:text="Prueba"
+            android:text="EndDate "
             />
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="2dp"
+        android:layout_below="@id/event_end"
+        android:id="@+id/event_distance"
+        android:textSize="12sp"
+        android:text="Distance "
+        />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
