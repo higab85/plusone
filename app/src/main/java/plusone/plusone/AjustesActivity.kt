@@ -48,12 +48,12 @@ class AjustesActivity : AppCompatActivity() {
         if (settingsChangeButton != null){
             settingsChangeButton.setOnClickListener {
                 val changeUser = User()
-                CurrentUser.email = myEditTextEmail.text.toString()
-                CurrentUser.password = myEditTextPassword.text.toString()
+                changeUser.email = myEditTextEmail.text.toString()
+                changeUser.password = myEditTextPassword.text.toString()
                 changeUser.name = CurrentUser.name
                 changeUser.username = CurrentUser.username
 
-                ChangeUser().execute()
+                ChangeUser().execute(changeUser)
                 val intent = Intent(this, MainActivity::class.java)
                 Toast.makeText(applicationContext,"User informations changed", Toast.LENGTH_LONG).show()
                 startActivity(intent)
