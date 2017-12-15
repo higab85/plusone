@@ -33,7 +33,7 @@ class Event: Serializable {
         this.end=end
         this.type=type
     }
-    constructor(id:String,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int){
+    constructor(id:String,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int,latitude:String,longitude:String){
         this.id=id
         this.name=name
         this.description=description
@@ -44,6 +44,7 @@ class Event: Serializable {
         this.reqPeople=reqPeople
         this.latitude = latitude
         this.longitude = longitude
+        this.reqPeople = reqPeople
 
     }
     constructor(name: String, location:String,start:String,end:String, type:String,distance:Double){

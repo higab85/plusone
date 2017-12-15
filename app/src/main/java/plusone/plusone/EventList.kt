@@ -24,11 +24,13 @@ import com.google.android.gms.common.GooglePlayServicesUtil
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.*
 import plusone.plusone.R.id.editTextSearch2
+import java.lang.Math.*
 
 
 // This activity will show an undetailed list of all the events (filtered or not depending on
 // whether a filter has been applied or not).
 class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, LocationListener {
+
 
 
     private var eventsInfoList:List<Event>? = null
@@ -42,6 +44,10 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
     val PLAY_SERVICE_RESOLUTION_REQUEST = 1000
     var mGoogleApiClient: GoogleApiClient? = null
     var mLocationRequest: LocationRequest? = null
+    var locationDevice: Location? = null
+    var latitudeDevice:Double = 0.0
+    var longitudeDevice:Double = 0.0
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -94,7 +100,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
                 val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2)
                 val searchWord:String = searchBar.text.toString()
                 eventsInfoListCurated = LocalEventFilter.searchEventByName(eventsInfoList, searchWord)
-                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)
+                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated,latitudeDevice,longitudeDevice)
                 myRecyclerView?.adapter= eventListInfoAdapter
             }
         }
@@ -102,7 +108,15 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         if (timeSortButton != null){
             timeSortButton.setOnClickListener{view->
                 eventsInfoList = LocalEventFilter.orderTimeFirstToLast(eventsInfoList!!)
-                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList)
+                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
+                myRecyclerView?.adapter= eventListInfoAdapter
+            }
+        }
+
+        if (distanceSortButton != null){
+            distanceSortButton.setOnClickListener{view->
+                eventsInfoList = LocalEventFilter.orderEventsByDistance(eventsInfoList!!)
+                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
                 myRecyclerView?.adapter= eventListInfoAdapter
             }
         }
@@ -178,8 +192,11 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
     }
 
     override fun onLocationChanged(p0: Location?) {
-        Toast.makeText(applicationContext,"${p0!!.latitude} - ${p0!!.longitude}", Toast.LENGTH_LONG).show()
-        //editTextSearch2. = "${p0!!.latitude} - ${p0!!.longitude}"
+        //Toast.makeText(applicationContext,"${p0!!.latitude} - ${p0!!.longitude}", Toast.LENGTH_LONG).show()
+
+        latitudeDevice = p0!!.latitude
+        longitudeDevice = p0!!.longitude
+
     }
 
     override fun onConnectionSuspended(p0: Int) {
@@ -204,6 +221,8 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
     }
 
 
+
+
     fun funTime(view: View, date:String){
         val c = Calendar.getInstance()
         val hour = c.get(Calendar.HOUR_OF_DAY)
@@ -224,7 +243,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
                     val time = LocalDateTime.parse(date + "T${singleDigitParser(hour)}:${singleDigitParser(minute)}", DateTimeFormatter.ISO_DATE_TIME)
 
                     eventsInfoListCurated = LocalEventFilter.filterByStartTimeAfter(eventsInfoList!!, time)
-                    eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated)
+                    eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated,latitudeDevice,longitudeDevice)
                     myRecyclerView?.adapter= eventListInfoAdapter
                 },hour, minute, true)
 
@@ -283,7 +302,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
 
         override fun onPostExecute(success: Boolean?) {
-            myRecyclerView?.adapter = EventListInfoAdapter(this@EventList,eventsInfoList)
+            myRecyclerView?.adapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
         }
 
         override fun onCancelled() {
@@ -300,7 +319,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList)
+            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
             myRecyclerView?.adapter= eventListInfoAdapter
         }
 
@@ -318,15 +337,13 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList)
+            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
             myRecyclerView?.adapter= eventListInfoAdapter
         }
 
         override fun onCancelled() {
         }
     }
-
-
 
 
     ///Code to take the location of the device

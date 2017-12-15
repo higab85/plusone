@@ -1,5 +1,6 @@
 package plusone.plusone
 
+import android.location.Location
 import android.os.AsyncTask
 import android.os.Bundle
 import android.provider.ContactsContract
@@ -17,6 +18,7 @@ class EventListCardView : AppCompatActivity() {
      var myRecyclerView: RecyclerView? = null
      var eventListInfoAdapter: EventListInfoAdapter? = null
     val searchWord:String = ""
+    var locationDevice: Location? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +83,7 @@ class EventListCardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList)
+            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList,locationDevice!!.latitude,locationDevice!!.longitude)
             myRecyclerView?.adapter= eventListInfoAdapter
         }
 
@@ -100,7 +102,7 @@ class EventListCardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList)
+            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList,locationDevice!!.latitude,locationDevice!!.longitude)
             myRecyclerView?.adapter= eventListInfoAdapter
         }
 
@@ -119,7 +121,7 @@ class EventListCardView : AppCompatActivity() {
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList)
+            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList,locationDevice!!.latitude,locationDevice!!.longitude)
             myRecyclerView?.adapter= eventListInfoAdapter
         }
 
