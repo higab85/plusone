@@ -19,79 +19,7 @@
     tools:context="plusone.plusone.AjustesActivity">
 
 
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="9dp">
 
-        <TextView
-            android:id="@+id/textViewSettingsName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/prompt_name" />
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal"-->
-            <!--tools:layout_editor_absoluteX="8dp"-->
-            <!--tools:layout_editor_absoluteY="8dp">-->
-
-        <EditText
-            android:id="@+id/editTextSettingsName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10" />
-
-            <!--<ImageButton-->
-                <!--android:id="@+id/imageButtonName"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-                <!--tools:layout_editor_absoluteX="-131dp"-->
-                <!--tools:layout_editor_absoluteY="481dp" />-->
-
-
-
-    </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="9dp">
-
-        <TextView
-            android:id="@+id/textViewSettingsLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/prompt_username" />
-
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal"-->
-            <!--tools:layout_editor_absoluteX="8dp"-->
-            <!--tools:layout_editor_absoluteY="8dp">-->
-
-        <EditText
-            android:id="@+id/editTextSettingsLastName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="10"
-            android:ems="10"
-            android:inputType="textPersonName" />
-
-            <!--<ImageButton-->
-                <!--android:id="@+id/imageButtonLast"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-                <!--tools:layout_editor_absoluteX="-131dp"-->
-                <!--tools:layout_editor_absoluteY="481dp" />-->
-
-
-    </TableRow>
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -105,20 +33,29 @@
             android:text="@string/prompt_email" />
 
 
-        <EditText
-            android:id="@+id/editTextAjustesEmail"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textEmailAddress" />
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
 
-        <!--<ImageButton-->
-            <!--android:id="@+id/imageButtonEmail"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-            <!--tools:layout_editor_absoluteX="-131dp"-->
-            <!--tools:layout_editor_absoluteY="481dp" />-->
+            <EditText
+                android:id="@+id/editTextAjustesEmail"
+                android:layout_width="161dp"
+                android:layout_height="wrap_content"
+                android:text="@string/editTextAjustesEmail"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+            <ImageButton
+                android:id="@+id/imageButtonAjustesEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+
+        </LinearLayout>
 
 
     </TableRow>
@@ -135,43 +72,32 @@
             android:text="@string/prompt_password"
             />
 
-        <!--<LinearLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:orientation="horizontal"-->
-            <!--tools:layout_editor_absoluteX="8dp"-->
-            <!--tools:layout_editor_absoluteY="8dp">-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
 
         <EditText
             android:id="@+id/editTextSettingsPassword"
-            android:layout_width="wrap_content"
+            android:layout_width="163dp"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword" />
 
-        <!--<ImageButton-->
-            <!--android:id="@+id/imageButtonContrasena"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--app:srcCompat="@android:drawable/ic_menu_edit"-->
-            <!--tools:layout_editor_absoluteX="-131dp"-->
-            <!--tools:layout_editor_absoluteY="481dp" />-->
+            <ImageButton
+                android:id="@+id/imageButtonAjustesPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_menu_edit" />
+
+        </LinearLayout>
 
 
     </TableRow>
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="9dp">
 
-        <CheckBox
-            android:id="@+id/checkBoxSettingsGender"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            android:text="@string/textViewGender" />
-
-    </TableRow>
     <TableRow
         android:layout_width="match_parent"
         android:layout_height="match_parent"
