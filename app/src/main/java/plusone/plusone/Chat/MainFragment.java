@@ -58,7 +58,7 @@ public class MainFragment extends Fragment {
     private Handler mTypingHandler = new Handler();
     private String mUsername;
     private Socket mSocket;
-
+    private Boolean messageHistoryReceived = false;
     private Boolean isConnected = true;
 
     public MainFragment() {
@@ -69,6 +69,15 @@ public class MainFragment extends Fragment {
         return mSocket;
     }
 
+
+    private Emitter.Listener onMessageHistoryEnd = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            System.out.println("listener");
+            messageHistoryReceived = true;
+
+        }
+    };
 
     private Emitter.Listener onLogin = new Emitter.Listener() {
         @Override
@@ -126,6 +135,8 @@ public class MainFragment extends Fragment {
         mSocket.on("typing", onTyping);
         mSocket.on("stop typing", onStopTyping);
         mSocket.on("login", onLogin);
+        mSocket.on("message history", onMessageHistory);
+        mSocket.on("message history end", onMessageHistoryEnd);
 
         mSocket.connect();
         JSONObject payload = new JSONObject();
@@ -373,6 +384,32 @@ public class MainFragment extends Fragment {
             getActivity().runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String username;
+                    String message;
+                    try {
+                        username = data.getString("username");
+                        message = data.getString("message");
+                    } catch (JSONException e) {
+                        Log.e(TAG, e.getMessage());
+                        return;
+                    }
+
+                    removeTyping(username);
+                    addMessage(username, message);
+                }
+            });
+        }
+    };
+
+    private Emitter.Listener onMessageHistory = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    if(messageHistoryReceived == true)
+                        return;
                     JSONObject data = (JSONObject) args[0];
                     String username;
                     String message;
