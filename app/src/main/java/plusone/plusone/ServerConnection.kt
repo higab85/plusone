@@ -110,39 +110,27 @@ object ServerConnection{
 
     fun getEventSubscriptionsFrom(user:User):List<Event>?{
         val gson = Gson()
-        val url = urlHost + "/user/events"
+        val url = urlHost + "/user/" + user.email + "events"
 
         val response:UsableResponse? = get(url,CurrentUser.token)
-
-        var event12:Event = Event("Event1", "0.0", "2017-12-03T12:30", "2017-12-03T13:30", "PARTY",2.2)
-        var event22:Event = Event("Event2", "1.1", "2017-12-03T13:00", "2017-12-03T13:30", "FOOD",0.5)
-        var event32:Event = Event("Event3", "2.1", "2017-12-03T10:00", "2017-12-03T14:30", "FOOD",7.5)
-        var event42:Event = Event("Event4", "2.1", "2017-12-03T09:00", "2017-12-03T10:30", "FOOD",5.5)
-        val events2:List<Event> = listOf(event12,event22,event32,event42)
 
 //        https://futurestud.io/tutorials/gson-mapping-of-arrays-and-lists-of-objects
         val eventListType = object : TypeToken<List<Event>>() {
         }.type
         val list:List<Event> = gson.fromJson(response?.body, eventListType)
-        return events2
+        return list
     }
 
     fun getUsersSubscribedTo(event:Event):List<User>?{
         val gson = Gson()
-        val url = urlHost + "/user/events"
+        val url = urlHost + "/event/" + event.id + "/users"
 
         val response:UsableResponse? = get(url,CurrentUser.token)
 
-        val user1:User = User("Tom", "tom59", "tom@google.com")
-        val user2:User = User("Jerry", "jerryferry", "jerry@fashion.com")
-        val user3:User = User("Ron Paul", "pauliepaul", "ron@paul.com")
-        val user4:User = User("Arnold", "arniebeast", "arnold@schwarzenegger.com")
-        val user5:User = User(CurrentUser)
-        val list:List<User> = listOf(user1, user2, user3, user4, user5)
 //        https://futurestud.io/tutorials/gson-mapping-of-arrays-and-lists-of-objects
-//        val eventListType = object : TypeToken<List<Event>>() {
-//        }.type
-//        val list:List<Event> = gson.fromJson(response?.body, eventListType)
+        val eventListType = object : TypeToken<List<Event>>() {
+        }.type
+        val list:List<User> = gson.fromJson(response?.body, eventListType)
         return list
     }
 
