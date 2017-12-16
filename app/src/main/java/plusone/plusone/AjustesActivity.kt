@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.ImageButton
 import android.widget.Toast
 import plusone.plusone.R.id.editTextSettingsPassword
+import plusone.plusone.R.id.imageButtonAjustesName
 
 
 class AjustesActivity : AppCompatActivity() {
@@ -21,6 +22,7 @@ class AjustesActivity : AppCompatActivity() {
 
         val imageButtonAjustesEmail = findViewById<ImageButton>(R.id.imageButtonAjustesEmail)
         val imageButtonAjustesPassword = findViewById<ImageButton>(R.id.imageButtonAjustesPassword)
+        val imageButtonAjustesName = findViewById<ImageButton>(R.id.imageButtonAjustesName)
         val settingsChangeButton = findViewById<Button>(R.id.settingsChangeButton)
 
 
@@ -30,8 +32,12 @@ class AjustesActivity : AppCompatActivity() {
         val myEditTextPassword = findViewById<EditText>(R.id.editTextSettingsPassword) as EditText
         myEditTextPassword.isEnabled = false
 
+        val myEditTextName = findViewById<EditText>(R.id.editTextSettingsName) as EditText
+        myEditTextName.isEnabled = false
+
         myEditTextEmail.setText(CurrentUser.email)
         myEditTextPassword.setText(CurrentUser.password)
+        myEditTextName.setText(CurrentUser.name)
 
         if (imageButtonAjustesEmail != null){
             imageButtonAjustesEmail.setOnClickListener {
@@ -45,13 +51,23 @@ class AjustesActivity : AppCompatActivity() {
             }
         }
 
+        if (imageButtonAjustesName != null){
+            imageButtonAjustesName.setOnClickListener {
+                myEditTextName.isEnabled= true
+            }
+        }
+
         if (settingsChangeButton != null){
             settingsChangeButton.setOnClickListener {
                 val changeUser = User()
                 changeUser.email = myEditTextEmail.text.toString()
                 changeUser.password = myEditTextPassword.text.toString()
-                changeUser.name = CurrentUser.name
+                changeUser.name = myEditTextName.text.toString()
                 changeUser.username = CurrentUser.username
+
+                if (myEditTextEmail.text.toString()!=""){CurrentUser.email=myEditTextEmail.text.toString()}
+                if (myEditTextPassword.text.toString()!=""){CurrentUser.password=myEditTextPassword.text.toString()}
+                if (myEditTextName.text.toString()!=""){CurrentUser.name=myEditTextName.text.toString()}
 
                 ChangeUser().execute(changeUser)
                 val intent = Intent(this, MainActivity::class.java)

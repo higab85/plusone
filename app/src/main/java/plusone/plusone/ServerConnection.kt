@@ -37,6 +37,7 @@ object ServerConnection{
             var user = gson.fromJson(response?.body, User::class.java)
             CurrentUser.username = user.username
             CurrentUser.email = user.email
+            CurrentUser.name = user.name
         }
 
     }

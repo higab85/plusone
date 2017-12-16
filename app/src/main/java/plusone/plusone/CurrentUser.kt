@@ -7,7 +7,7 @@ import android.media.session.MediaSession
  */
 
 object CurrentUser{
-    var name:String = "name"
+    var name:String = ""
     var email:String = ""
     var username:String = "user"
     var password:String = ""
