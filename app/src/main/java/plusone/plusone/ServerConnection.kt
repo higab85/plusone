@@ -137,7 +137,8 @@ object ServerConnection{
         val user2:User = User("Jerry", "jerryferry", "jerry@fashion.com")
         val user3:User = User("Ron Paul", "pauliepaul", "ron@paul.com")
         val user4:User = User("Arnold", "arniebeast", "arnold@schwarzenegger.com")
-        val list:List<User> = listOf(user1, user2, user3, user4)
+        val user5:User = User(CurrentUser)
+        val list:List<User> = listOf(user1, user2, user3, user4, user5)
 //        https://futurestud.io/tutorials/gson-mapping-of-arrays-and-lists-of-objects
 //        val eventListType = object : TypeToken<List<Event>>() {
 //        }.type

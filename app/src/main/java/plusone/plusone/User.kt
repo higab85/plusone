@@ -15,6 +15,13 @@ class User : Serializable {
 
     constructor()
 
+    constructor(user:CurrentUser){
+        name = user.name
+        email = user.email
+        username = user.username
+        password = user.password
+    }
+
     constructor(name: String, email: String, username: String) {
         this.name = name
         this.email = email
