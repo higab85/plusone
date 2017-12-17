@@ -25,6 +25,7 @@ import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
+import static android.support.test.espresso.action.ViewActions.replaceText;
 import static android.support.test.espresso.action.ViewActions.scrollTo;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -51,6 +52,10 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
+import android.support.test.uiautomator.UiDevice;
+import android.support.test.uiautomator.UiObject;
+import android.support.test.uiautomator.UiObjectNotFoundException;
+import android.support.test.uiautomator.UiSelector;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
@@ -71,7 +76,7 @@ import static org.junit.Assert.*;
 import static plusone.plusone.R.id.event_list_recycler_view;
 
 /**
- * Created by Usuario on 14/11/2017.
+ * Created by Javier on 14/11/2017.
  */
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -103,7 +108,7 @@ public class MainActivityTest {
     public void escribirEnSearchBar(){
         myActivityTestRule.launchActivity(new Intent());
 
-        String texto ="Parece que funciona";
+        String texto ="Esto va que flipas,no?";
 
         onView(withId(R.id.editTextSearchHome)).check(matches((isDisplayed())));
         onView(withId(R.id.editTextSearchHome)).perform(clearText(),typeText(texto),closeSoftKeyboard());
@@ -175,9 +180,21 @@ public class MainActivityTest {
 
         onView(withId(R.id.addAddressButon)).perform(click());
 
-        onView(withId(R.id.eventAddress)).check(matches((isCompletelyDisplayed())));
-        onView(withId(R.id.eventAddress)).perform(clearText(),typeText("Where ever you want"));
-        onView(withId(R.id.eventAddress)).perform(closeSoftKeyboard());
+        String texto ="Estadio Santiago Bernabéu";
+
+        onView(withId(R.id.SearchAddress)).check(matches((isDisplayed())));
+        onView(withId(R.id.SearchAddress)).perform(clearText(),replaceText(texto),closeSoftKeyboard());
+        onView(withId(R.id.SearchAddress)).toString().compareTo(texto);
+        onView(withId(R.id.SearchMapButton)).perform(click());
+
+        UiDevice uiDevice = UiDevice.getInstance(getInstrumentation());
+        UiObject mMarker1 = uiDevice.findObject(new UiSelector().descriptionContains("Your Event Location :" + texto));
+        try {
+            mMarker1.click();
+        } catch (UiObjectNotFoundException e) {
+
+            e.printStackTrace();
+        }
 
         onView(withId(R.id.eventType)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Learning"))).perform(click());
@@ -202,7 +219,7 @@ public class MainActivityTest {
         onView(withId(R.id.eventName)).check(matches((isDisplayed())));
         onView(withId(R.id.eventName)).perform(clearText(),typeText("Evento de testeo2"),closeSoftKeyboard());
         onView(withId(R.id.description)).check(matches((isDisplayed())));
-        onView(withId(R.id.description)).perform(clearText(),typeText("Que dise loco"),closeSoftKeyboard());
+        onView(withId(R.id.description)).perform(clearText(),typeText("Hola soy Skynet y me he colado dentro de PlusOne, porfavor no digais nada"),closeSoftKeyboard());
 
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
@@ -230,9 +247,6 @@ public class MainActivityTest {
                 allOf(withId(android.R.id.button1), withText("OK")));
         appCompatButton7.perform(scrollTo(), click());
 
-        onView(withId(R.id.eventAddress)).check(matches((isCompletelyDisplayed())));
-        onView(withId(R.id.eventAddress)).perform(clearText(),typeText("Where ever you want"));
-        onView(withId(R.id.eventAddress)).perform(closeSoftKeyboard());
 
         onView(withId(R.id.eventType)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Learning"))).perform(click());
@@ -315,7 +329,7 @@ public class MainActivityTest {
         myActivityTestRule.launchActivity(new Intent());
         onView(withId(R.id.imageButtonAddEvent)).perform(click());
 
-        String texto ="Que pasa Julio!!";
+        String texto ="Que pasa Hulio!!";
         onView(withId(R.id.eventName)).check(matches((isDisplayed())));
         onView(withId(R.id.eventName)).perform(clearText(),typeText(texto),closeSoftKeyboard());
         onView(withId(R.id.eventName)).toString().compareTo(texto);

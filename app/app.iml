@@ -111,6 +111,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
@@ -172,7 +173,12 @@
     <orderEntry type="library" exported="" name="kotlin-stdlib-jre7-1.1.51" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="jsr305-2.0.1" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-1.0.1" level="project" />
+<<<<<<< Updated upstream
     <orderEntry type="library" exported="" name="play-services-base-11.2.0" level="project" />
+=======
+    <orderEntry type="library" exported="" name="play-services-maps-11.0.4" level="project" />
+    <orderEntry type="library" exported="" scope="TEST" name="uiautomator-v18-2.1.2" level="project" />
+>>>>>>> Stashed changes
     <orderEntry type="library" exported="" name="constraint-layout-solver-1.0.2" level="project" />
     <orderEntry type="library" exported="" name="okio-1.13.0" level="project" />
     <orderEntry type="library" exported="" name="annotations-13.0" level="project" />

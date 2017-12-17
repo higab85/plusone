@@ -88,6 +88,12 @@ class EventCreateActivity : AppCompatActivity() {
                  funDate(true)
             }
         }
+        if(eventStartsAtButton==null){
+            time=""
+        }
+        if(eventEndsAtButton==null){
+            time=""
+        }
         val eventEndsAtButton:Button? = findViewById<Button>(R.id.eventEndsAtButton)
 
         if (eventEndsAtButton != null){
