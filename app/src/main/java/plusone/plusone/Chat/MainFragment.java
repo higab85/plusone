@@ -125,6 +125,8 @@ public class MainFragment extends Fragment {
             throw new RuntimeException(e);
         }
 
+
+        mSocket.on("ping", sendPong);
         mSocket.on(Socket.EVENT_CONNECT,onConnect);
         mSocket.on(Socket.EVENT_DISCONNECT,onDisconnect);
         mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
@@ -152,6 +154,28 @@ public class MainFragment extends Fragment {
 
 //        startSignIn();
     }
+
+    private Emitter.Listener sendPong = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    JSONObject data = (JSONObject) args[0];
+                    String ping;
+                    try {
+                        ping = data.getString("ping");
+                    } catch (JSONException e) {
+                        return;
+                    }
+                    if(ping.equals("1")){
+                        mSocket.emit("pong", "pong");
+                    }
+                    Log.e("SOCKETPING", "RECEIVED PING! ");
+                }
+            });
+        }
+    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -306,7 +330,7 @@ public class MainFragment extends Fragment {
         if (!mSocket.connected()) return;
 
         mTyping = false;
-
+        System.out.println(mUsername + " is sending a message");
         String message = mInputMessageView.getText().toString().trim();
         if (TextUtils.isEmpty(message)) {
             mInputMessageView.requestFocus();
