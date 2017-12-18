@@ -57,7 +57,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val buttonEntertainment = findViewById<Button>(R.id.buttonEntertainment)
         val buttonLearning = findViewById<Button>(R.id.buttonLearning)
         val buttonOthers = findViewById<Button>(R.id.buttonOthers)
-        val buttonEventsSubscribed = findViewById<Button>(R.id.buttonEventsSubscribed)
+//        val buttonEventsSubscribed = findViewById<Button>(R.id.buttonEventsSubscribed)
 
 
         buttonSports.setOnClickListener{
@@ -96,14 +96,14 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             intent.putExtra("searchHome", "Food")
             startActivity(intent)
         }
-        buttonEventsSubscribed.setOnClickListener {
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "EventSubscribed")
-            startActivity(intent)
-
-
-        }
+//        buttonEventsSubscribed.setOnClickListener {
+//            val intent = Intent(this, EventList::class.java)
+//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+//            intent.putExtra("searchHome", "EventSubscribed")
+//            startActivity(intent)
+//
+//
+//        }
         imageButtonSearchHome.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             val searchBar: EditText = findViewById<EditText>(R.id.editTextSearchHome)

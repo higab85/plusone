@@ -87,9 +87,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }else if(searchHome=="EventSubscribed") {
             var user:User = CurrentUser
             EventSubscriptionsFrom(user).execute()
-        } else{
-        }
-        else if (searchHome=="user_id"){
+        } else if (searchHome=="user_id"){
             val user_id = this.intent.getStringExtra("user_id")
             refreshMyEvent(user_id).execute()
         }
@@ -362,9 +360,8 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
     }
 
-    inner class refreshMyEvent(private val user_id:String): AsyncTask<String, Void, Boolean>() {
-    inner class EventSubscriptionsFrom(private val user:User):AsyncTask<User, Boolean, Boolean>(){
 
+    inner class refreshMyEvent(private val user_id:String): AsyncTask<String, Void, Boolean>() {
         override fun doInBackground(vararg params: String):Boolean{
             val query = mapOf("user_id" to user_id)
             eventsInfoList = ServerConnection.getEvents(query)
@@ -380,6 +377,8 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
     }
 
+
+    inner class EventSubscriptionsFrom(private val user:User):AsyncTask<User, Boolean, Boolean>(){
 
         override fun doInBackground(vararg params: User):Boolean? {
 
