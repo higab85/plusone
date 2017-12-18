@@ -13,12 +13,17 @@ import java.io.Serializable
 
 class AllInfoEventActivity : AppCompatActivity() {
 
+    var peopleSubscribed:Int = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_all_info_event)
 
         val event:Event = this.intent.getSerializableExtra("event") as Event
+        userCount(event)
+
 
         System.out.println("Subscription: ${event.subscription}")
 
@@ -41,11 +46,14 @@ class AllInfoEventActivity : AppCompatActivity() {
         val allInfoPeopleNeededTextView: TextView = findViewById<TextView>(R.id.allInfoPeopleNeeded)
         allInfoPeopleNeededTextView.text = event.reqPeople.toString()
 
+
+        val peopleSubscribedView: TextView = findViewById<TextView>(R.id.peopleSubscribed)
+        allInfoPeopleNeededTextView.text = peopleSubscribed.toString()
+
         val subscriptionTextView: TextView = findViewById<TextView>(R.id.Subscribe)
 
         val allInfoLocation = event.location
 
-        isAttendingEvent(event)
 
         if ((event.latitude=="0.0" && event.longitude=="0.0") || (event.latitude=="" && event.longitude=="")){
             SeeMapButton.text = "No Localisation!"
@@ -55,10 +63,6 @@ class AllInfoEventActivity : AppCompatActivity() {
 
         Subscribe.setOnClickListener {
             toggleSubscribeEvent(event).execute()
-            if(event.subscription == true)
-                subscriptionTextView.text = "Subscribe"
-            else
-                subscriptionTextView.text = "Unsubscribe"
         }
 
 
@@ -96,25 +100,20 @@ class AllInfoEventActivity : AppCompatActivity() {
         override fun onCancelled() {
         }
     }
-    inner class isAttendingEvent (private val event:Event): AsyncTask<Event, Boolean, Boolean>() {
 
-        override fun doInBackground(vararg params: Event): Boolean? {
-            return ServerConnection.isAttending(event)
+    inner class userCount (private val event:Event): AsyncTask<Event, Void, Int>() {
+
+        override fun doInBackground(vararg params: Event): Int {
+            peopleSubscribed = ServerConnection.getUsersSubscribedTo(event)!!.count()
+            return ServerConnection.getUsersSubscribedTo(event)!!.count()
         }
 
-        override fun onPostExecute(success: Boolean?) {
-            answer(success)
+        fun onPostExecute(success: Boolean?) {
         }
 
         override fun onCancelled() {
         }
     }
 
-    fun answer(ans:Boolean?){
-        val subscriptionTextView: TextView = findViewById<TextView>(R.id.Subscribe)
-        if(ans!!)
-            subscriptionTextView.text = "Unsubscribe"
-        else
-            subscriptionTextView.text = "Subscribe"
-    }
+
 }

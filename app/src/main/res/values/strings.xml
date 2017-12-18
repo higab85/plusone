@@ -38,7 +38,7 @@
     <string name="timeStart">Starts at</string>
     <string name="location"> Location</string>
     <string name="type">Type</string>
-    <string name="Subscribe">Subscribe</string>
+    <string name="Subscribe">toggle subscription</string>
     <string name="Unsubscribe">UnSubscribe</string>
     <string name="addAddress">Add Address</string>
     <string name="searchMap">Search</string>
@@ -63,6 +63,8 @@
 
 
     <string name="log_out">Log out</string>
+    <string name="buttonEventsSubscribed">Events Subscribed</string>
+    <string name="buttonViewNumberPeople">People Subscribed</string>
     <string name="settingsChangeButton">Change</string>
     <string name="textViewGender">Gender</string>
     <string name="editTextSettingsPassword"></string>
