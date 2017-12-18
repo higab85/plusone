@@ -156,6 +156,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="9dp">
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="9dp">
         <Button
             android:id="@+id/settingsCloseButton"
             android:layout_width="250px"
@@ -166,5 +174,7 @@
             tools:layout_editor_absoluteY="273dp" />
 
     </TableRow>
+
+
 
 </TableLayout>

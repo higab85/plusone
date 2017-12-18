@@ -23,6 +23,7 @@ import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GooglePlayServicesUtil
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.*
+import kotlinx.android.synthetic.main.activity_all_info_event.*
 import plusone.plusone.R.id.editTextSearch2
 import java.lang.Math.*
 
@@ -35,6 +36,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
 
     private var eventsInfoList:List<Event>? = null
     private var eventsInfoListCurated:List<Event>? = null
+
 
     var myRecyclerView: RecyclerView? = null
     var eventListInfoAdapter: EventListInfoAdapter? = null
@@ -80,8 +82,10 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
         else if (searchHome=="Others"){
             refreshEventByType(searchHome).execute()
-        }
-        else{
+        }else if(searchHome=="EventSubscribed") {
+            var user:User = CurrentUser
+            EventSubscriptionsFrom(user).execute()
+        } else{
             refreshSearchEventData(searchHome).execute()
         }
 
@@ -94,6 +98,9 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         val timeSortButton: Button?  = findViewById<Button>(R.id.sortTimeButton)
         val distanceSortButton: Button?  = findViewById<Button>(R.id.sortDistanceButton)
         val filterButton:Button? = findViewById<Button>(R.id.filterButton)
+
+
+
 
         if (searchButton != null){
             searchButton.setOnClickListener{view->
@@ -123,6 +130,8 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
 
 
     }
+
+
 
     private fun requestPermission() {
         if(ActivityCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED
@@ -345,6 +354,25 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
     }
 
+    inner class EventSubscriptionsFrom(private val user:User):AsyncTask<User, Boolean, Boolean>(){
+
+        override fun doInBackground(vararg params: User):Boolean? {
+
+            eventsInfoList = ServerConnection.getEventSubscriptionsFrom(user)
+            return true
+
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+
+        }
+
+        override fun onCancelled() {
+        }
+
+
+
+    }
 
     ///Code to take the location of the device
 

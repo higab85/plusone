@@ -110,7 +110,8 @@ object ServerConnection{
 
     fun getEventSubscriptionsFrom(user:User):List<Event>?{
         val gson = Gson()
-        val url = urlHost + "/user/" + user.email + "events"
+
+        val url = urlHost + "/user/" + user.email + "/events"
 
         val response:UsableResponse? = get(url,CurrentUser.token)
 
