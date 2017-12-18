@@ -97,9 +97,9 @@ public class LoginActivityUITest {
         myActivityTestRule.launchActivity(new Intent());
 
         onView(withId(R.id.user)).check(matches(isDisplayed()));
-        onView(withId(R.id.user)).perform(clearText(),typeText("test@test.com"),closeSoftKeyboard());
+        onView(withId(R.id.user)).perform(clearText(),typeText("javier@asenjo.com"),closeSoftKeyboard());
         onView(withId(R.id.password)).check(matches(isDisplayed()));
-        onView(withId(R.id.password)).perform(clearText(),typeText("test"),closeSoftKeyboard());
+        onView(withId(R.id.password)).perform(clearText(),typeText("javicraft"),closeSoftKeyboard());
         onView(withId(R.id.loginButton)).perform(click());
         intended(hasComponent(MainActivity.class.getName()));
     }
@@ -123,7 +123,7 @@ public class LoginActivityUITest {
         myActivityTestRule.launchActivity(new Intent());
 
         onView(withId(R.id.user)).check(matches(isDisplayed()));
-        onView(withId(R.id.user)).perform(clearText(),typeText("testMalo@test.com"),closeSoftKeyboard());
+        onView(withId(R.id.user)).perform(clearText(),replaceText("Este test lo he hecho, perdón, hemos"),closeSoftKeyboard());
         onView(withId(R.id.password)).check(matches(isDisplayed()));
         onView(withId(R.id.password)).perform(clearText(),typeText("itsATrap"),closeSoftKeyboard());
         onView(withId(R.id.loginButton)).perform(click());
@@ -175,11 +175,11 @@ public class LoginActivityUITest {
 
         ViewInteraction appCompatAutoCompleteTextView2 = onView(
                 withId(R.id.user));
-        appCompatAutoCompleteTextView2.perform(scrollTo(), replaceText("test@test.com"), closeSoftKeyboard());
+        appCompatAutoCompleteTextView2.perform(scrollTo(), replaceText("javier@asenjo.com"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText = onView(
                 withId(R.id.password));
-        appCompatEditText.perform(scrollTo(), replaceText("test"), closeSoftKeyboard());
+        appCompatEditText.perform(scrollTo(), replaceText("javicraft"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton = onView(
                 Matchers.allOf(withId(R.id.loginButton), withText("Sign in"),
@@ -201,7 +201,7 @@ public class LoginActivityUITest {
 
         ViewInteraction appCompatEditText4 = onView(
                 Matchers.allOf(withId(R.id.description), isDisplayed()));
-        appCompatEditText4.perform(replaceText("Descripcion de prueba"), closeSoftKeyboard());
+        appCompatEditText4.perform(replaceText("I like turtles"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton2 = onView(
                 Matchers.allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
@@ -256,11 +256,11 @@ public class LoginActivityUITest {
 
         ViewInteraction appCompatAutoCompleteTextView2 = onView(
                 withId(R.id.user));
-        appCompatAutoCompleteTextView2.perform(scrollTo(), replaceText("test@test.com"), closeSoftKeyboard());
+        appCompatAutoCompleteTextView2.perform(scrollTo(), replaceText("javier@asenjo.com"), closeSoftKeyboard());
 
         ViewInteraction appCompatEditText = onView(
                 withId(R.id.password));
-        appCompatEditText.perform(scrollTo(), replaceText("test"), closeSoftKeyboard());
+        appCompatEditText.perform(scrollTo(), replaceText("javicraft"), closeSoftKeyboard());
 
         ViewInteraction appCompatButton = onView(
                 Matchers.allOf(withId(R.id.loginButton), withText("Sign in"),
