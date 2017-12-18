@@ -35,7 +35,7 @@ object ServerConnection{
         val response:UsableResponse? = get(url, CurrentUser.token)
         if (response?.message == "OK") {
             var user = gson.fromJson(response?.body, User::class.java)
-            CurrentUser.username = user.username
+            CurrentUser.username = user.name
             CurrentUser.email = user.email
             CurrentUser.name = user.name
         }
