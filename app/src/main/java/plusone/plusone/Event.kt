@@ -12,6 +12,7 @@ import java.time.format.DateTimeFormatter
 
 class Event: Serializable {
     var id:String = ""
+    var user_id:String=""
     var name:String = ""
     var description:String = ""
     var start:String = ""
@@ -33,8 +34,9 @@ class Event: Serializable {
         this.end=end
         this.type=type
     }
-    constructor(id:String,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int,latitude:String,longitude:String){
+    constructor(id:String,user_id:String,name: String,description:String, location:String,start:String,end:String, type:String,reqPeople:Int,latitude:String,longitude:String){
         this.id=id
+        this.user_id = user_id
         this.name=name
         this.description=description
         this.location=location

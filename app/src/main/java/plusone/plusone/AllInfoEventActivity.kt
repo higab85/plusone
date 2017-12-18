@@ -53,12 +53,12 @@ class AllInfoEventActivity : AppCompatActivity() {
         }
 
 
+        if(event.subscription == true)
+            subscriptionTextView.text = "Subscribe"
+        else
+            subscriptionTextView.text = "Unsubscribe"
         Subscribe.setOnClickListener {
             toggleSubscribeEvent(event).execute()
-            if(event.subscription == true)
-                subscriptionTextView.text = "Subscribe"
-            else
-                subscriptionTextView.text = "Unsubscribe"
         }
 
 

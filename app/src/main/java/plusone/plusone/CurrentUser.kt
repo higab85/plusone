@@ -13,4 +13,5 @@ object CurrentUser{
     var password:String = ""
     var userLoggedIn:Boolean = false
     var token:String = ""
+    var id:String = ""
 }

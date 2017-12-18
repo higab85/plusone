@@ -18,6 +18,8 @@ import java.time.format.DateTimeFormatter
 import android.support.v4.app.ActivityCompat
 import android.content.pm.PackageManager
 import android.location.Location
+import android.support.design.widget.NavigationView
+import android.support.v7.widget.CardView
 import android.util.Log
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GooglePlayServicesUtil
@@ -80,6 +82,10 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
         else if (searchHome=="Others"){
             refreshEventByType(searchHome).execute()
+        }
+        else if (searchHome=="user_id"){
+            val user_id = this.intent.getStringExtra("user_id")
+            refreshMyEvent(user_id).execute()
         }
         else{
             refreshSearchEventData(searchHome).execute()
@@ -332,6 +338,23 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
 
         override fun doInBackground(vararg params: String):Boolean{
             val query = mapOf("type" to type)
+            eventsInfoList = ServerConnection.getEvents(query)
+            return true
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
+            myRecyclerView?.adapter= eventListInfoAdapter
+        }
+
+        override fun onCancelled() {
+        }
+    }
+
+    inner class refreshMyEvent(private val user_id:String): AsyncTask<String, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: String):Boolean{
+            val query = mapOf("user_id" to user_id)
             eventsInfoList = ServerConnection.getEvents(query)
             return true
         }

@@ -38,6 +38,7 @@ object ServerConnection{
             CurrentUser.username = user.username
             CurrentUser.email = user.email
             CurrentUser.name = user.name
+            CurrentUser.id = user.public_id
         }
 
     }
@@ -74,6 +75,21 @@ object ServerConnection{
         val json = gson.toJson(user)
 
         val url = urlHost + "/user"
+        val response:UsableResponse? = put(url, json)
+
+        if (response?.message == "OK") {
+            getUserData()
+            return true
+        }
+
+        return false
+    }
+
+    fun modifyEvent(event:Event):Boolean{
+        val gson = Gson()
+        val json = gson.toJson(event)
+
+        val url = urlHost + "/event"
         val response:UsableResponse? = put(url, json)
 
         if (response?.message == "OK") {
@@ -123,6 +139,7 @@ object ServerConnection{
         val list:List<Event> = gson.fromJson(response?.body, eventListType)
         return list
     }
+
 
     fun getEvent(event:Event):Event?{
         val gson = Gson()

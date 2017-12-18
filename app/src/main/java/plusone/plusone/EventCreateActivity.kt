@@ -31,6 +31,16 @@ class EventCreateActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event)
 
+        var isEditTrue:String = ""
+        isEditTrue = this.intent.getStringExtra("activateEdit")
+        if(isEditTrue!="" && isEditTrue=="isTrue"){
+            val eventToModify:Event = this.intent.getSerializableExtra("event") as Event
+            eventName.setText(eventToModify.name)
+            description.setText(eventToModify.description)
+            createEventButton.setText("EDIT")
+        }
+
+
         val nameFrom =this.intent.getStringExtra("name")
         eventName.setText(nameFrom)
         val descriptionFrom =this.intent.getStringExtra("description")
@@ -44,24 +54,36 @@ class EventCreateActivity : AppCompatActivity() {
 
 
         createEventButton.setOnClickListener{
-            val event = Event()
-            event.name = eventName.text.toString()
-            event.description=description.text.toString()
+            var event = Event()
+
+            if(isEditTrue!=""){
+                val eventToModify:Event = this.intent.getSerializableExtra("event") as Event
+                if(eventToModify!=null){
+                    event = eventToModify
+                }
+            }
+
+            if(eventName.text.toString()!=null){event.name = eventName.text.toString()}
+            if(description.text.toString()!=null){event.description=description.text.toString()}
             // TODO: change to calculatable format
             System.out.println(eventStart)
             System.out.println(eventEnd)
-            event.start = eventStart!!
-            event.end = eventEnd!!
-            event.location = eventAddress.text.toString()
+            if(eventStart!!!=null){event.start = eventStart!!}
+            if(eventEnd!!!=null){event.end = eventEnd!!}
+            if(eventAddress.text.toString()!=null){event.location = eventAddress.text.toString()}
             val spinner = findViewById<Spinner>(R.id.eventType)
-            event.type = spinner.getSelectedItem().toString();
-            event.reqPeople = peopleNeeded.text.toString().toInt()
-            event.latitude = latitudeFrom.toString()
-            event.longitude = longitudeFrom.toString()
+            if(spinner.getSelectedItem().toString()!=null){event.type = spinner.getSelectedItem().toString()}
+            if(peopleNeeded.text.toString().toInt()!=null){event.reqPeople = peopleNeeded.text.toString().toInt()}
+            if(latitudeFrom.toString()!=null){event.latitude = latitudeFrom.toString()}
+            if(longitudeFrom.toString()!=null){event.longitude = longitudeFrom.toString()}
 
 
-
-            CreateEvent().execute(event)
+            if(isEditTrue!=null){
+                EditEvent().execute(event)
+            }
+            else{
+                CreateEvent().execute(event)
+            }
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
 
@@ -163,7 +185,21 @@ class EventCreateActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    inner class EditEvent: AsyncTask<Event, Void, Boolean>() {
+
+        override fun doInBackground(vararg params: Event): Boolean {
+            return ServerConnection.modifyEvent(params[0])
+        }
+
+        override fun onPostExecute(success: Boolean?) {
+            finish()
+        }
+
+        override fun onCancelled() {
+        }
+    }
+
+    /**override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         // Check which request we're responding to
         if (requestCode == ID) {
             // Make sure the request was successful
@@ -174,7 +210,7 @@ class EventCreateActivity : AppCompatActivity() {
 
             }
         }
-    }
+    }**/
 
 
 }

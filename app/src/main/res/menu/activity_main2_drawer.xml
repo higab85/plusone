@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/imageButtonAddEvent"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Create Event" />
+        <item
+            android:id="@+id/imageButtonMyEvents"
+            android:icon="@android:drawable/btn_star_big_on"
+            android:title="Events Created" />
+        <item
+            android:id="@+id/imageButtonSettings"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="My Account" />
+    </group>
+
+    <item android:title="Policy">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="About Us" />
+        </menu>
+    </item>
+
+</menu>

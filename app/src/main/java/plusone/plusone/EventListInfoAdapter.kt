@@ -9,7 +9,11 @@ import android.view.ViewGroup
 import android.content.Context
 import android.content.Intent
 import android.location.Location
+import android.media.Image
+import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
+import android.widget.Button
+import android.widget.ImageButton
 import java.io.Serializable
 
 /**
@@ -20,15 +24,16 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
     var PI_RAD = Math.PI / 180.0
 
     inner class MyViewHolder(itemview: View) : RecyclerView.ViewHolder(itemview) {
-        var id: String = "100"
+        var id: String = ""
         var nameEvent: TextView
-        var locationEvent: TextView
+        //var locationEvent: TextView
         var startEvent: TextView
         var endEvent: TextView
         var descriptionEvent:TextView
         var typeEvent:TextView
         var reqPeopleEvent:TextView
         var distance:TextView
+        var editEvent:ImageButton
         var latitude:Double = 0.0
         var longitude:Double= 0.0
 
@@ -36,13 +41,14 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
         init {
 
             nameEvent=itemview.findViewById<TextView>(R.id.event_name)
-            locationEvent = itemview.findViewById<TextView>(R.id.event_location)
+            //locationEvent = itemview.findViewById<TextView>(R.id.event_location)
             startEvent = itemview.findViewById<TextView>(R.id.event_start)
             endEvent = itemview.findViewById<TextView>(R.id.event_end)
             descriptionEvent=itemview.findViewById<TextView>(R.id.event_type)
             typeEvent=itemview.findViewById<TextView>(R.id.event_description)
             reqPeopleEvent=itemview.findViewById<TextView>(R.id.event_reqPeople)
             distance=itemview.findViewById<TextView>(R.id.event_distance)
+            editEvent=itemview.findViewById<ImageButton>(R.id.imageButtonCard)
 
 
         }
@@ -52,6 +58,12 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
                 val intent = Intent(myContext, AllInfoEventActivity::class.java)
                 intent.putExtra("event", event as Serializable)
                 itemView.context.startActivity(intent)
+            }
+            editEvent.setOnClickListener{View->
+                val intent = Intent(myContext, EventCreateActivity::class.java)
+                intent.putExtra("activateEdit","isTrue")
+                intent.putExtra("event", event as Serializable)
+                editEvent.context.startActivity(intent)
             }
         }
     }
@@ -66,8 +78,11 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val eventInfo = eventsInfoList!![position]
         holder.id = eventInfo.id
+        if (eventInfo.user_id == CurrentUser.id){
+            holder.editEvent.setVisibility(1)
+        }
         holder.nameEvent.text = eventInfo.name
-        holder.locationEvent.text = eventInfo.location
+        //holder.locationEvent.text = eventInfo.location
         holder.startEvent.text = "Start: "+eventInfo.start.subSequence(0,10)+" At: "+eventInfo.start.subSequence(11,16)
         holder.endEvent.text = "  End: "+eventInfo.end.subSequence(0,10)+" At: "+eventInfo.end.subSequence(11,16)
         holder.descriptionEvent.text=eventInfo.description
