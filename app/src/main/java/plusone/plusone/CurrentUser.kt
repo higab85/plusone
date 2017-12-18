@@ -9,4 +9,5 @@ import android.media.session.MediaSession
 object CurrentUser : User() {
     var userLoggedIn:Boolean = false
     var token:String = ""
+    var id:String = ""
 }

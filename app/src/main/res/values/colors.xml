@@ -4,6 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#ff4081</color>
 
+    <color name="colorPrimaryMenu">#00000000</color>
+    <color name="colorAccentMenu">#ff4081</color>
+    <color name="colorPrimaryDarkMenu">#303F9F</color>
+
+
+
+
     <color name="username0">#e21400</color>
     <color name="username1">#91580f</color>
     <color name="username2">#f8a700</color>
