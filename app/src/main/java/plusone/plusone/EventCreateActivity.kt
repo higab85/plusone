@@ -53,10 +53,11 @@ class EventCreateActivity : AppCompatActivity() {
         eventAddress.setText(addressFrom)
 
 
+
         createEventButton.setOnClickListener{
             var event = Event()
 
-            if(isEditTrue!=""){
+            if(isEditTrue=="isTrue"){
                 val eventToModify:Event = this.intent.getSerializableExtra("event") as Event
                 if(eventToModify!=null){
                     event = eventToModify
@@ -78,7 +79,7 @@ class EventCreateActivity : AppCompatActivity() {
             if(longitudeFrom.toString()!=null){event.longitude = longitudeFrom.toString()}
 
 
-            if(isEditTrue!=null){
+            if(isEditTrue=="isTrue"){
                 EditEvent().execute(event)
             }
             else{
@@ -205,7 +206,7 @@ class EventCreateActivity : AppCompatActivity() {
         }
     }
 
-    /**override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
         // Check which request we're responding to
         if (requestCode == ID) {
             // Make sure the request was successful
@@ -216,7 +217,7 @@ class EventCreateActivity : AppCompatActivity() {
 
             }
         }
-    }**/
+    }
 
 
 }

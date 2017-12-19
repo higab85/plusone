@@ -96,14 +96,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             intent.putExtra("searchHome", "Food")
             startActivity(intent)
         }
-//        buttonEventsSubscribed.setOnClickListener {
-//            val intent = Intent(this, EventList::class.java)
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-//            intent.putExtra("searchHome", "EventSubscribed")
-//            startActivity(intent)
-//
-//
-//        }
         imageButtonSearchHome.setOnClickListener{
             val intent = Intent(this, EventList::class.java)
             val searchBar: EditText = findViewById<EditText>(R.id.editTextSearchHome)
@@ -160,6 +152,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
         else if (id == R.id.imageButtonSettings) {
             val intent = Intent(this, AjustesActivity::class.java)
+            startActivity(intent)
+        }
+        else if (id == R.id.buttonEventsSubscribed) {
+            val intent = Intent(this, EventList::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
+            intent.putExtra("searchHome", "EventSubscribed")
             startActivity(intent)
         }
 

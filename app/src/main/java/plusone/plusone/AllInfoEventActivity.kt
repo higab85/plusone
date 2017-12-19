@@ -83,11 +83,14 @@ class AllInfoEventActivity : AppCompatActivity() {
         peopleSubscribedView.text = peopleSubscribed.toString()
 
         val allInfoSubscribe: TextView = findViewById<TextView>(R.id.Subscribe)
-        if(subscribedOrNot)
+        if(subscribedOrNot){
             allInfoSubscribe.text = "unsubscribe"
-        else
+            Chat.setEnabled(true)
+        }
+        else {
             allInfoSubscribe.text = "subscribe"
-
+            Chat.setEnabled(false)
+        }
         if ((event!!.latitude=="0.0" && event!!.longitude=="0.0") || (event!!.latitude=="" && event!!.longitude=="")){
             SeeMapButton.text = "No Localisation!"
             SeeMapButton.setEnabled(false)
