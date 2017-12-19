@@ -57,6 +57,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val buttonEntertainment = findViewById<Button>(R.id.buttonEntertainment)
         val buttonLearning = findViewById<Button>(R.id.buttonLearning)
         val buttonOthers = findViewById<Button>(R.id.buttonOthers)
+        val imageButtonAddEvent2 = findViewById<ImageButton>(R.id.imageButtonAddEvent2)
 //        val buttonEventsSubscribed = findViewById<Button>(R.id.buttonEventsSubscribed)
 
 
@@ -102,6 +103,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             val searchWordHome:String = searchBar.text.toString()
             intent.putExtra("searchHome", searchWordHome)
             intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+            startActivity(intent)
+        }
+        imageButtonAddEvent2.setOnClickListener{
+            val intent = Intent(this, EventCreateActivity::class.java)
+            intent.putExtra("activateEdit","isFalse")
             startActivity(intent)
         }
     }
