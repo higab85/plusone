@@ -3,6 +3,7 @@ package plusone.plusone.Chat;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.Fragment;
@@ -30,6 +31,7 @@ import org.json.JSONObject;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import io.socket.client.Socket;
 import io.socket.emitter.Emitter;
@@ -60,6 +62,7 @@ public class MainFragment extends Fragment {
     private Socket mSocket;
     private Boolean messageHistoryReceived = false;
     private Boolean isConnected = true;
+    private JSONObject emptyPayload = new JSONObject();
 
     public MainFragment() {
         super();
@@ -69,15 +72,6 @@ public class MainFragment extends Fragment {
         return mSocket;
     }
 
-
-    private Emitter.Listener onMessageHistoryEnd = new Emitter.Listener() {
-        @Override
-        public void call(Object... args) {
-            System.out.println("listener");
-            messageHistoryReceived = true;
-
-        }
-    };
 
     private Emitter.Listener onLogin = new Emitter.Listener() {
         @Override
@@ -116,7 +110,7 @@ public class MainFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        new keepConnectionAlive().execute();
         setHasOptionsMenu(true);
 
         try {
@@ -125,8 +119,6 @@ public class MainFragment extends Fragment {
             throw new RuntimeException(e);
         }
 
-
-        mSocket.on("ping", sendPong);
         mSocket.on(Socket.EVENT_CONNECT,onConnect);
         mSocket.on(Socket.EVENT_DISCONNECT,onDisconnect);
         mSocket.on(Socket.EVENT_CONNECT_ERROR, onConnectError);
@@ -139,6 +131,8 @@ public class MainFragment extends Fragment {
         mSocket.on("login", onLogin);
         mSocket.on("message history", onMessageHistory);
         mSocket.on("message history end", onMessageHistoryEnd);
+        mSocket.on("pong", onPong);
+
 
         mSocket.connect();
         JSONObject payload = new JSONObject();
@@ -155,27 +149,27 @@ public class MainFragment extends Fragment {
 //        startSignIn();
     }
 
-    private Emitter.Listener sendPong = new Emitter.Listener() {
-        @Override
-        public void call(final Object... args) {
-            getActivity().runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    JSONObject data = (JSONObject) args[0];
-                    String ping;
-                    try {
-                        ping = data.getString("ping");
-                    } catch (JSONException e) {
-                        return;
-                    }
-                    if(ping.equals("1")){
-                        mSocket.emit("pong", "pong");
-                    }
-                    Log.e("SOCKETPING", "RECEIVED PING! ");
-                }
-            });
-        }
-    };
+//    private Emitter.Listener sendPong = new Emitter.Listener() {
+//        @Override
+//        public void call(final Object... args) {
+//            getActivity().runOnUiThread(new Runnable() {
+//                @Override
+//                public void run() {
+//                    JSONObject data = (JSONObject) args[0];
+//                    String ping;
+//                    try {
+//                        ping = data.getString("ping");
+//                    } catch (JSONException e) {
+//                        return;
+//                    }
+//                    if(ping.equals("1")){
+//                        mSocket.emit("pong", "pong");
+//                    }
+//                    Log.e("SOCKETPING", "RECEIVED PING! ");
+//                }
+//            });
+//        }
+//    };
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -189,7 +183,6 @@ public class MainFragment extends Fragment {
 
         mSocket.disconnect();
         mSocket.off("login", onLogin);
-
         mSocket.off(Socket.EVENT_CONNECT, onConnect);
         mSocket.off(Socket.EVENT_DISCONNECT, onDisconnect);
         mSocket.off(Socket.EVENT_CONNECT_ERROR, onConnectError);
@@ -200,6 +193,17 @@ public class MainFragment extends Fragment {
         mSocket.off("typing", onTyping);
         mSocket.off("stop typing", onStopTyping);
     }
+
+
+    private Emitter.Listener onMessageHistoryEnd = new Emitter.Listener() {
+        @Override
+        public void call(Object... args) {
+            System.out.println("listener");
+            mSocket.emit("ping", emptyPayload);
+            messageHistoryReceived = true;
+
+        }
+    };
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
@@ -261,34 +265,11 @@ public class MainFragment extends Fragment {
             return;
         }
 
-        mUsername = "Keeat";
 //        int numUsers = data.getIntExtra("numUsers", 1);
 
         addLog(getResources().getString(R.string.message_welcome));
 //        addParticipantsLog(numUsers);
     }
-
-//    @Override
-//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-//        // Inflate the menu; this adds items to the action bar if it is present.
-//        inflater.inflate(R.menu.menu_main, menu);
-//    }
-
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        // Handle action bar item clicks here. The action bar will
-//        // automatically handle clicks on the Home/Up button, so long
-//        // as you specify a parent activity in AndroidManifest.xml.
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.action_leave) {
-//            leave();
-//            return true;
-//        }
-//
-//        return super.onOptionsItemSelected(item);
-//    }
 
     private void addLog(String message) {
         mMessages.add(new Message.Builder(Message.TYPE_LOG)
@@ -296,10 +277,6 @@ public class MainFragment extends Fragment {
         mAdapter.notifyItemInserted(mMessages.size() - 1);
         scrollToBottom();
     }
-
-//    private void addParticipantsLog(int numUsers) {
-//        addLog(getResources().getQuantityString(R.plurals.message_participants, numUsers, numUsers));
-//    }
 
     private void addMessage(String username, String message) {
         mMessages.add(new Message.Builder(Message.TYPE_MESSAGE)
@@ -342,6 +319,8 @@ public class MainFragment extends Fragment {
 
         // perform the sending message attempt.
         mSocket.emit("new message",message);
+        mSocket.emit("ping", emptyPayload);
+        System.out.println("sent ping");
     }
 
 
@@ -555,5 +534,30 @@ public class MainFragment extends Fragment {
             mSocket.emit("stop typing");
         }
     };
+
+    private Emitter.Listener onPong = new Emitter.Listener() {
+        @Override
+        public void call(final Object... args) {
+            System.out.println("pong");
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                }
+            });
+        }
+    };
+
+    private class keepConnectionAlive extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void ... parms) {
+            while(true){
+                android.os.SystemClock.sleep(5*1000);
+                mSocket.emit("buaa");
+                System.out.println("buaa");
+            }
+        }
+
+    }
+
 }
 
