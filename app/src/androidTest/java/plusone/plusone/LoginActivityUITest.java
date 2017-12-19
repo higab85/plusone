@@ -188,7 +188,7 @@ public class LoginActivityUITest {
         appCompatButton.perform(scrollTo(), click());
 
         ViewInteraction appCompatImageButton = onView(
-                Matchers.allOf(withId(R.id.imageButtonAddEvent), isDisplayed()));
+                Matchers.allOf(withId(R.id.imageButtonAddEvent2), isDisplayed()));
         appCompatImageButton.perform(click());
 
         ViewInteraction appCompatEditText2 = onView(
@@ -318,7 +318,7 @@ public class LoginActivityUITest {
         appCompatButton.perform(scrollTo(), click());
 
         ViewInteraction appCompatImageButton = onView(
-                Matchers.allOf(withId(R.id.imageButtonAddEvent), isDisplayed()));
+                Matchers.allOf(withId(R.id.imageButtonAddEvent2), isDisplayed()));
         appCompatImageButton.perform(click());
 
         ViewInteraction appCompatEditText2 = onView(
