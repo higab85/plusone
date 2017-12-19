@@ -388,7 +388,8 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
 
         override fun onPostExecute(success: Boolean?) {
-
+            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
+            myRecyclerView?.adapter= eventListInfoAdapter
         }
 
         override fun onCancelled() {

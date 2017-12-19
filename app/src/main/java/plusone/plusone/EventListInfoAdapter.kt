@@ -14,6 +14,7 @@ import android.support.v4.content.ContextCompat.startActivity
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageButton
+import android.widget.Toast
 import java.io.Serializable
 
 /**
@@ -60,10 +61,12 @@ class EventListInfoAdapter(private val myContext: Context, private val eventsInf
                 itemView.context.startActivity(intent)
             }
             editEvent.setOnClickListener{View->
-                val intent = Intent(myContext, EventCreateActivity::class.java)
-                intent.putExtra("activateEdit","isTrue")
-                intent.putExtra("event", event as Serializable)
-                editEvent.context.startActivity(intent)
+                //val intent = Intent(myContext, EventCreateActivity::class.java)
+                //intent.putExtra("activateEdit","isTrue")
+                //intent.putExtra("event", event as Serializable)
+                //editEvent.context.startActivity(intent)
+                Toast.makeText(myContext, "You have to wait the new version of PlusOne! :)",
+                        Toast.LENGTH_LONG).show();
             }
         }
     }

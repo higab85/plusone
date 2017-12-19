@@ -11,6 +11,10 @@
             android:icon="@android:drawable/btn_star_big_on"
             android:title="Events Created" />
         <item
+            android:id="@+id/buttonEventsSubscribed"
+            android:icon="@android:drawable/ic_menu_agenda"
+            android:title="Events Suscribed" />
+        <item
             android:id="@+id/imageButtonSettings"
             android:icon="@drawable/ic_menu_manage"
             android:title="My Account" />
