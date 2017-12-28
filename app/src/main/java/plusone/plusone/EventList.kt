@@ -1,6 +1,6 @@
 package plusone.plusone
 
-import android.Manifest
+
 import android.app.DatePickerDialog
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
@@ -18,16 +18,11 @@ import java.time.format.DateTimeFormatter
 import android.support.v4.app.ActivityCompat
 import android.content.pm.PackageManager
 import android.location.Location
-import android.support.design.widget.NavigationView
-import android.support.v7.widget.CardView
 import android.util.Log
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GooglePlayServicesUtil
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.location.*
-import kotlinx.android.synthetic.main.activity_all_info_event.*
-import plusone.plusone.R.id.editTextSearch2
-import java.lang.Math.*
 
 
 // This activity will show an undetailed list of all the events (filtered or not depending on
@@ -36,19 +31,17 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
 
 
 
-    private var eventsInfoList:List<Event>? = null
-    private var eventsInfoListCurated:List<Event>? = null
+    private var eventsInfoList:List<Event> = emptyList()
+    private var eventsInfoListCurated:List<Event> = emptyList()
 
 
     var myRecyclerView: RecyclerView? = null
     var eventListInfoAdapter: EventListInfoAdapter? = null
-    val searchWord:String = ""
 
     val PERMISSON_REQUEST_CODE = 1001
     val PLAY_SERVICE_RESOLUTION_REQUEST = 1000
     var mGoogleApiClient: GoogleApiClient? = null
     var mLocationRequest: LocationRequest? = null
-    var locationDevice: Location? = null
     var latitudeDevice:Double = 0.0
     var longitudeDevice:Double = 0.0
 
@@ -63,36 +56,21 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
             buildGoogleApiCLient()
         }
 
-        val searchHome = this.intent.getStringExtra("searchHome")
-        if (searchHome==""){
-            refreshEventData().execute()
-        }
-        else if (searchHome=="Sports Event"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Food"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Party"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Entertainment"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Learning"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Others"){
-            refreshEventByType(searchHome).execute()
-        }else if(searchHome=="EventSubscribed") {
-            var user:User = CurrentUser
-            EventSubscriptionsFrom(user).execute()
-        } else if (searchHome=="user_id"){
-            val user_id = this.intent.getStringExtra("user_id")
-            refreshMyEvent(user_id).execute()
-        }
-        else{
-            refreshSearchEventData(searchHome).execute()
+        val filterType = this.intent.getStringExtra("filter type")
+        val filterSearch:String? = this.intent.getStringExtra("filter search")
+        val filterOther:String? = this.intent.getStringExtra("filter other")
+
+        var queryMap = mutableMapOf<String,String>()
+        if (filterType != null)
+            queryMap["type"] = filterType
+        if(filterSearch != null)
+            queryMap["name"] = filterSearch
+
+        refreshEventData().execute(queryMap)
+
+
+        if(filterOther=="EventSubscribed") {
+            EventSubscriptionsFrom(CurrentUser).execute()
         }
 
         myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_view)
@@ -106,34 +84,46 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         val filterButton:Button? = findViewById<Button>(R.id.filterButton)
 
 
-
-
-        if (searchButton != null){
-            searchButton.setOnClickListener{view->
-                val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2)
-                val searchWord:String = searchBar.text.toString()
-                eventsInfoListCurated = LocalEventFilter.searchEventByName(eventsInfoList, searchWord)
-                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoListCurated,latitudeDevice,longitudeDevice)
-                myRecyclerView?.adapter= eventListInfoAdapter
-            }
+        fun curateInfoList(list:List<Event>){
+            eventListInfoAdapter = EventListInfoAdapter(this@EventList,list,latitudeDevice,longitudeDevice)
+            myRecyclerView?.adapter= eventListInfoAdapter
         }
 
-        if (timeSortButton != null){
-            timeSortButton.setOnClickListener{view->
-                eventsInfoList = LocalEventFilter.orderTimeFirstToLast(eventsInfoList!!)
-                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
-                myRecyclerView?.adapter= eventListInfoAdapter
-            }
+        searchButton?.setOnClickListener{view->
+            val searchBar = findViewById<EditText>(R.id.editTextSearch2)
+            val searchWord:String = searchBar.text.toString()
+            eventsInfoListCurated = LocalEventFilter.searchEventByName(eventsInfoList, searchWord)
+            curateInfoList(eventsInfoListCurated)
+            myRecyclerView?.adapter= eventListInfoAdapter
         }
 
-        if (distanceSortButton != null){
-            distanceSortButton.setOnClickListener{view->
-                eventsInfoList = LocalEventFilter.orderEventsByDistance(eventsInfoList!!)
-                eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
-                myRecyclerView?.adapter= eventListInfoAdapter
+
+        var orderTimeFirstToLast = false
+        var orderDistanceClosestFirst = false
+
+        fun orderEvents(order:Boolean, list:List<Event>){
+            when(order){
+                true -> eventsInfoList = list.reversed()
+                false -> eventsInfoList = list
             }
+            curateInfoList(eventsInfoList)
         }
 
+        timeSortButton?.setOnClickListener{view->
+            val list = LocalEventFilter.orderTimeFirstToLast(eventsInfoList)
+            orderEvents(orderTimeFirstToLast, list)
+
+            orderTimeFirstToLast = !orderTimeFirstToLast
+            orderDistanceClosestFirst = false
+        }
+
+        distanceSortButton?.setOnClickListener{view->
+            val list = LocalEventFilter.orderEventsByDistance(eventsInfoList)
+            orderEvents(orderDistanceClosestFirst, list)
+
+            orderDistanceClosestFirst = !orderDistanceClosestFirst
+            orderTimeFirstToLast = false
+        }
 
     }
 
@@ -184,7 +174,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
     }
 
     override fun onConnected(p0: Bundle?) {
-        createLocationRequest();
+        createLocationRequest()
     }
 
     private fun createLocationRequest() {
@@ -307,73 +297,18 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
         }
     }
 
-
     // refresh the list: Synchronises local list of events with database on cloud.
-    inner class refreshEventData: AsyncTask<Void, Void, Boolean>() {
+    inner class refreshEventData: AsyncTask<Map<String,String>, Void, Boolean>() {
 
-        override fun doInBackground(vararg params: Void):Boolean{
-            eventsInfoList = ServerConnection.getEvents()
-            return true
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            myRecyclerView?.adapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
-        }
-
-        override fun onCancelled() {
-        }
-    }
-
-    // updates the list to only show events which are relevant to search query
-    inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: String):Boolean{
-            val query = mapOf("name" to searchObject)
-            eventsInfoList = ServerConnection.getEvents(query)
+        override fun doInBackground(vararg params: Map<String,String>):Boolean{
+            System.out.println("refreshing event data")
+            eventsInfoList = ServerConnection.getEvents(params[0])!!
             return true
         }
 
         override fun onPostExecute(success: Boolean?) {
             eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
             myRecyclerView?.adapter= eventListInfoAdapter
-        }
-
-        override fun onCancelled() {
-        }
-    }
-
-    // updates the list to only show events which are relevant to search query
-    inner class refreshEventByType(private val type:String): AsyncTask<String, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: String):Boolean{
-            val query = mapOf("type" to type)
-            eventsInfoList = ServerConnection.getEvents(query)
-            return true
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
-            myRecyclerView?.adapter= eventListInfoAdapter
-        }
-
-        override fun onCancelled() {
-        }
-    }
-
-
-    inner class refreshMyEvent(private val user_id:String): AsyncTask<String, Void, Boolean>() {
-        override fun doInBackground(vararg params: String):Boolean{
-            val query = mapOf("user_id" to user_id)
-            eventsInfoList = ServerConnection.getEvents(query)
-            return true
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventList,eventsInfoList,latitudeDevice,longitudeDevice)
-            myRecyclerView?.adapter= eventListInfoAdapter
-        }
-
-        override fun onCancelled() {
         }
     }
 
@@ -381,8 +316,7 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
     inner class EventSubscriptionsFrom(private val user:User):AsyncTask<User, Boolean, Boolean>(){
 
         override fun doInBackground(vararg params: User):Boolean? {
-
-            eventsInfoList = ServerConnection.getEventSubscriptionsFrom(user)
+            eventsInfoList = ServerConnection.getEventSubscriptionsFrom(user)!!
             return true
 
         }
@@ -392,13 +326,6 @@ class EventList : AppCompatActivity(), GoogleApiClient.ConnectionCallbacks, Goog
             myRecyclerView?.adapter= eventListInfoAdapter
         }
 
-        override fun onCancelled() {
-        }
-
-
-
     }
 
-    ///Code to take the location of the device
-
-   }
+}

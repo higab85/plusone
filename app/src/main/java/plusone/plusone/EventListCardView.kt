@@ -1,9 +1,7 @@
 package plusone.plusone
 
-import android.location.Location
 import android.os.AsyncTask
 import android.os.Bundle
-import android.provider.ContactsContract
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -17,115 +15,49 @@ class EventListCardView : AppCompatActivity() {
      private var eventsInfoList:List<Event>? = null
      var myRecyclerView: RecyclerView? = null
      var eventListInfoAdapter: EventListInfoAdapter? = null
-    val searchWord:String = ""
-    var locationDevice: Location? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.recycler_view_list_events)
-        val searchHome = this.intent.getStringExtra("searchHome")
+        val searchHome:String? = this.intent.getStringExtra("searchHome")
+        val filterType = this.intent.getStringExtra("filter type")
 
         supportActionBar?.title = "Events"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-        if (searchHome==""){
-            refreshEventData().execute()
-        }
-        else if (searchHome=="Sports Event"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Food"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Party"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Entertainment"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Learning"){
-            refreshEventByType(searchHome).execute()
-        }
-        else if (searchHome=="Others"){
-            refreshEventByType(searchHome).execute()
-        }
-        else{
-            refreshSearchEventData(searchHome).execute()
-        }
+        var queryMap = mutableMapOf<String,String>()
+        queryMap["type"] = filterType
+        queryMap["name"] = searchHome!!
+
+        refreshEventData().execute(queryMap)
+
 
         myRecyclerView = findViewById<RecyclerView>(R.id.event_list_recycler_viewoo)
         myRecyclerView?.setHasFixedSize(true)
         myRecyclerView?.layoutManager = LinearLayoutManager(this@EventListCardView)
 
 
-        val searchButton: ImageButton?  = findViewById<ImageButton>(R.id.imageButtonSearch)
+        val searchButton: ImageButton? = findViewById<ImageButton>(R.id.imageButtonSearch)
 
 
-        if (searchButton != null){
-            searchButton.setOnClickListener{view->
-                val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2)
-                val searchWord:String = searchBar.text.toString()
-                refreshSearchEventData(searchWord).execute()
-            }
+        searchButton?.setOnClickListener{view->
+            val searchBar: EditText = findViewById<EditText>(R.id.editTextSearch2)
+            queryMap["name"] =  searchBar.text.toString()
+            refreshEventData().execute(queryMap)
         }
-
-
     }
 
     // refresh the list: Synchronises local list of events with database on cloud.
-    inner class refreshEventData: AsyncTask<Void, Void, Boolean>() {
+    inner class refreshEventData: AsyncTask<Map<String,String>, Void, Boolean>() {
 
-        override fun doInBackground(vararg params: Void):Boolean{
-            eventsInfoList = ServerConnection.getEvents()
+        override fun doInBackground(vararg params: Map<String,String>):Boolean{
+            eventsInfoList = ServerConnection.getEvents(params[0])
             return true
         }
 
         override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList,locationDevice!!.latitude,locationDevice!!.longitude)
             myRecyclerView?.adapter= eventListInfoAdapter
-        }
-
-        override fun onCancelled() {
-        }
-    }
-
-    // updates the list to only show events which are relevant to search query
-    inner class refreshSearchEventData(private val searchObject:String): AsyncTask<String, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: String):Boolean{
-            // TODO implement serverconnection
-//            eventsInfoList = ServerConnection.searchEventsDB(searchObject)
-            eventsInfoList = ServerConnection.getEvents()
-            return true
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList,locationDevice!!.latitude,locationDevice!!.longitude)
-            myRecyclerView?.adapter= eventListInfoAdapter
-        }
-
-        override fun onCancelled() {
-        }
-    }
-
-    // updates the list to only show events which are relevant to search query
-    inner class refreshEventByType(private val type:String): AsyncTask<String, Void, Boolean>() {
-
-        override fun doInBackground(vararg params: String):Boolean{
-            // todo implement serverconnection
-//            eventsInfoList = DatabaseConnection.searchEventsByType(type)
-            eventsInfoList = ServerConnection.getEvents()
-            return true
-        }
-
-        override fun onPostExecute(success: Boolean?) {
-            eventListInfoAdapter = EventListInfoAdapter(this@EventListCardView,eventsInfoList,locationDevice!!.latitude,locationDevice!!.longitude)
-            myRecyclerView?.adapter= eventListInfoAdapter
-        }
-
-        override fun onCancelled() {
         }
     }
 

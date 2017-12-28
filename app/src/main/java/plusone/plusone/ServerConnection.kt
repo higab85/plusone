@@ -5,6 +5,7 @@ import com.google.gson.*
 import java.io.IOException
 import kotlin.jvm.java
 import com.google.gson.reflect.TypeToken
+import com.mysql.fabric.Server
 import okhttp3.*
 
 
@@ -27,7 +28,9 @@ object ServerConnection{
     val JSON = MediaType.parse("application/json; charset=utf-8")
 
     val client = OkHttpClient()
-    val urlHost = "https://fierce-plateau-73728.herokuapp.com"
+    var urlHost1 = "https://fierce-plateau-73728.herokuapp.com"
+    var urlHost2 = "http://10.0.2.2:5000"
+    var urlHost = urlHost1
 
     fun getUserData(){
         val gson = Gson()
@@ -189,7 +192,6 @@ object ServerConnection{
 
     }
 
-
     fun searchEvent():Boolean{
         val gson = Gson()
         val json = gson.toJson(CurrentUser)
@@ -260,10 +262,18 @@ object ServerConnection{
                 .header("Authorization", authorization)
                 .get()
                 .build()
-
+        System.out.println("request: " + request)
         val response = client.newCall(request)?.execute()
         return UsableResponse(response)
     }
 
+    fun toggleDB(b: Boolean) {
+        when (b) {
+            false -> urlHost = urlHost1
+            true  -> urlHost = urlHost2
+        }
+        System.out.println("urlHost: $urlHost")
+        loginUser()
+    }
 
 }

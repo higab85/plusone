@@ -1,24 +1,20 @@
 package plusone.plusone
 
+
 import android.content.Intent
-import android.media.Image
+import android.os.AsyncTask
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.NavigationView
-import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.Toolbar
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import android.widget.TextView
-
-
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -31,8 +27,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout) as DrawerLayout
-        val toggle = ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close)
+        val toggle = object: ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close){
+
+
+            /** Called when a drawer has settled in a completely open state.  */
+            override fun onDrawerOpened(drawerView: View?) {
+                super.onDrawerOpened(drawerView)
+                invalidateOptionsMenu() // creates call to onPrepareOptionsMenu()
+
+                val toggleDB = findViewById<Switch>(R.id.database_switch) as Switch
+                toggleDB.setOnCheckedChangeListener { buttonView, isChecked ->
+                    ChangeDB().execute(isChecked)
+                }
+            }
+        }
+
         drawer.setDrawerListener(toggle)
         toggle.syncState()
 
@@ -57,53 +67,38 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val buttonEntertainment = findViewById<Button>(R.id.buttonEntertainment)
         val buttonLearning = findViewById<Button>(R.id.buttonLearning)
         val buttonOthers = findViewById<Button>(R.id.buttonOthers)
-//        val buttonEventsSubscribed = findViewById<Button>(R.id.buttonEventsSubscribed)
 
+        fun eventListFilter(intentKey:String, intentValue:String){
+            val intent = Intent(this, EventList::class.java)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT)
+            intent.putExtra(intentKey, intentValue)
+            startActivity(intent)
+        }
 
         buttonSports.setOnClickListener{
-           val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Sports Event")
-            startActivity(intent)
+            eventListFilter("filter type", "Sports Event")
         }
         buttonParty.setOnClickListener{
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Party")
-            startActivity(intent)
+            eventListFilter("filter type", "Party")
         }
         buttonEntertainment.setOnClickListener{
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Entertainment")
-            startActivity(intent)
+            eventListFilter("filter type", "Entertainment")
         }
         buttonLearning.setOnClickListener{
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Learning")
-            startActivity(intent)
+            eventListFilter("filter type", "Learning")
         }
         buttonOthers.setOnClickListener{
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Others")
-            startActivity(intent)
+            eventListFilter("filter type", "Others")
         }
         buttonFood.setOnClickListener{
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "Food")
-            startActivity(intent)
+            eventListFilter("filter type", "Food")
         }
-        imageButtonSearchHome.setOnClickListener{
-            val intent = Intent(this, EventList::class.java)
+        imageButtonSearchHome.setOnClickListener {
             val searchBar: EditText = findViewById<EditText>(R.id.editTextSearchHome)
-            val searchWordHome:String = searchBar.text.toString()
-            intent.putExtra("searchHome", searchWordHome)
-            intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-            startActivity(intent)
+            val searchWordHome: String = searchBar.text.toString()
+            eventListFilter("filter search", searchWordHome)
         }
+
     }
 
     override fun onBackPressed() {
@@ -127,12 +122,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
 
-
         return if (id == R.id.action_settings) {
             true
         } else super.onOptionsItemSelected(item)
 
     }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
@@ -143,13 +138,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             intent.putExtra("activateEdit","isFalse")
             startActivity(intent)
         }
-        else if (id == R.id.imageButtonMyEvents) {
-            val intent = Intent(this, EventList::class.java)
-            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "user_id")
-            intent.putExtra("user_id", CurrentUser.id)
-            startActivity(intent)
-        }
         else if (id == R.id.imageButtonSettings) {
             val intent = Intent(this, AjustesActivity::class.java)
             startActivity(intent)
@@ -157,17 +145,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         else if (id == R.id.buttonEventsSubscribed) {
             val intent = Intent(this, EventList::class.java)
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-            intent.putExtra("searchHome", "EventSubscribed")
+            intent.putExtra("filter other", "EventSubscribed")
             startActivity(intent)
         }
+
 
         val drawer = findViewById<DrawerLayout>(R.id.drawer_layout) as DrawerLayout
         drawer.closeDrawer(GravityCompat.START)
         return true
     }
 
+    inner class ChangeDB: AsyncTask<Boolean, Void, Boolean>() {
 
-
+        override fun doInBackground(vararg isChecked: Boolean?): Boolean {
+             ServerConnection.toggleDB(isChecked[0]!!)
+         return true
+        }
+    }
 }
 
 

@@ -10,6 +10,8 @@ public class MainActivity extends AppCompatActivity {
     static String eventID;
     static String username;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         username = this.getIntent().getStringExtra("username");
 
         setContentView(R.layout.activity_chat);
+
 
 
     }
