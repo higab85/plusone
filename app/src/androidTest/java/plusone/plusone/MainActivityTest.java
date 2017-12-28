@@ -96,9 +96,9 @@ public class MainActivityTest {
    @Test
     public void buttonCreateEventWorks(){
         myActivityTestRule.launchActivity(new Intent());
-        assertNotNull(myActivity.findViewById(R.id.imageButtonAddEvent));
+        assertNotNull(myActivity.findViewById(R.id.imageButtonAddEvent2));
 
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
         Activity secondActivity = getInstrumentation().waitForMonitorWithTimeout(monitorCreateEvent,5000);
         assertNotNull(secondActivity);
         secondActivity.finish();
@@ -119,13 +119,13 @@ public class MainActivityTest {
     @Test
     public void buttonCreateEventWorks2(){
         //myActivityTestRule.launchActivity(new Intent());
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
         intended(hasComponent(EventCreateActivity.class.getName()));
     }
     @Test
     public void spinnerWorksEventCreate(){
        myActivityTestRule.launchActivity(new Intent());
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
         onView(withId(R.id.eventType)).perform(click());
         onData(allOf(is(instanceOf(String.class)),is("Others"))).perform(click());
         onView(withId(R.id.eventType)).check(matches(withSpinnerText("Others")));
@@ -145,7 +145,7 @@ public class MainActivityTest {
    public void createEventConLOCALIZACION(){
         myActivityTestRule.launchActivity(new Intent());
 
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
 
         onView(withId(R.id.eventName)).check(matches((isDisplayed())));
         onView(withId(R.id.eventName)).perform(clearText(),typeText("Evento de testeo2"),closeSoftKeyboard());
@@ -210,11 +210,11 @@ public class MainActivityTest {
         onView(withId(R.id.buttonLearning)).perform(closeSoftKeyboard()).perform(click());
 
     }*/
-    @Test
+    /*@Test
     public void CreateEventSinLOCALIZACION(){
         myActivityTestRule.launchActivity(new Intent());
 
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
 
         onView(withId(R.id.eventName)).check(matches((isDisplayed())));
         onView(withId(R.id.eventName)).perform(clearText(),typeText("Evento de testeo2"),closeSoftKeyboard());
@@ -259,12 +259,12 @@ public class MainActivityTest {
         onView(withId(R.id.createEventButton)).perform(closeSoftKeyboard()).perform(click());
 
 
-    }
+    }*/
     @Test
     public void startEventFunciona() {
         myActivityTestRule.launchActivity(new Intent());
 
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
         appCompatButton2.perform(click());
@@ -281,7 +281,7 @@ public class MainActivityTest {
     public void endEventFunciona() {
         myActivityTestRule.launchActivity(new Intent());
 
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
 
         ViewInteraction appCompatButton5 = onView(
                 allOf(withId(R.id.eventEndsAtButton), withText("Finishes at"), isDisplayed()));
@@ -299,7 +299,7 @@ public class MainActivityTest {
     public void startEventYEndEventFunciona() {
         myActivityTestRule.launchActivity(new Intent());
 
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
         ViewInteraction appCompatButton2 = onView(
                 allOf(withId(R.id.textViewTimeStart), withText("Starts at"), isDisplayed()));
         appCompatButton2.perform(click());
@@ -327,7 +327,7 @@ public class MainActivityTest {
     @Test
     public void escribirEnSearchTextBar(){
         myActivityTestRule.launchActivity(new Intent());
-        onView(withId(R.id.imageButtonAddEvent)).perform(click());
+        onView(withId(R.id.imageButtonAddEvent2)).perform(click());
 
         String texto ="Que pasa Hulio!!";
         onView(withId(R.id.eventName)).check(matches((isDisplayed())));

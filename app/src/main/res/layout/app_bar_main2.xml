@@ -102,6 +102,17 @@
         android:background="@android:color/transparent"
         app:srcCompat="@drawable/plusnav" />
 
+    <ImageButton
+        android:id="@+id/imageButtonAddEvent2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="top"
+        android:layout_marginLeft="315dp"
+        android:layout_toRightOf="@+id/editTextSearchHome"
+        android:layout_marginTop="350dp"
+        android:layout_weight="100"
+        app:srcCompat="@android:drawable/ic_menu_add" />
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
