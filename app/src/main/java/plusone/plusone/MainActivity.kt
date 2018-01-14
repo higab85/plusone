@@ -15,10 +15,14 @@ import android.view.MenuItem
 import android.view.View
 import android.widget.*
 import android.widget.TextView
+import com.mysql.fabric.Server
+import org.jetbrains.anko.toast
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+    var newDB = false
+    var toggleDB:Switch? = null
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -36,8 +40,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 super.onDrawerOpened(drawerView)
                 invalidateOptionsMenu() // creates call to onPrepareOptionsMenu()
 
-                val toggleDB = findViewById<Switch>(R.id.database_switch) as Switch
-                toggleDB.setOnCheckedChangeListener { buttonView, isChecked ->
+                toggleDB = findViewById<Switch>(R.id.database_switch)
+                if(ServerConnection.urlHostState)
+                    toggleDB?.toggle()
+                toggleDB?.setOnCheckedChangeListener { buttonView, isChecked ->
                     ChangeDB().execute(isChecked)
                 }
             }
@@ -155,11 +161,28 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    inner class ChangeDB: AsyncTask<Boolean, Void, Boolean>() {
+    inner class ChangeDB: AsyncTask<Boolean, Boolean, Boolean>() {
 
         override fun doInBackground(vararg isChecked: Boolean?): Boolean {
-             ServerConnection.toggleDB(isChecked[0]!!)
-         return true
+            ServerConnection.toggleDB(isChecked[0]!!)
+            if(!ServerConnection.loginUser()) {
+                ServerConnection.toggleDB(!isChecked[0]!!)
+                return false
+            }
+            return true
+        }
+
+        override fun onPostExecute(success: Boolean) {
+            if (success)
+                newDB = true
+            if(newDB) {
+                toast("Switched database!")
+                newDB=false
+            }
+            else {
+                toast("Account doesn't exist in other DB!")
+                toggleDB?.toggle()
+            }
         }
     }
 }

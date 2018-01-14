@@ -28,6 +28,7 @@ object ServerConnection{
     val JSON = MediaType.parse("application/json; charset=utf-8")
 
     val client = OkHttpClient()
+    var urlHostState = false
     var urlHost1 = "https://fierce-plateau-73728.herokuapp.com"
     var urlHost2 = "http://10.0.2.2:5000"
     var urlHost = urlHost1
@@ -56,6 +57,7 @@ object ServerConnection{
 
         CurrentUser.token = response?.body!!
         getUserData()
+        System.out.println(CurrentUser.token)
         return true
     }
 
@@ -214,6 +216,17 @@ object ServerConnection{
         return true
     }
 
+
+    fun toggleDB(b: Boolean):Boolean {
+        when (b) {
+            false -> urlHost = urlHost1
+            true  -> urlHost = urlHost2
+        }
+        System.out.println("urlHost: $urlHost")
+        urlHostState = !urlHostState
+        return true
+    }
+
     //------------------
     //  HTTP METHODS
     //------------------
@@ -265,15 +278,6 @@ object ServerConnection{
         System.out.println("request: " + request)
         val response = client.newCall(request)?.execute()
         return UsableResponse(response)
-    }
-
-    fun toggleDB(b: Boolean) {
-        when (b) {
-            false -> urlHost = urlHost1
-            true  -> urlHost = urlHost2
-        }
-        System.out.println("urlHost: $urlHost")
-        loginUser()
     }
 
 }

@@ -81,6 +81,12 @@
                 android:text="@string/action_register"
                 android:textStyle="bold" />
 
+            <Switch
+                android:id="@+id/switchLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/databaseToggle" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

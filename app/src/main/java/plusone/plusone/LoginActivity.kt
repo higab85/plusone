@@ -23,7 +23,9 @@ import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
+import android.widget.Switch
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.toast
 
 
 class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
@@ -54,6 +56,11 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
         registerButton.setOnClickListener{
             val intent = Intent(this, RegisterActivity::class.java)
             startActivity(intent)
+        }
+
+        val toggleDB = findViewById<Switch>(R.id.switchLogin) as Switch
+        toggleDB.setOnCheckedChangeListener { buttonView, isChecked ->
+            ChangeDB().execute(isChecked)
         }
 
 
@@ -256,6 +263,15 @@ class LoginActivity : AppCompatActivity(), LoaderCallbacks<Cursor> {
             mAuthTask = null
             showProgress(false)
         }
+    }
+
+    inner class ChangeDB: AsyncTask<Boolean, Void, Boolean>() {
+
+        override fun doInBackground(vararg isChecked: Boolean?):Boolean {
+            ServerConnection.toggleDB(isChecked[0]!!)
+            return true
+        }
+
     }
 
     companion object {
