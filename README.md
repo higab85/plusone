@@ -7,7 +7,7 @@ PlusOne is an Android app which seeks to help people find partners for activitie
 - Accounts: In order to use PlusOne you need to register and sign in to your account. This lets you keep your information across devices.
 - Search and Filter: Events created by any user can be filtered by any category.
 - Geolocation: PlusOne will tell you how far away from any given event.
-- Chat: Once you've subscribed to an event, you can engage in conversations with other participants of said event.
+- Chat: Once you've subscribed to an event, you can engage in conversations with other participants of said event(implemented with [socket.io](https://socket.io/)).
 - Dual Database: PlusOne let's you swap where you get your events from, without having to restart the app.
 - [API: PlusOne uses an API built in Flask and Sockets-io.](https://github.com/higab85/plusone-server)
 
